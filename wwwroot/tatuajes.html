@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Tatuajes de Autor | Franki Tattoo Ibarra</title>
+    <meta name="description" content="Galería de tatuajes de autor en Ibarra: realismo en sombras, tradicional, blackwork y diseños personalizados. Agenda tu cita con Franki Tattoo.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tatuajes de Autor | Franki Tattoo Ibarra">
+    <meta property="og:description" content="Conoce nuestro portafolio de tatuajes realismo, sombras y autor en Ibarra, Ecuador.">
+    <meta property="og:image" content="https://franki-tattoo.onrender.com/images/franki-logo.jpg">
+    <meta property="og:url" content="https://franki-tattoo.onrender.com/tatuajes.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/jpeg" href="images/franki-logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/public.css?v=13">
+    <style>
+        .page-header {
+            margin-top: 100px;
+            text-align: center;
+            padding: 3.5rem 1rem;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)), #121212;
+            border-bottom: 1px solid #222;
+        }
+
+            .page-header h1 {
+                color: #00e676;
+                font-size: 3.5rem;
+                text-transform: uppercase;
+            }
+
+        @media (max-width: 768px) {
+            .page-header {
+                margin-top: 70px;
+                padding: 2rem 1rem;
+            }
+
+                .page-header h1 {
+                    font-size: 2.2rem;
+                }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="images/franki-logo-transparent.png" alt="Franki Tattoo" class="logo-img" />
+            <span class="logo-badge">Tattoo</span>
+        </a>
+        
+        <div class="header-actions-mobile">
+            <button id="ft-nav-user-btn-mobile" class="nav-action-btn user-btn" title="Iniciar sesión" aria-label="Mi Cuenta">
+                <span class="ft-user-icon">👤</span>
+            </button>
+            <button id="ft-nav-cart-btn-mobile" class="nav-action-btn cart-btn" aria-label="Carrito" onclick="Cart.openDrawer()">
+                🛒 <span class="ft-cart-badge" style="display:none;">0</span>
+            </button>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="tatuajes.html" style="color:#00e676;">Tatuajes</a></li>
+                <li><a href="piercings.html">Piercings</a></li>
+                <li><a href="vapes.html">Smokes / Vapes</a></li>
+                <li><a href="artesanias.html">Artesanías</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="consentimiento.html">Consentimiento</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions-desktop">
+            <button id="ft-nav-user-btn" class="nav-action-btn user-btn" title="Iniciar sesión">
+                <span class="ft-user-icon">👤</span>
+                <span class="ft-user-name">Ingresar</span>
+            </button>
+            <button id="ft-nav-cart-btn" class="nav-action-btn cart-btn" title="Ver Carrito" onclick="Cart.openDrawer()">
+                🛒 Carrito <span id="ft-nav-cart-badge" class="ft-cart-badge" style="display:none;">0</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <h1>Tatuajes & Diseños de Autor</h1>
+        <p style="color: #ccc; max-width: 650px; margin: 0.5rem auto 0;">
+            Proyectos personalizados en Ibarra. Blackwork, floral, caligrafía, dragones y piezas dark art.
+        </p>
+    </div>
+
+    <!-- 1. GUÍA DE CUIDADOS & CICATRIZACIÓN (PRIMERO) -->
+    <section class="aftercare-container">
+        <div class="aftercare-header">
+            <h2>🩹 Guía de Cuidados & Cicatrización</h2>
+            <p>El 50% de la belleza y nitidez de tu tatuaje depende de cómo lo cuides las primeras semanas. Sigue estas instrucciones oficiales de Franki Tattoo para que tus líneas y sombras cicatricen perfectas.</p>
+        </div>
+
+        <div class="aftercare-timeline-grid">
+            <div class="aftercare-phase-card phase-highlight">
+                <span class="phase-badge">Fase 1 • Días 1 a 3</span>
+                <div class="phase-card-title">🚿 Higiene & Protección Inicial</div>
+                <ul class="phase-steps-list">
+                    <li>Retira el film o apósito protector en el tiempo indicado por Franki (entre 2 y 4 horas o según el tipo de parche).</li>
+                    <li>Lava el tatuaje con <strong>agua tibia y jabón neutro antibacteriano</strong> usando suavemente la yema de tus dedos.</li>
+                    <li>Seca con toques suaves usando toalla de papel desechable limpia. <strong>Nunca frotes</strong>.</li>
+                </ul>
+                <div class="phase-pro-tip">
+                    <strong>Tip Pro:</strong> Deja respirar el tatuaje 10 minutos al aire libre antes de cubrirlo con ropa holgada.
+                </div>
+            </div>
+
+            <div class="aftercare-phase-card">
+                <span class="phase-badge">Fase 2 • Días 4 a 14</span>
+                <div class="phase-card-title">🧴 Humectación & Regeneración</div>
+                <ul class="phase-steps-list">
+                    <li>Aplica una <strong>capa muy fina</strong> de crema cicatrizante recomendada (Aquaphor, Bepanthol o pomada especial) 2 a 3 veces al día.</li>
+                    <li>No pongas exceso de crema; la piel necesita oxigenarse para cicatrizar con nitidez.</li>
+                    <li>Aparecerán pequeñas pieles o costras finas: <strong>es completamente normal</strong>.</li>
+                </ul>
+                <div class="phase-pro-tip">
+                    <strong>¡Regla de Oro!</strong> Deja que las costras caigan solas. Nunca las arranques ni te rasques.
+                </div>
+            </div>
+
+            <div class="aftercare-phase-card">
+                <span class="phase-badge">Fase 3 • Día 15 en adelante</span>
+                <div class="phase-card-title">☀️ Protección Solar & Brillo</div>
+                <ul class="phase-steps-list">
+                    <li>La piel superficial ya cicatrizó, pero la dermis profunda continúa sellando el pigmento.</li>
+                    <li>Mantén la piel hidratada diariamente con crema corporal neutra.</li>
+                    <li>Aplica <strong>bloqueador solar FPS 50+</strong> cada vez que salgas al sol para evitar que los negros pierdan contraste.</li>
+                </ul>
+                <div class="phase-pro-tip">
+                    <strong>Larga Vida:</strong> El bloqueador solar mantendrá tus tatuajes con aspecto fresco y nítido por años.
+                </div>
+            </div>
+        </div>
+
+        <!-- Lo que SÍ vs Lo que NUNCA -->
+        <div class="aftercare-dos-donts">
+            <div class="dos-box">
+                <h3>✅ Lo que SÍ debes hacer</h3>
+                <ul class="rules-list">
+                    <li>Lavar siempre tus manos con agua y jabón antes de tocar el área tatuada.</li>
+                    <li>Usar ropa holgada, suave y 100% de algodón que no presione ni frote la zona.</li>
+                    <li>Beber abundante agua para mantener la piel hidratada desde adentro.</li>
+                    <li>Escribirnos a WhatsApp si tienes cualquier inquietud sobre tu proceso de curación.</li>
+                </ul>
+            </div>
+            <div class="donts-box">
+                <h3>🚫 Lo que NUNCA debes hacer</h3>
+                <ul class="rules-list">
+                    <li><strong>Cero piscinas, saunas, jacuzzis o playa</strong> los primeros 15 días (alto riesgo de infección y pérdida de tinta).</li>
+                    <li><strong>No exponer al sol directo</strong> mientras la piel esté en proceso de regeneración.</li>
+                    <li><strong>No arrancar costras</strong> ni frotar con toallas ásperas o esponjas de baño.</li>
+                    <li><strong>No aplicar alcohol, agua oxigenada, vaselina pesada ni perfumes</strong> sobre el tatuaje.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. GALERÍA DE ESTILOS Y PORTAFOLIO (DEBAJO DE CUIDADOS) -->
+    <section id="galeria-tatuajes" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+        <div class="pricing-notice-banner">
+            <span class="notice-icon">💡</span>
+            <div class="notice-text">
+                <strong>Nota de Cotización:</strong> El valor de cada tatuaje es personalizado y varía según el <strong>tamaño</strong>, la <strong>zona del cuerpo</strong> y la <strong>complejidad del diseño</strong>. Usa nuestro asistente de citas para solicitar tu presupuesto exacto en tiempo real.
+            </div>
+        </div>
+
+        <h2 class="section-title">Explora por Estilo de Tatuaje</h2>
+
+        <!-- Barra de Filtros Interactivos -->
+        <div class="filter-bar" id="tattoo-filter-bar">
+            <button type="button" class="filter-chip is-active" data-filter="all">✨ Todos los Estilos</button>
+            <button type="button" class="filter-chip" data-filter="geometrico">📐 Geométrico & Blackwork</button>
+            <button type="button" class="filter-chip" data-filter="lineafina">🌸 Línea Fina & Botánico</button>
+            <button type="button" class="filter-chip" data-filter="lettering">✍️ Lettering & Caligrafía</button>
+            <button type="button" class="filter-chip" data-filter="darkart">💀 Dark Art & Sombras</button>
+            <button type="button" class="filter-chip" data-filter="oriental">🐉 Oriental & Dragones</button>
+        </div>
+
+        <div class="gallery" id="featured-styles-gallery" style="margin-bottom: 3.5rem;">
+            <div class="gallery-item" data-style="geometrico">
+                <img src="images/arbolvida.jpg" alt="Geométrico & Blackwork - Franki Tattoo" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Geométrico & Blackwork</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="lineafina">
+                <img src="images/gatito.jpg" alt="Línea Fina Floral - Franki Tattoo" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Línea Fina & Fineline</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="lettering">
+                <img src="images/frase-2.jpg" alt="Lettering Caligrafía - Franki Tattoo" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Lettering & Frases</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="darkart">
+                <img src="images/espartano.jpg" alt="Dr. Plaga y Sombras - Franki Tattoo" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Dark Art & Sombras</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="oriental">
+                <img src="images/geishaaa.jpg" alt="Geisha Oriental a Color - Franki Tattoo" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Oriental & Color</h3>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Portafolio de Trabajos Reales</h2>
+        <div class="gallery" id="portfolio-grid-real">
+            <div class="gallery-item" data-style="oriental">
+                <img src="images/geishaaa.jpg" alt="Tatuaje Geisha Tradicional a Color" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Geisha Oriental • Color</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="darkart">
+                <img src="images/espartano.jpg" alt="Guerrero Espartano Realismo" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Guerrero Espartano • Sombras</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="lineafina">
+                <img src="images/floresrojas.jpg" alt="Flores Rojas Color" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Flores Rojas • Color</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="lineafina">
+                <img src="images/gatito.jpg" alt="Retrato Gatito Fineline" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Retrato Gatito • Fineline</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="geometrico">
+                <img src="images/arbolvida.jpg" alt="Árbol de la Vida y Geometría" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Árbol de la Vida • Blackwork</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="lettering">
+                <img src="images/frase-2.jpg" alt="Lettering y Caligrafía" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Lettering & Frase Caligráfica</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="oriental">
+                <img src="images/tronco-kabuki.jpg" alt="Máscara Kabuki Oriental" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Kabuki Tradicional • Oriental</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="darkart">
+                <img src="images/buho-sanantonia.jpg" alt="Búho en Sombras" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Búho Místico • Sombras</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="darkart">
+                <img src="images/calaquina.jpg" alt="Calavera Catrina Sombras" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Calavera & Flores • Sombras</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="lineafina">
+                <img src="images/picaflor.jpg" alt="Colibrí Picaflor y Flores" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Colibrí Picaflor • Fineline</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="lineafina">
+                <img src="images/zorritooo.jpg" alt="Zorro Floral Delicado" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Zorro Floral • Línea Fina</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="lineafina">
+                <img src="images/maripo-cover.jpg" alt="Cover de Mariposa en Hombro" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Cover Mariposa • Color</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="lineafina">
+                <img src="images/maripomadrehija.jpg" alt="Mariposas Madre e Hija" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Mariposas Madre e Hija</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="darkart">
+                <img src="images/angelote.jpg" alt="Arcángel Guerrero Sombras" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Arcángel Guerrero • Sombras</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="darkart">
+                <img src="images/virgencitamecanico.jpg" alt="Virgen Mecánica Autor" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Virgen Mecánica • Diseño de Autor</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="darkart">
+                <img src="images/ojo-luci.jpg" alt="Ojo Realista" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Ojo Realista • Sombras</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="geometrico">
+                <img src="images/arana.jpg" alt="Araña Blackwork" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Araña • Blackwork</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-style="darkart">
+                <img src="images/serpi.jpg" alt="Serpiente Sombras" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Serpiente • Sombras</h3>
+                </div>
+            </div>
+        </div>
+
+        <div id="dynamic-portfolio" class="gallery" style="margin-top: 2rem;"></div>
+
+        <div class="appointment-cta-banner" style="margin-top: 4rem;">
+            <div class="cta-content">
+                <h3>¿Tienes una idea para tu próximo tatuaje?</h3>
+                <p>Escríbenos directamente o agenda tu cita. Cotizaciones claras según tamaño y detalle sin compromiso.</p>
+            </div>
+            <button type="button" class="btn btn-cta-main" onclick="openChatbot('Tatuaje')">
+                📅 Agendar Turno con Franki ➔
+            </button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Franki Tattoo Studio. Todos los derechos reservados. • <a href="privacidad-terminos.html" style="color:#00e676; text-decoration:none;">Términos y Privacidad</a> • <a href="consentimiento.html" style="color:#00e676; text-decoration:none;">Ficha de Consentimiento</a></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/nav.js?v=2"></script>
+    <script src="js/chatbot.js?v=4"></script>
+    <script src="js/auth-modal.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/lightbox.js?v=1"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const container = document.getElementById("dynamic-portfolio");
+            try {
+                const res = await fetch("/api/portfolio?category=Tattoo");
+                const items = await res.json();
+                
+                if (!items || items.length === 0) {
+                    return; // Queda oculto
+                }
+
+                // Evitar duplicar fotos que ya están en la cuadrícula estática de trabajos reales
+                const existingImgs = Array.from(document.querySelectorAll("#portfolio-grid-real img, #featured-styles-gallery img"))
+                    .map(img => (img.getAttribute("src") || "").replace(/^\/?images\//, ""));
+                const extraItems = items.filter(item => {
+                    const itemPath = (item.imageUrl || "").replace(/^\/?images\//, "");
+                    return !existingImgs.includes(itemPath);
+                });
+
+                if (extraItems.length === 0) return;
+
+                container.innerHTML = "";
+                extraItems.forEach(item => {
+                    const card = document.createElement("div");
+                    card.className = "item-card";
+                    
+                    const hasImage = item.imageUrl && item.imageUrl.trim() !== "";
+                    const isVideo = hasImage && /\.(mp4|mov|webm|m4v)$/i.test(item.imageUrl);
+                    
+                    let mediaHtml = "";
+                    if (hasImage) {
+                        if (isVideo) {
+                            mediaHtml = `<video src="${item.imageUrl}" controls muted playsinline loop style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0; background:#000;"></video>`;
+                        } else {
+                            mediaHtml = `<img src="${item.imageUrl}" alt="${item.title}" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                            <div class="img-placeholder" style="display:none; aspect-ratio:1/1; height:auto;"><div class="ph-icon">🖼️</div><span>${item.title}</span></div>`;
+                        }
+                    } else {
+                        mediaHtml = `<div class="img-placeholder" style="aspect-ratio:1/1; height:auto;"><div class="ph-icon">🖼️</div><span>${item.title}</span></div>`;
+                    }
+
+                    card.innerHTML = `
+                        ${mediaHtml}
+                        <div class="item-info" style="padding: 1.1rem 1rem; text-align: center;">
+                            <h3 style="margin: 0; font-size: 1.15rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.5px;">${item.title}</h3>
+                        </div>
+                    `;
+                    // Asignar data-style según el título para filtrado dinámico
+                    const lowerTitle = (item.title || "").toLowerCase();
+                    if (lowerTitle.includes("anatom") || lowerTitle.includes("geom")) card.setAttribute("data-style", "geometrico");
+                    else if (lowerTitle.includes("flor") || lowerTitle.includes("marip") || lowerTitle.includes("line")) card.setAttribute("data-style", "lineafina");
+                    else if (lowerTitle.includes("letr") || lowerTitle.includes("callig") || lowerTitle.includes("text")) card.setAttribute("data-style", "lettering");
+                    else if (lowerTitle.includes("plaga") || lowerTitle.includes("pensador") || lowerTitle.includes("dark") || lowerTitle.includes("sombr")) card.setAttribute("data-style", "darkart");
+                    else if (lowerTitle.includes("dragon") || lowerTitle.includes("japon") || lowerTitle.includes("orient")) card.setAttribute("data-style", "oriental");
+                    else card.setAttribute("data-style", "all");
+
+                    container.appendChild(card);
+                });
+
+                // Activar lógica de filtros de estilo interactivos
+                const filterChips = document.querySelectorAll("#tattoo-filter-bar .filter-chip");
+                filterChips.forEach(chip => {
+                    chip.addEventListener("click", () => {
+                        filterChips.forEach(c => c.classList.remove("is-active"));
+                        chip.classList.add("is-active");
+                        const selectedFilter = chip.getAttribute("data-filter");
+
+                        // 1. Filtrar Galería de Estilos
+                        document.querySelectorAll("#featured-styles-gallery .gallery-item").forEach(item => {
+                            const style = item.getAttribute("data-style");
+                            item.style.display = (selectedFilter === "all" || style === selectedFilter) ? "" : "none";
+                        });
+
+                        // 2. Filtrar Portafolio Real
+                        document.querySelectorAll("#portfolio-grid-real .gallery-item").forEach(item => {
+                            const style = item.getAttribute("data-style");
+                            item.style.display = (selectedFilter === "all" || style === selectedFilter) ? "" : "none";
+                        });
+
+                        // 3. Filtrar Portafolio Dinámico
+                        document.querySelectorAll("#dynamic-portfolio .item-card").forEach(item => {
+                            const style = item.getAttribute("data-style") || "all";
+                            item.style.display = (selectedFilter === "all" || style === "all" || style === selectedFilter) ? "" : "none";
+                        });
+                    });
+                });
+
+            } catch (err) {
+                container.innerHTML = '<p style="text-align:center; color:red;">Error al cargar el portafolio.</p>';
+            }
+        });
+    </script>
+</body>
+</html>

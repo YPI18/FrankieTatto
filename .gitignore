@@ -1,0 +1,33 @@
+## Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## Visual Studio / VS Code / IDE
+.vs/
+.vscode/
+.idea/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+.agent/
+.gemini/
+.cursor/
+.impeccable/
+
+## SQLite temp files
+*.db-shm
+*.db-wal
+
+## OS files
+.DS_Store
+Thumbs.db

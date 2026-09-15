@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Manual de Usuario y Operación — Frankie Tattoo Studio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+    @page {
+      size: A4;
+      margin: 1.5cm 1.3cm;
+      @bottom-right {
+        content: counter(page);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1a1a1a;
+      background: #ffffff;
+      line-height: 1.55;
+      font-size: 10pt;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    /* PORTADA */
+    .cover-page {
+      min-height: 980px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 3.5rem 2.5rem;
+      background: linear-gradient(135deg, #0d0d0d 0%, #161616 55%, #1f1f1f 100%);
+      color: #ffffff;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .cover-page::before {
+      content: "";
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0, 230, 118, 0.22) 0%, rgba(0, 230, 118, 0) 70%);
+      border-radius: 50%;
+    }
+
+    .cover-badge {
+      display: inline-block;
+      align-self: flex-start;
+      background: rgba(0, 230, 118, 0.15);
+      border: 1px solid #00e676;
+      color: #00e676;
+      padding: 0.4rem 1.1rem;
+      border-radius: 20px;
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .cover-main {
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    .cover-title {
+      font-family: 'Cinzel', serif;
+      font-size: 34pt;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 0.8rem;
+    }
+
+    .cover-title span {
+      color: #00e676;
+    }
+
+    .cover-subtitle {
+      font-size: 13.5pt;
+      color: #b0b0b0;
+      font-weight: 400;
+      max-width: 620px;
+      line-height: 1.5;
+    }
+
+    .cover-divider {
+      width: 80px;
+      height: 4px;
+      background: #00e676;
+      margin: 1.5rem 0;
+      border-radius: 2px;
+    }
+
+    .cover-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      border-top: 1px solid #333333;
+      padding-top: 1.5rem;
+    }
+
+    .cover-meta-item h5 {
+      font-size: 8pt;
+      color: #888888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.25rem;
+    }
+
+    .cover-meta-item p {
+      font-size: 10pt;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* ENCABEZADOS Y SECCIONES */
+    h1, h2, h3, h4 {
+      color: #0d0d0d;
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 16pt;
+      border-bottom: 2px solid #00e676;
+      padding-bottom: 0.4rem;
+      margin-top: 1.8rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    h3 {
+      font-size: 12pt;
+      margin-top: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #111111;
+    }
+
+    p {
+      margin-bottom: 0.8rem;
+      color: #333333;
+    }
+
+    /* CAJAS Y TARJETAS */
+    .feature-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #00e676;
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card.dark {
+      background: #141414;
+      color: #f1f1f1;
+      border: 1px solid #262626;
+      border-left: 4px solid #00e676;
+    }
+
+    .feature-card.dark p {
+      color: #cccccc;
+    }
+
+    .feature-card.dark h4 {
+      color: #00e676;
+      margin-bottom: 0.4rem;
+      font-size: 11pt;
+    }
+
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.9rem;
+      margin: 1rem 0;
+    }
+
+    .step-box {
+      background: #f9fbf9;
+      border: 1px solid #e0ede0;
+      border-radius: 8px;
+      padding: 0.85rem;
+    }
+
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      background: #00e676;
+      color: #000000;
+      font-weight: 700;
+      font-size: 9pt;
+      border-radius: 50%;
+      margin-bottom: 0.4rem;
+    }
+
+    .step-box h4 {
+      font-size: 10pt;
+      margin-bottom: 0.25rem;
+      color: #0f172a;
+    }
+
+    .step-box p {
+      font-size: 8.8pt;
+      color: #555555;
+      margin-bottom: 0;
+      line-height: 1.4;
+    }
+
+    /* SIMULACIÓN DE WHATSAPP */
+    .whatsapp-box {
+      background: #0b141a;
+      border-radius: 10px;
+      padding: 1.2rem;
+      color: #e9edef;
+      font-family: 'Inter', sans-serif;
+      font-size: 9pt;
+      margin: 1rem 0;
+      border: 1px solid #222d34;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .whatsapp-bubble {
+      background: #005c4b;
+      padding: 1rem 1.2rem;
+      border-radius: 8px 8px 0 8px;
+      max-width: 96%;
+      margin-left: auto;
+      line-height: 1.5;
+      color: #ffffff;
+    }
+
+    .whatsapp-bubble strong {
+      color: #00e676;
+    }
+
+    .whatsapp-meta {
+      font-size: 7.5pt;
+      color: rgba(255,255,255,0.7);
+      text-align: right;
+      margin-top: 0.4rem;
+    }
+
+    /* TABLAS */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 8.8pt;
+    }
+
+    table th {
+      background: #1a1a1a;
+      color: #ffffff;
+      padding: 0.6rem 0.8rem;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    table td {
+      padding: 0.6rem 0.8rem;
+      border-bottom: 1px solid #e2e8f0;
+      color: #333333;
+    }
+
+    table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    /* BADGES Y ALERTAS */
+    .alert-tip {
+      background: #ecfdf5;
+      border-left: 4px solid #10b981;
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+      font-size: 9pt;
+      color: #065f46;
+      margin: 1rem 0;
+    }
+
+    .alert-warn {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+      font-size: 9pt;
+      color: #92400e;
+      margin: 1rem 0;
+    }
+
+    .alert-sec {
+      background: #f0fdf4;
+      border-left: 4px solid #00e676;
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+      font-size: 9pt;
+      color: #14532d;
+      margin: 1rem 0;
+    }
+
+    .code-pill {
+      font-family: 'JetBrains Mono', monospace;
+      background: #222;
+      color: #00e676;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 8.2pt;
+      font-weight: 600;
+    }
+
+    ul, ol {
+      margin-left: 1.2rem;
+      margin-bottom: 0.8rem;
+      font-size: 9.3pt;
+      color: #333333;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+    }
+
+    .highlight-box {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      padding: 0.85rem;
+      border-radius: 6px;
+      font-size: 8.8pt;
+      margin-bottom: 0.8rem;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 8pt;
+      font-weight: 700;
+    }
+    .badge-pickup { background: #e0f2fe; color: #0369a1; }
+    .badge-local { background: #dcfce7; color: #15803d; }
+    .badge-servi { background: #fef3c7; color: #b45309; }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== PORTADA ==================== -->
+  <div class="cover-page">
+    <div class="cover-badge">⚡ Manual Oficial y Guía de Operación Integral</div>
+    
+    <div class="cover-main">
+      <h1 class="cover-title">FRANKIE<br><span>TATTOO STUDIO</span></h1>
+      <div class="cover-divider"></div>
+      <p class="cover-subtitle">
+        Manual de Usuario, Logística de Envíos Nacionales y Locales, Pasarela Bancaria Directa, Chatbot Inteligente de Citas y Panel de Administración.
+      </p>
+    </div>
+
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <h5>Destinatario Principal</h5>
+        <p>Franki (Artista & Propietario)</p>
+      </div>
+      <div class="cover-meta-item">
+        <h5>Ubicación</h5>
+        <p>Ibarra, Imbabura — Ecuador</p>
+      </div>
+      <div class="cover-meta-item">
+        <h5>Versión del Sistema</h5>
+        <p>v3.0 Profesional (2026)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- ==================== ÍNDICE GENERAL ==================== -->
+  <h2>📋 Contenido del Manual</h2>
+  <div class="highlight-box" style="font-size:9.5pt; line-height:1.8;">
+    <p><strong>1. Introducción y Beneficios del Sistema</strong> — Automatización y ahorro de tiempo.</p>
+    <p><strong>2. El Asistente Virtual / Chatbot Inteligente de Citas</strong> — Cómo atiende al cliente 24/7.</p>
+    <p><strong>3. Ficha Técnica de Citas que Llega a WhatsApp</strong> — Formato exacto y cómo responder.</p>
+    <p><strong>4. Tienda Online y Pasarela de Transferencias Bancarias</strong> — Pichincha, DeUna y otros bancos.</p>
+    <p><strong>5. Sistema Completo de Envíos y Logística (Ibarra & Servientrega)</strong> — Tarifas, dirección y despacho.</p>
+    <p><strong>6. Mensaje de Pedido de Tienda por WhatsApp</strong> — Desglose de subtotal, envío y comprobante.</p>
+    <p><strong>7. Subida de Comprobantes y Validación Antifraude</strong> — Regla de oro para validar dinero real.</p>
+    <p><strong>8. Panel de Control Administrativo Privado</strong> — Gestión de pedidos, citas, stock y portafolio.</p>
+    <p><strong>9. Seguridad Integral y Blindaje del Sistema</strong> — Auditoría de seguridad y protecciones activas.</p>
+    <p><strong>10. Posicionamiento en Google (SEO Local) y Schema.org</strong> — Ficha oficial de Google, estrellas 4.9⭐ y velocidad móvil.</p>
+    <p><strong>11. Configuración de Cuentas y Contacto Oficial</strong> — Número de Franki y datos bancarios.</p>
+    <p><strong>12. Tabla Resumen Operativa del Día a Día</strong> — Guía rápida de consulta para Franki.</p>
+  </div>
+
+  <hr style="border:0; border-top:1px solid #e2e8f0; margin:1.5rem 0;">
+
+  <!-- ==================== SECCIÓN 1: INTRODUCCIÓN ==================== -->
+  <h2>1. Introducción y Beneficios del Sistema</h2>
+  <p>
+    ¡Hola Franki! Este manual fue diseñado para explicarte de forma clara, detallada y en palabras sencillas cómo opera tu plataforma web profesional. El propósito fundamental de esta solución es <strong>automatizar la atención al cliente, organizar tus turnos y ventas de tienda, y ahorrarte horas de mensajes repetitivos en WhatsApp</strong>, para que tú puedas concentrarte al 100% en lo que mejor haces: <strong>tatuar, perforar y crear arte</strong>.
+  </p>
+
+  <div class="step-grid">
+    <div class="step-box">
+      <div class="step-num">✓</div>
+      <h4>Filtro Previo y Automatizado</h4>
+      <p>El cliente ya no te preguntará "¿cuánto cuesta?" a secas. El sistema recopila número de tatuajes, tamaño, zona, estilo e historial médico antes de que hables con él.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">✓</div>
+      <h4>Cero Comisiones Bancarias</h4>
+      <p>El 100% del dinero de ventas y abonos va directamente a tus cuentas de Banco Pichincha o DeUna. Sin comisiones abusivas ni retenciones de intermediarios.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">✓</div>
+      <h4>Envíos Locales y Nacionales Integrados</h4>
+      <p>La tienda calcula el costo del despacho (Gratis en local, $2.00 en Ibarra y $5.00 a todo Ecuador por Servientrega) y te envía la dirección lista para rotular el paquete.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">✓</div>
+      <h4>Control de Stock Inteligente</h4>
+      <p>Cada compra descuenta automáticamente las existencias de vapes, piercings y cremas. Si un pedido se cancela o borra en el panel, el stock se repone solo.</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- ==================== SECCIÓN 2: EL CHATBOT ==================== -->
+  <h2>2. El Asistente Virtual / Chatbot Inteligente de Citas</h2>
+  <p>
+    Ubicado en la esquina inferior derecha de toda la web (botón flotante con el icono de WhatsApp). Trabaja las 24 horas del día, los 7 días de la semana, guiando al cliente paso a paso mediante un cuestionario interactivo:
+  </p>
+
+  <div class="step-grid">
+    <div class="step-box">
+      <div class="step-num">1</div>
+      <h4>Cantidad de Tatuajes</h4>
+      <p>El cliente elige si desea <strong>1, 2 o 3 o más tatuajes</strong> dentro de la misma sesión.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">2</div>
+      <h4>Tamaño y Estilo por Pieza</h4>
+      <p>Pregunta para cada tatuaje: tamaño (pequeño 5-10cm, mediano 10-15cm, grande, manga) y estilo (blackwork, realismo, sombras, anime, línea fina, etc.).</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">3</div>
+      <h4>Servicios Adicionales (Upselling)</h4>
+      <p>Ofrece perforaciones (hélix, septum, nostril, pezón), joyería de acero quirúrgico hipoalergénico o cremas post-cuidado disponibles en tu estudio.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">4</div>
+      <h4>Filtro Médico y Salud</h4>
+      <p>Detecta si el cliente tiene alergias al látex, níquel, metales, alcohol o tintas, resguardando la salud del cliente y tu responsabilidad profesional.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">5</div>
+      <h4>Preferencia de Fecha y Horario</h4>
+      <p>El cliente selecciona la fecha deseada y la franja horaria sugerida (10:00, 11:30, 14:00, 15:30, 17:00, 18:30).</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">6</div>
+      <h4>Aviso de Abono Obligatorio</h4>
+      <p>El bot le notifica con claridad que el valor final se cotiza con Franki y que se requiere un <strong>abono de reserva</strong> para asegurar el turno en la agenda.</p>
+    </div>
+  </div>
+
+  <div class="alert-tip">
+    📲 <strong>Conexión directa a WhatsApp:</strong> Al finalizar el cuestionario, el cliente presiona el botón verde <em>"Enviar Ficha a Franki por WhatsApp"</em>. Automáticamente se abre WhatsApp en su teléfono con el número oficial de Franki (<strong>099 154 8585</strong>) y todo el mensaje pre-redactado listo para enviar.
+  </div>
+
+  <!-- ==================== SECCIÓN 3: FICHA DE CITAS WHATSAPP ==================== -->
+  <h2>3. Ficha Técnica de Citas que Llega a tu WhatsApp</h2>
+  <p>
+    Así es como verás entrar la ficha de agendamiento en tu WhatsApp personal cada vez que un cliente use el bot:
+  </p>
+
+  <div class="whatsapp-box">
+    <div class="whatsapp-bubble">
+      *¡HOLA FRANKI TATTOO!* ⚡<br>
+      *NUEVA CITA REGISTRADA EN EL SISTEMA*<br><br>
+      🆔 <strong>Cita #104</strong><br>
+      👤 <strong>Cliente:</strong> Carlos Mantilla<br>
+      📱 <strong>Teléfono / WhatsApp:</strong> 098 765 4321<br>
+      📅 <strong>Día y Horario:</strong> Sábado 19 de Septiembre — 15:30<br>
+      🏥 <strong>Alergias / Salud:</strong> 🟢 Ninguna alergia declarada<br><br>
+      📋 <strong>DETALLES DE LA SESIÓN:</strong><br>
+      🖋️ <strong>Tatuajes a cotizar (2):</strong><br>
+      &nbsp;&nbsp;• <strong>Tatuaje #1:</strong> Mediano (10 a 15 cm) — Blackwork / Sombras<br>
+      &nbsp;&nbsp;• <strong>Tatuaje #2:</strong> Pequeño (5 a 10 cm) — Fineline / Línea Fina<br>
+      💎 <strong>Piercings (1):</strong><br>
+      &nbsp;&nbsp;• <strong>Perforación #1:</strong> Oreja: Hélix (Joya Acero Quirúrgico)<br><br>
+      💡 <strong>Nota:</strong> El valor final y el abono de reserva se acuerdan directamente con Franki según el diseño, tamaño y zona del cuerpo.<br>
+      💵 <strong>Cotización y Abono:</strong> Por definir con Franki<br><br>
+      ✅ Por favor confírmame disponibilidad y presupuesto para enviarte el abono de reserva. ¡Muchas gracias!
+      <div class="whatsapp-meta">15:32 ✓✓</div>
+    </div>
+  </div>
+
+  <h3>Protocolo de 3 Pasos para Responder la Cita:</h3>
+  <ol>
+    <li><strong>Pedir referencias visuales:</strong> Dile al cliente: <em>"¡Hola Carlos! Qué tal. Por favor envíame las imágenes de referencia de los tatuajes y en qué zona del cuerpo te los vas a hacer"</em>.</li>
+    <li><strong>Establecer el precio y el abono:</strong> <em>"El del brazo te sale en $45 y el pequeño en $25. Para separarte el turno del sábado a las 3:30pm requiero un abono de $20 a mi DeUna o Pichincha"</em>.</li>
+    <li><strong>Confirmar en el Panel:</strong> Cuando recibas el comprobante y confirmes el dinero en tu banca móvil, entras a tu panel de administración y cambias el estado de la cita a <strong>Confirmed (Confirmado)</strong>.</li>
+  </ol>
+
+  <div class="page-break"></div>
+
+  <!-- ==================== SECCIÓN 4: TIENDA Y MÉTODOS DE PAGO ==================== -->
+  <h2>4. Tienda Online y Pasarela de Pagos Directa</h2>
+  <p>
+    Tu tienda web permite vender productos físicos (joyería de acero quirúrgico hipoalergénico, cremas cicatrizantes, vapes, prendas y artesanías). Al dar clic en "Proceder al Pago", el cliente tiene a disposición <strong>3 métodos directos adaptados a la realidad financiera de Ecuador</strong> (sin intermediarios de tarjetas que cobren altas comisiones ni retengan tu dinero):
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Método de Pago</th>
+        <th>¿Cómo opera el cliente?</th>
+        <th>Comisión para Franki</th>
+        <th>Velocidad de Acreditación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>🏦 Banco Pichincha (Directa)</strong></td>
+        <td>Muestra el número de cuenta de ahorros de Franki, CI, titular y email con botones de <em>"Copiar en 1 Clic"</em>. Pide número de referencia y permite subir foto.</td>
+        <td><strong>0% (Gratis)</strong></td>
+        <td>Inmediata entre cuentas Pichincha</td>
+      </tr>
+      <tr>
+        <td><strong>📱 DeUna! (QR / Celular)</strong></td>
+        <td>Muestra el número celular registrado en DeUna con botón de copiar y opción de QR visual. El cliente transfiere desde su app DeUna en 10 segundos.</td>
+        <td><strong>0% (Gratis)</strong></td>
+        <td>Inmediata en tu celular</td>
+      </tr>
+      <tr>
+        <td><strong>🏛️ Otros Bancos (Interbancaria SPI)</strong></td>
+        <td>Para clientes con cuentas en <strong>Banco Guayaquil, Produbanco, Banco del Pacífico, Internacional o Cooperativas (JEP, CoopMego)</strong>. Muestra todos los datos necesarios para transferencias interbancarias directas.</td>
+        <td><strong>0% (Gratis)</strong></td>
+        <td>De inmediato o pocas horas según horario bancario</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ==================== SECCIÓN 5: LOGÍSTICA Y ENVÍOS ==================== -->
+  <h2>5. Sistema Completo de Envíos y Logística (Ibarra & Servientrega)</h2>
+  <p>
+    El sistema cuenta con un motor inteligente de envíos integrado directamente en el carrito de compras. Cuando el cliente va a finalizar su compra, selecciona una de las <strong>3 opciones de entrega</strong>:
+  </p>
+
+  <div class="step-grid">
+    <div class="step-box">
+      <div class="step-num">A</div>
+      <h4>🏢 Retiro en Estudio</h4>
+      <p><strong>Costo: Gratis ($0.00 USD)</strong><br>
+      El cliente se acerca personalmente a tu local en la <strong>Calle Olmedo y Grijalva (Ibarra)</strong> a retirar sus productos.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">B</div>
+      <h4>🛵 Envío a Domicilio en Ibarra</h4>
+      <p><strong>Costo: +$2.00 USD</strong><br>
+      Para entregas dentro de la ciudad de Ibarra. El sistema le exige al cliente ingresar su <strong>dirección exacta y referencia</strong> (ej. <em>Av. Teodoro Gómez y Atahualpa, frente a farmacia</em>).</p>
+    </div>
+  </div>
+
+  <div class="feature-card dark" style="margin-top:0.8rem;">
+    <h4>🚚 Opción C: Envío Nacional por Servientrega</h4>
+    <p>
+      <strong>Costo automático: +$5.00 USD</strong><br>
+      Diseñado para vender tus productos a cualquier provincia o ciudad de Ecuador (Quito, Guayaquil, Cuenca, Manta, Ambato, etc.).
+    </p>
+    <ul style="margin-top:0.5rem; color:#ccc;">
+      <li><strong>Campos obligatorios solicitados:</strong> La web le pide al cliente:
+        <br>1) <em>Ciudad y Provincia de Destino</em> (ej: Quito, Pichincha).
+        <br>2) <em>Dirección exacta, sector y referencias del domicilio</em>.
+      </li>
+      <li><strong>Cálculo en vivo:</strong> El sistema suma los $5.00 al subtotal y muestra con total transparencia: Subtotal + Envío = Total a pagar.</li>
+      <li><strong>Blindaje en el servidor:</strong> El valor de $5.00 se valida en el servidor para evitar que nadie pueda alterar o reducir el valor del envío.</li>
+    </ul>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- ==================== CÓMO DESPACHAR CON SERVIENTREGA ==================== -->
+  <h3>📦 Guía Operativa para Franki: ¿Cómo Despachar por Servientrega?</h3>
+  <div class="step-grid">
+    <div class="step-box">
+      <div class="step-num">1</div>
+      <h4>Revisar la Notificación</h4>
+      <p>Te llega el mensaje a WhatsApp con el detalle de la compra, el dinero ya verificado y la ciudad/dirección del cliente.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">2</div>
+      <h4>Empacar los Artículos</h4>
+      <p>Tomas el vape, joya o producto de tu vitrina y lo empacas en una cajita o sobre acolchado con tu sticker o tarjeta de presentación.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">3</div>
+      <h4>Dejar en la Agencia Servientrega</h4>
+      <p>Te acercas a la agencia Servientrega de Ibarra con los datos que te llegaron al chat: <em>Nombre completo, Teléfono, Ciudad y Dirección</em>.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">4</div>
+      <h4>Enviar la Guía al Cliente</h4>
+      <p>Le tomas una foto al comprobante con el número de guía de Servientrega y se la mandas al cliente por el mismo chat para que rastree su paquete.</p>
+    </div>
+  </div>
+
+  <!-- ==================== SECCIÓN 6: MENSAJE WHATSAPP DE PEDIDO ==================== -->
+  <h2>6. Mensaje de Pedido que Llega a tu WhatsApp</h2>
+  <p>
+    Cuando un cliente completa una compra en tu tienda web, a tu WhatsApp te llegará un mensaje estructurado con toda la información necesaria:
+  </p>
+
+  <div class="whatsapp-box">
+    <div class="whatsapp-bubble">
+      *¡Hola Franki Tattoo!* 🖤 Acabo de realizar una compra en su tienda online:<br><br>
+      📦 *Pedido:* <strong>#PED-7814</strong><br>
+      👤 *Cliente:* Gabriel Espinoza<br>
+      📞 *Teléfono:* 099 345 6789<br>
+      🚚 *Modalidad:* <strong>Envío Nacional por Servientrega (+$5.00 USD)</strong><br>
+      📍 *Ciudad/Provincia:* Quito, Pichincha<br>
+      🏠 *Dirección y Ref:* Av. De los Shyris y República del Salvador, Edificio Platinum piso 4<br><br>
+      🛒 *Artículos:*<br>
+      &nbsp;&nbsp;• 1x Vape Smok Nord 4 ($35.00)<br>
+      &nbsp;&nbsp;• 2x Piercing Acero Quirúrgico Hipoalergénico ($18.00)<br><br>
+      💵 *Subtotal Productos:* $53.00 USD<br>
+      🛵 *Costo de Envío:* $5.00 USD<br>
+      💰 *TOTAL:* <strong>$58.00 USD</strong><br>
+      💳 *Método de Pago:* Banco Pichincha (Directa)<br>
+      🔖 *Comprobante/Ref:* 9041285<br>
+      📎 *Foto Comprobante:* https://frankitattoo.onrender.com/uploads/comprobante-7814.jpg<br><br>
+      He adjuntado el comprobante en la web. ¡Quedo atento a la confirmación y despacho!
+      <div class="whatsapp-meta">16:14 ✓✓</div>
+    </div>
+  </div>
+
+  <!-- ==================== SECCIÓN 7: COMPROBANTES Y ANTIFRAUDE ==================== -->
+  <h2>7. Subida de Comprobantes y Validación Antifraude</h2>
+  
+  <div class="feature-card dark">
+    <h4>📸 Subida de Comprobante en la Web</h4>
+    <p>
+      El cliente tiene un botón directo para subir foto de su comprobante bancario. Al confirmar, el archivo se almacena en el servidor y te llega como enlace directo a tu WhatsApp.
+    </p>
+  </div>
+
+  <div class="alert-warn">
+    ⚠️ <strong>Regla de Oro contra estafas bancarias en Ecuador:</strong><br>
+    Nunca despaches un producto ni entregues una encomienda en Servientrega basándote únicamente en la captura de pantalla del comprobante (los estafadores usan aplicaciones para alterar fotos).<br>
+    👉 <strong>Abre tu app de Banco Pichincha o DeUna y comprueba en 5 segundos que el saldo real se haya acreditado en tu cuenta.</strong>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- ==================== SECCIÓN 8: PANEL DE ADMINISTRACIÓN ==================== -->
+  <h2>8. Modo Administrador (Panel de Gestión Privada)</h2>
+  <p>
+    Diseñado para el control interno de tu estudio. Te permite ver pedidos con sus direcciones de entrega, turnos agendados, ajustar existencias de la tienda y subir material al portafolio.
+  </p>
+
+  <div class="feature-card dark">
+    <h4>🔑 Cómo Acceder al Panel de Control:</h4>
+    <p>
+      Puedes entrar en cualquier momento desde tu teléfono móvil o laptop:
+    </p>
+    <ul style="margin-top:0.4rem; color:#ccc;">
+      <li><strong>Opción 1:</strong> Entra directo a <span class="code-pill">/admin.html</span> o <span class="code-pill">/estudio-interno.html</span>.</li>
+      <li><strong>Opción 2:</strong> Inicia sesión en la web pública con tu cuenta. El icono de usuario mostrará el botón <em>"👑 Panel Admin"</em>.</li>
+    </ul>
+
+    <div style="background:#1f1f1f; border:1px solid #333; border-radius:6px; padding:0.8rem; margin-top:0.8rem;">
+      <h5 style="color:#00e676; margin-bottom:0.4rem; font-size:8.5pt; text-transform:uppercase; letter-spacing:1px;">Credenciales de Acceso Administrador:</h5>
+      <p style="margin:0; font-size:9pt; color:#ddd;">
+        • <strong>Correo:</strong> <span class="code-pill">Franki@frankitattoo.com</span><br>
+        • <strong>Contraseña inicial:</strong> <span class="code-pill">Franki</span>
+      </p>
+    </div>
+  </div>
+
+  <h3>Módulos Principales del Panel:</h3>
+
+  <div class="step-grid">
+    <div class="step-box">
+      <div class="step-num">📦</div>
+      <h4>Gestión de Pedidos y Envíos</h4>
+      <p>Tabla con numeración (#), ID, Cliente, Total, <strong>Tipo de Entrega</strong> (Retiro, Domicilio o Servientrega) y la <strong>Dirección de destino</strong>. Puedes cambiar el estado a <em>Processing</em> o <em>Completed</em>.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">📅</div>
+      <h4>Agenda de Citas</h4>
+      <p>Visualiza todos los turnos agendados desde la web. Incluye notas del cliente y campo reservado para <strong>Notas Médicas / Confidenciales</strong> (alergias, cuidados especiales).</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">🏷️</div>
+      <h4>Catálogo e Inventario</h4>
+      <p>Agrega piercings, vapes y artesanías. Modifica precios, sube fotos y define stock mínimo para recibir alertas automáticas cuando un producto se esté agotando.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">🎥</div>
+      <h4>Portafolio (Fotos y Videos Reels)</h4>
+      <p>Sube fotos de alta resolución o <strong>videos MP4 de hasta 100MB</strong>. Se publican de inmediato en la galería pública para lucir tus trabajos.</p>
+    </div>
+  </div>
+
+  <!-- ==================== SECCIÓN 9: SEGURIDAD DEL SISTEMA ==================== -->
+  <h2>9. Seguridad Integral y Blindaje del Sistema</h2>
+  <p>
+    Se realizaron múltiples pruebas de seguridad automatizadas basadas en las directrices de seguridad de <strong>Claude Security / Anthropic</strong> para asegurar que tu tienda sea invulnerable a fraudes:
+  </p>
+
+  <div class="alert-sec">
+    🔒 <strong>Protecciones Activas en el Sistema:</strong>
+    <ul style="margin-top:0.4rem; margin-bottom:0; color:#14532d;">
+      <li><strong>Protección contra Manipulación de Precios:</strong> El cliente no puede cambiar los precios ni inventar costos de envío negativos. El servidor calcula todos los totales con la base de datos oficial.</li>
+      <li><strong>Límite de Peticiones (Rate Limiting):</strong> Máximo 10 peticiones por minuto en pedidos, reservas y subida de archivos para evitar que bots saturen el servidor o agoten el stock falsamente.</li>
+      <li><strong>Control de Roles Estricto:</strong> Solo tú y tus empleados con cuenta autorizada pueden ver direcciones de clientes, estados de pedidos o notas médicas internas.</li>
+      <li><strong>Restauración Automática de Stock:</strong> Si borras un pedido cancelado en el panel, el sistema devuelve automáticamente las unidades al inventario.</li>
+      <li><strong>Cifrado de Credenciales:</strong> Tus contraseñas están encriptadas con algoritmos seguros de ASP.NET Identity y nunca se reinician solas al reiniciar el servidor.</li>
+    </ul>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- ==================== SECCIÓN 10: POSICIONAMIENTO LOCAL GOOGLE ==================== -->
+  <h2>10. Posicionamiento en Google (SEO Local) y Schema.org</h2>
+  <p>
+    Tu plataforma web está técnicamente optimizada según los estándares de SEO Local y Schema.org oficial recomendados para estudios profesionales. Esto permite que Google reconozca tu estudio como un negocio físico verificado en Ibarra y lo posicione en los primeros lugares:
+  </p>
+
+  <div class="step-grid">
+    <div class="step-box">
+      <div class="step-num">⭐</div>
+      <h4>Rich Snippets con Calificación 4.9/5</h4>
+      <p>Configurado con marcado estructurado oficial <span class="code-pill">TattooShop</span> y <span class="code-pill">AggregateRating</span> con <strong>4.9 estrellas y 7 reseñas</strong>. En los resultados de Google, tu web resalta con estrellas de calificación doradas para generar máxima confianza.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">📍</div>
+      <h4>Sincronización con Google Maps</h4>
+      <p>Geolocalización exacta en <strong>Olmedo y Juan Manuel Grijalva 4-68 (frente a Saitel)</strong>, con coordenadas GPS vinculadas al Knowledge Graph de Google para abrir la ruta en el mapa en 1 toque.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">⚡</div>
+      <h4>Velocidad y Carga Móvil Instantánea</h4>
+      <p>Preconexión a servidores DNS (<span class="code-pill">preconnect</span>), fuentes asíncronas y optimización para smartphones. Google premia los sitios ultrarrápidos con mejor visibilidad.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">🔍</div>
+      <h4>Palabras Clave de Alta Intención</h4>
+      <p>Optimizado para búsquedas comerciales clave: <em>"tatuajes ibarra", "piercings ibarra", "acero quirúrgico hipoalergénico", "smokeshop ibarra" y "franki tattoo"</em>.</p>
+    </div>
+  </div>
+
+  <div class="alert-tip">
+    💡 <strong>Impacto para tu negocio:</strong> Cuando un cliente en Ibarra o ciudades cercanas busque en Google "dónde tatuarme en Ibarra" o "piercing en la oreja", Google le mostrará tu negocio con las estrellas de calificación, dirección, teléfono y acceso directo a tu web y WhatsApp.
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- ==================== SECCIÓN 11: CONFIGURACIÓN CUENTAS ==================== -->
+  <h2>11. Configuración de Cuentas y Contacto Oficial</h2>
+  <p>
+    El sistema ya se encuentra configurado con los datos de contacto oficiales de Franki Tattoo Studio:
+  </p>
+
+  <div class="highlight-box">
+    <strong>📋 Datos Oficiales Registrados en el Sistema:</strong>
+    <ul style="margin-top:0.5rem; margin-bottom:0;">
+      <li><strong>Número Oficial de WhatsApp:</strong> <span class="code-pill">099 154 8585</span> (Internacional: +593 99 154 8585). Todas las citas y pedidos llegan a este número.</li>
+      <li><strong>Ubicación del Estudio:</strong> Calle Olmedo y Grijalva, Ibarra, Imbabura, Ecuador.</li>
+      <li><strong>Cuentas Bancarias de Destino:</strong> Banco Pichincha (Ahorros) y DeUna!. Cuando Franki desee actualizar el número de cuenta corriente/ahorros, Ismael lo actualiza en el archivo <span class="code-pill">cart.js</span> en 1 minuto.</li>
+    </ul>
+  </div>
+
+  <!-- ==================== SECCIÓN 12: RESUMEN DÍA A DÍA ==================== -->
+  <h2>12. Resumen Rápido para el Día a Día</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Situación Cotidiana</th>
+        <th>¿Qué hace la plataforma web?</th>
+        <th>¿Qué acción realizas tú (Franki)?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Cliente navega en su celular</strong></td>
+        <td>Muestra el <em>Mobile Action Dock</em> fijo abajo para Cotizar, Ver Carrito y Abrir Mapa en 1 toque.</td>
+        <td>Recibes consultas directas y pedidos listos con un formato claro en tu WhatsApp.</td>
+      </tr>
+      <tr>
+        <td><strong>Cliente nuevo quiere cotizar tatuajes</strong></td>
+        <td>El chatbot le pregunta piezas, estilos, zonas, alergias y turno deseado.</td>
+        <td>Abres el mensaje de WhatsApp, solicitas las imágenes de referencia y fijas el valor del abono.</td>
+      </tr>
+      <tr>
+        <td><strong>Cliente compra en tienda con Retiro en Local</strong></td>
+        <td>Guarda el pedido, descuenta stock y le indica que retire en Olmedo y Grijalva.</td>
+        <td>Verificas el pago en tu app del banco, separas el producto y esperas al cliente en el estudio.</td>
+      </tr>
+      <tr>
+        <td><strong>Cliente compra con Envío en Ibarra (+$2.00)</strong></td>
+        <td>Suma los $2.00, cobra el total y te manda la dirección y referencia por WhatsApp.</td>
+        <td>Verificas el pago, empacas el producto y lo envías con un motorizado o delivery local.</td>
+      </tr>
+      <tr>
+        <td><strong>Cliente compra fuera de Ibarra / Servientrega (+$5.00)</strong></td>
+        <td>Suma los $5.00 de Servientrega, exige ciudad/provincia y dirección completa.</td>
+        <td>Verificas el pago, empacas el pedido, lo dejas en Servientrega y le mandas la foto de la guía al cliente.</td>
+      </tr>
+      <tr>
+        <td><strong>Llega mercadería nueva de piercings o vapes</strong></td>
+        <td>Mantiene el catálogo público actualizado en tiempo real.</td>
+        <td>Entras a tu panel de administración (`/admin.html`), vas a <em>Productos</em> y aumentas el stock disponible.</td>
+      </tr>
+      <tr>
+        <td><strong>Terminaste un tatuaje espectacular</strong></td>
+        <td>Publica fotos y videos en la galería pública al instante.</td>
+        <td>Vas a <em>Portafolio</em> en el panel, subes la foto o reel (MP4 hasta 100MB) y queda visible para todos tus visitantes.</td>
+      </tr>
+      <tr>
+        <td><strong>Alguien busca "Tatuajes Ibarra" en Google</strong></td>
+        <td>Muestra tu estudio con calificación 4.9⭐, mapa interactivo y botones directos.</td>
+        <td>Atraes clientes nuevos de forma orgánica sin necesidad de pagar publicidad.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="text-align:center; margin-top:3rem; padding-top:1.5rem; border-top:1px solid #e2e8f0; color:#888; font-size:8.5pt;">
+    <strong>Frankie Tattoo Studio</strong> — Calle Olmedo y Grijalva, Ibarra, Ecuador.<br>
+    Plataforma Web Profesional desarrollada para potenciar el crecimiento de tu estudio. 🖤⚡
+  </div>
+
+</body>
+</html>

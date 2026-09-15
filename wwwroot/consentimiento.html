@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consentimiento Informado Digital | Franki Tattoo Studio</title>
+    <meta name="description" content="Ficha digital de consentimiento informado y salud para procedimientos de tatuajes y body piercing en Franki Tattoo Studio, Ibarra.">
+    <link rel="icon" type="image/jpeg" href="images/franki-logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/public.css?v=13">
+    <style>
+        @media print {
+            header, footer, .sig-actions, #btn-send-whatsapp, .btn-print-doc {
+                display: none !important;
+            }
+            body {
+                background: #fff !important;
+                color: #000 !important;
+            }
+            .consent-card {
+                border: 1px solid #000 !important;
+                box-shadow: none !important;
+                background: #fff !important;
+                color: #000 !important;
+            }
+            .consent-title, .consent-field label, .checklist-item {
+                color: #000 !important;
+            }
+            .consent-field input, .consent-field select {
+                background: #fff !important;
+                color: #000 !important;
+                border: 1px solid #999 !important;
+            }
+            .sig-canvas {
+                background: #fff !important;
+                border: 1px solid #000 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado de Navegación -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/franki-logo-transparent.png" alt="Franki Tattoo Logo" class="logo-img" />
+                <span>FRANKI TATTOO</span>
+            </a>
+            <div class="menu-toggle" id="mobile-menu-btn">
+                <span></span><span></span><span></span>
+            </div>
+            <nav id="nav-menu">
+                <a href="index.html">Inicio</a>
+                <a href="tatuajes.html">Tatuajes</a>
+                <a href="piercings.html">Piercings</a>
+                <a href="tienda.html">Tienda</a>
+                <a href="consentimiento.html" class="active" style="color:#00e676;">Consentimiento</a>
+            </nav>
+        </div>
+    </header>
+
+    <div style="margin-top: 100px;"></div>
+
+    <main class="consent-container">
+        <div class="consent-card">
+            <div style="text-align: center; margin-bottom: 1rem;">
+                <img src="images/franki-logo-transparent.png" alt="Logo" style="width: 70px; height: 70px; border-radius: 50%; border: 2px solid #00e676; background:#121212;" />
+            </div>
+            <h1 class="consent-title">Consentimiento Informado</h1>
+            <p class="consent-subtitle">Franki Tattoo Studio • Ibarra, Ecuador • Bioseguridad y Responsabilidad Profesional</p>
+
+            <form id="consent-form">
+                <!-- Datos del Cliente -->
+                <div class="consent-form-row">
+                    <div class="consent-field">
+                        <label for="c-nombre">Nombres y Apellidos Completos *</label>
+                        <input type="text" id="c-nombre" required placeholder="Ej: Juan Pérez" />
+                    </div>
+                    <div class="consent-field">
+                        <label for="c-cedula">Cédula o Pasaporte *</label>
+                        <input type="text" id="c-cedula" required placeholder="Ej: 1004567890" />
+                    </div>
+                </div>
+
+                <div class="consent-form-row">
+                    <div class="consent-field">
+                        <label for="c-telefono">Teléfono / WhatsApp *</label>
+                        <input type="tel" id="c-telefono" required placeholder="Ej: 0991548585" />
+                    </div>
+                    <div class="consent-field">
+                        <label for="c-edad">Edad (Mayor de 18 años) *</label>
+                        <input type="number" id="c-edad" min="18" max="99" required placeholder="Ej: 22" />
+                    </div>
+                </div>
+
+                <div class="consent-form-row">
+                    <div class="consent-field">
+                        <label for="c-procedimiento">Tipo de Procedimiento *</label>
+                        <select id="c-procedimiento" required>
+                            <option value="Tatuaje">Tatuaje</option>
+                            <option value="Piercing / Perforación">Piercing / Perforación</option>
+                            <option value="Tatuaje y Piercing">Ambos</option>
+                        </select>
+                    </div>
+                    <div class="consent-field">
+                        <label for="c-zona">Zona del Cuerpo *</label>
+                        <input type="text" id="c-zona" required placeholder="Ej: Antebrazo derecho, Septum, etc." />
+                    </div>
+                </div>
+
+                <!-- Declaración de Salud y Consentimiento -->
+                <h3 style="color:#00e676; font-size:1.15rem; margin: 1.5rem 0 0.8rem 0;">Declaración de Salud y Aceptación:</h3>
+                <div class="consent-checklist">
+                    <label class="checklist-item">
+                        <input type="checkbox" required />
+                        <span>Confirmo que tengo 18 años o más y acudo de manera libre y voluntaria a realizarme el procedimiento.</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" required />
+                        <span>Declaro que <strong>NO</strong> me encuentro bajo la influencia de alcohol, estupefacientes ni medicamentos anticoagulantes.</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" required />
+                        <span>Declaro que no padezco de hemofilia, cicatrización con queloides severos, ni afecciones cardíacas que contraindiquen el procedimiento.</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" required />
+                        <span>(En mujeres) Declaro que <strong>NO</strong> me encuentro en estado de gestación ni en período de lactancia.</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" required />
+                        <span>He sido informado(a) sobre la técnica, he comprobado que el material utilizado es <strong>100% estéril y desechable</strong>, y me comprometo a cumplir rigurosamente con el protocolo de cuidados posteriores indicado por el artista.</span>
+                    </label>
+                </div>
+
+                <!-- Lienzo de Firma Digital -->
+                <label style="color:#ddd; font-weight:700; font-size:0.95rem;">Firma Digital del Cliente (Dibuja con tu dedo o mouse abajo): *</label>
+                <div class="signature-wrapper">
+                    <canvas id="sig-canvas" class="sig-canvas"></canvas>
+                    <div class="sig-actions">
+                        <span style="color:#777; font-size:0.8rem;">Dibuja tu firma en el recuadro</span>
+                        <button type="button" id="btn-clear-sig" class="sig-clear-btn">🗑️ Limpiar Firma</button>
+                    </div>
+                </div>
+
+                <!-- Botones de Acción -->
+                <div style="margin-top: 2.2rem; display: flex; flex-direction: column; gap: 0.9rem;">
+                    <button type="submit" id="btn-send-whatsapp" class="btn btn-cta-main" style="width: 100%; font-size: 1.05rem; padding: 1rem;">
+                        📲 Confirmar y Enviar Ficha a Franki por WhatsApp ➔
+                    </button>
+                    <button type="button" onclick="window.print()" class="btn btn-print-doc" style="background:#222; color:#ccc; width: 100%; border: 1px solid #444;">
+                        🖨️ Imprimir / Guardar en PDF
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Franki Tattoo Studio. Documento de Bioseguridad y Consentimiento Legal. • <a href="privacidad-terminos.html" style="color:#00e676; text-decoration:none;">Términos y Privacidad</a></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/nav.js?v=2"></script>
+    <script src="js/chatbot.js?v=4"></script>
+    <script>
+        // Inicialización y manejo de la firma en Canvas
+        document.addEventListener("DOMContentLoaded", () => {
+            const canvas = document.getElementById("sig-canvas");
+            const ctx = canvas.getContext("2d");
+            let isDrawing = false;
+            let hasSigned = false;
+
+            function resizeCanvas() {
+                const rect = canvas.getBoundingClientRect();
+                canvas.width = rect.width;
+                canvas.height = rect.height;
+                ctx.lineWidth = 2.5;
+                ctx.lineCap = "round";
+                ctx.lineJoin = "round";
+                ctx.strokeStyle = "#00e676";
+            }
+            resizeCanvas();
+            window.addEventListener("resize", resizeCanvas);
+
+            function getPos(e) {
+                const rect = canvas.getBoundingClientRect();
+                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+                return {
+                    x: clientX - rect.left,
+                    y: clientY - rect.top
+                };
+            }
+
+            function startDraw(e) {
+                isDrawing = true;
+                hasSigned = true;
+                const pos = getPos(e);
+                ctx.beginPath();
+                ctx.moveTo(pos.x, pos.y);
+            }
+
+            function draw(e) {
+                if (!isDrawing) return;
+                e.preventDefault();
+                const pos = getPos(e);
+                ctx.lineTo(pos.x, pos.y);
+                ctx.stroke();
+            }
+
+            function stopDraw() {
+                isDrawing = false;
+            }
+
+            // Mouse events
+            canvas.addEventListener("mousedown", startDraw);
+            canvas.addEventListener("mousemove", draw);
+            window.addEventListener("mouseup", stopDraw);
+
+            // Touch events
+            canvas.addEventListener("touchstart", startDraw, { passive: false });
+            canvas.addEventListener("touchmove", draw, { passive: false });
+            window.addEventListener("touchend", stopDraw);
+
+            document.getElementById("btn-clear-sig").addEventListener("click", () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                hasSigned = false;
+            });
+
+            // Form Submit y Envío a WhatsApp
+            document.getElementById("consent-form").addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                if (!hasSigned) {
+                    alert("Por favor estampa tu firma en el recuadro antes de continuar.");
+                    return;
+                }
+
+                const nombre = document.getElementById("c-nombre").value.trim();
+                const cedula = document.getElementById("c-cedula").value.trim();
+                const telefono = document.getElementById("c-telefono").value.trim();
+                const edad = document.getElementById("c-edad").value.trim();
+                const proc = document.getElementById("c-procedimiento").value;
+                const zona = document.getElementById("c-zona").value.trim();
+                const fecha = new Date().toLocaleDateString("es-EC", { dateStyle: "medium" });
+
+                const msg = `📋 *CONSENTIMIENTO INFORMADO DIGITAL — FRANKI TATTOO*\n\n` +
+                    `📅 *Fecha:* ${fecha}\n` +
+                    `👤 *Cliente:* ${nombre}\n` +
+                    `🆔 *Cédula/Pasaporte:* ${cedula}\n` +
+                    `📞 *Teléfono:* ${telefono}\n` +
+                    `🎂 *Edad:* ${edad} años\n` +
+                    `🖋️ *Procedimiento:* ${proc}\n` +
+                    `📍 *Zona del Cuerpo:* ${zona}\n\n` +
+                    `✅ *Declaración de Salud:* Aprobada y aceptada.\n` +
+                    `✅ *Mayoría de edad:* Verificada.\n` +
+                    `✅ *Protocolo de cuidados:* Aceptado.\n` +
+                    `✍️ *Firma Digital:* Registrada en pantalla en Franki Tattoo Studio.\n\n` +
+                    `_Ficha archivada para control sanitario y respaldo del cliente._`;
+
+                const url = `https://wa.me/593991548585?text=${encodeURIComponent(msg)}`;
+                window.open(url, "_blank");
+            });
+        });
+    </script>
+</body>
+</html>

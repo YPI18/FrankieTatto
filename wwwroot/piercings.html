@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Body Piercing & Perforaciones | Franki Tattoo Ibarra</title>
+    <meta name="description" content="Perforaciones corporales profesionales y seguras en Ibarra: hélix, septum, nostril, industrial y joyería en acero quirúrgico hipoalergénico. ¡Agenda tu cita!">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Body Piercing & Perforaciones | Franki Tattoo Ibarra">
+    <meta property="og:description" content="Perforaciones corporales estériles y joyería en acero quirúrgico hipoalergénico en Ibarra, Ecuador.">
+    <meta property="og:image" content="https://franki-tattoo.onrender.com/images/franki-logo-transparent.png">
+    <meta property="og:url" content="https://franki-tattoo.onrender.com/piercings.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/png" href="images/franki-logo-transparent.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/public.css?v=15">
+    <style>
+        .page-header {
+            margin-top: 100px;
+            text-align: center;
+            padding: 3.5rem 1rem;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), #121212;
+            border-bottom: 1px solid #222;
+        }
+
+            .page-header h1 {
+                color: #00e676;
+                font-size: 3.5rem;
+                text-transform: uppercase;
+            }
+
+        @media (max-width: 768px) {
+            .page-header {
+                margin-top: 70px;
+                padding: 2rem 1rem;
+            }
+
+                .page-header h1 {
+                    font-size: 2.2rem;
+                }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="images/franki-logo-transparent.png" alt="Franki Tattoo" class="logo-img" />
+            <span class="logo-badge">Tattoo</span>
+        </a>
+        
+        <div class="header-actions-mobile">
+            <button id="ft-nav-user-btn-mobile" class="nav-action-btn user-btn" title="Iniciar sesión" aria-label="Mi Cuenta">
+                <span class="ft-user-icon">👤</span>
+            </button>
+            <button id="ft-nav-cart-btn-mobile" class="nav-action-btn cart-btn" aria-label="Carrito" onclick="Cart.openDrawer()">
+                🛒 <span class="ft-cart-badge" style="display:none;">0</span>
+            </button>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="tatuajes.html">Tatuajes</a></li>
+                <li><a href="piercings.html" style="color:#00e676;">Piercings</a></li>
+                <li><a href="vapes.html">Smokes / Vapes</a></li>
+                <li><a href="artesanias.html">Artesanías</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="consentimiento.html">Consentimiento</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions-desktop">
+            <button id="ft-nav-user-btn" class="nav-action-btn user-btn" title="Iniciar sesión">
+                <span class="ft-user-icon">👤</span>
+                <span class="ft-user-name">Ingresar</span>
+            </button>
+            <button id="ft-nav-cart-btn" class="nav-action-btn cart-btn" title="Ver Carrito" onclick="Cart.openDrawer()">
+                🛒 Carrito <span id="ft-nav-cart-badge" class="ft-cart-badge" style="display:none;">0</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <h1>Piercings & Joyería</h1>
+        <p style="color: #ccc; max-width: 650px; margin: 0.5rem auto 0;">
+            Perforaciones seguras, técnica limpia y joyería en acero quirúrgico hipoalergénico grado médico.
+        </p>
+        <div style="margin-top: 1.5rem;">
+            <a href="tienda.html?cat=Piercing" class="btn-store-cta">
+                🛒 Ir a la Tienda de Joyería de Piercings ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- 1. GUÍA DE CUIDADOS & CICATRIZACIÓN DE PIERCING (PRIMERO) -->
+    <section class="aftercare-container">
+        <div class="aftercare-header">
+            <h2>💎 Protocolo de Cuidados & Cicatrización</h2>
+            <p>Una perforación saludable y sin complicaciones depende de una higiene rigurosa. Sigue las recomendaciones de bioseguridad de Franki Tattoo para que tu piercing cicatrice de forma impecable.</p>
+        </div>
+
+        <div class="aftercare-timeline-grid">
+            <div class="aftercare-phase-card phase-highlight">
+                <span class="phase-badge">Higiene Diaria • 2 a 3 veces al día</span>
+                <div class="phase-card-title">💧 Solución Salina Estéril</div>
+                <ul class="phase-steps-list">
+                    <li>Limpia suavemente la zona con <strong>suero fisiológico o solución salina isotónica estéril</strong> aplicada con una gasa limpia.</li>
+                    <li>Remoja costras o secreciones secas con el suero durante 2 minutos hasta que se ablanden solas.</li>
+                    <li>Seca cuidadosamente con toques suaves usando <strong>gasa estéril o toalla de papel limpia</strong>.</li>
+                </ul>
+                <div class="phase-pro-tip">
+                    <strong>Tip Pro:</strong> Nunca uses algodón en motas; las fibras se enredan en la joya y causan irritación.
+                </div>
+            </div>
+
+            <div class="aftercare-phase-card">
+                <span class="phase-badge">Manejo de la Joya</span>
+                <div class="phase-card-title">🚫 Cero Movimiento en Seco</div>
+                <ul class="phase-steps-list">
+                    <li><strong>No gires, muevas ni juegues con la joya</strong>. Mover la pieza en seco rompe el tejido nuevo que se está regenerando.</li>
+                    <li>Evita dormir sobre el lado de la perforación o usar auriculares apretados en orejas recién perforadas.</li>
+                    <li>Mantén la joya inicial colocada en el estudio hasta que la cicatrización esté completamente consolidada.</li>
+                </ul>
+                <div class="phase-pro-tip">
+                    <strong>Material:</strong> Solo usamos acero quirúrgico hipoalergénico grado médico (316L), libre de níquel.
+                </div>
+            </div>
+
+            <div class="aftercare-phase-card">
+                <span class="phase-badge">Tiempos Estimados de Curación</span>
+                <div class="phase-card-title">⏳ Paciencia & Regeneración</div>
+                <ul class="phase-steps-list">
+                    <li><strong>Lóbulo:</strong> 6 a 8 semanas.</li>
+                    <li><strong>Cartílago (Hélix, Tragus, Conch, Industrial):</strong> 3 a 6 meses.</li>
+                    <li><strong>Nariz (Nostril, Septum):</strong> 2 a 4 meses.</li>
+                    <li><strong>Ombligo y Ceja:</strong> 6 a 9 meses.</li>
+                </ul>
+                <div class="phase-pro-tip">
+                    <strong>Nota:</strong> Aunque no duela por fuera, el canal interno sigue cicatrizando.
+                </div>
+            </div>
+        </div>
+
+        <!-- Lo que SÍ vs Lo que NUNCA -->
+        <div class="aftercare-dos-donts">
+            <div class="dos-box">
+                <h3>✅ Lo que SÍ debes hacer</h3>
+                <ul class="rules-list">
+                    <li>Lavar tus manos siempre con jabón antes de limpiar tu piercing.</li>
+                    <li>Cambiar la funda de tu almohada con frecuencia durante las primeras 2 semanas.</li>
+                    <li>Proteger el piercing al lavar tu cabello para que no se enganchen peines o toallas.</li>
+                    <li>Acudir a revisión con Franki si notas cualquier inflamación anormal o molestia.</li>
+                </ul>
+            </div>
+            <div class="donts-box">
+                <h3>🚫 Lo que NUNCA debes hacer</h3>
+                <ul class="rules-list">
+                    <li><strong>Cero alcohol, agua oxigenada, yodo o cremas antibióticas pesadas</strong> (resecan, queman e inflaman el tejido).</li>
+                    <li><strong>No sumergir en piscinas, tinas, ríos o mar</strong> durante el primer mes de curación.</li>
+                    <li><strong>No retirar la joya por tu cuenta</strong> si se presenta inflamación (el canal puede cerrarse en minutos).</li>
+                    <li><strong>No utilizar joyas de fantasía o metales baratos</strong> que contengan níquel o cobre.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. SERVICIOS DE PERFORACIÓN Y JOYERÍA (DEBAJO DE CUIDADOS) -->
+    <section>
+        <div class="pricing-notice-banner">
+            <span class="notice-icon">💡</span>
+            <div class="notice-text">
+                <strong>Nota de Perforaciones:</strong> Los precios son referenciales con pieza básica estándar. El valor final puede variar según la <strong>zona anatómica</strong> y el modelo de <strong>joyería de acero quirúrgico</strong> que elijas.
+            </div>
+        </div>
+
+        <h2 class="section-title">Perforaciones en Estudio • Joyería en Acero Quirúrgico</h2>
+        <div class="gallery">
+            <div class="item-card">
+                <img src="images/piercing-ombligo-real.jpg" alt="Piercing de Ombligo - Franki Tattoo" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center;">
+                    <h3 style="margin-bottom:0.4rem; font-size:1.15rem;">Piercing de Ombligo</h3>
+                    <p style="color:#aaa; font-size:0.88rem; margin:0;">Colocación precisa con catéter estéril y banana en acero quirúrgico hipoalergénico 316L.</p>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <img src="images/piercing-nostril-real.jpg" alt="Piercing Nostril y Septum - Franki Tattoo" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center;">
+                    <h3 style="margin-bottom:0.4rem; font-size:1.15rem;">Nostril / Septum</h3>
+                    <p style="color:#aaa; font-size:0.88rem; margin:0;">Perforación nasal rápida y sin dolor. Pieza inicial básica de acero quirúrgico incluida.</p>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <img src="images/piercing-industrial-real.jpg" alt="Piercing Industrial - Franki Tattoo" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center;">
+                    <h3 style="margin-bottom:0.4rem; font-size:1.15rem;">Industrial / Cartílago</h3>
+                    <p style="color:#aaa; font-size:0.88rem; margin:0;">Alineación anatómica perfecta en barra recta de acero quirúrgico. Máxima bioseguridad.</p>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <img src="images/piercing-ceja-real.jpg" alt="Piercing de Ceja - Franki Tattoo" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center;">
+                    <h3 style="margin-bottom:0.4rem; font-size:1.15rem;">Piercing de Ceja</h3>
+                    <p style="color:#aaa; font-size:0.88rem; margin:0;">Curvatura exacta para evitar rechazo o tensión en la piel. Técnica rápida.</p>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <img src="images/piercing-tragus-real.jpg" alt="Piercing Tragus y Oreja - Franki Tattoo" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center;">
+                    <h3 style="margin-bottom:0.4rem; font-size:1.15rem;">Tragus & Hélix</h3>
+                    <p style="color:#aaa; font-size:0.88rem; margin:0;">Labret con base plana para mayor comodidad al dormir y usar audífonos.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="appointment-cta-banner">
+            <div class="cta-content">
+                <h3>¿Quieres una perforación limpia y bien hecha?</h3>
+                <p>Agenda tu cita o escríbenos a WhatsApp. Te asesoramos con la joya ideal para tu anatomía.</p>
+            </div>
+            <button type="button" class="btn btn-cta-main" onclick="openChatbot('Piercing')">
+                💎 Agendar Cita para Piercing ➔
+            </button>
+        </div>
+    </section>
+
+    <!-- GALERÍA REAL DE JOYERÍA / PIERCINGS -->
+    <section style="background-color: #121212; border-top: 1px solid #222;">
+        <h2 class="section-title">Portafolio en el Estudio</h2>
+        <p style="text-align:center; color:#aaa; margin-bottom:2rem; max-width:600px; margin-left:auto; margin-right:auto;">
+            Clientes reales perforados en Franki Tattoo Ibarra con piezas en acero quirúrgico hipoalergénico.
+        </p>
+        <div class="gallery" id="piercing-real-gallery">
+            <div class="gallery-item">
+                <img src="images/piercing-ombligo-real.jpg" alt="Piercing Ombligo" loading="lazy" />
+                <div class="gallery-overlay"><h3>Ombligo en Acero Quirúrgico</h3></div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/piercing-industrial-real.jpg" alt="Industrial Oreja" loading="lazy" />
+                <div class="gallery-overlay"><h3>Industrial & Cartílago</h3></div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/piercing-nostril-real.jpg" alt="Nostril Nariz" loading="lazy" />
+                <div class="gallery-overlay"><h3>Nostril Nariz</h3></div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/piercing-ceja-real.jpg" alt="Ceja" loading="lazy" />
+                <div class="gallery-overlay"><h3>Piercing de Ceja</h3></div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/piercing-tragus-real.jpg" alt="Tragus Oreja" loading="lazy" />
+                <div class="gallery-overlay"><h3>Tragus en Oreja</h3></div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/piercing-labret-real.jpg" alt="Labret Labio" loading="lazy" />
+                <div class="gallery-overlay"><h3>Labret Labio</h3></div>
+            </div>
+        </div>
+
+        <div id="dynamic-portfolio-piercing" class="gallery" style="margin-top:2rem;"></div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="tienda.html?cat=Piercing" class="btn-store-cta">
+                🛒 Ver Catálogo de Joyas en Tienda ➔
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Franki Tattoo Studio. Todos los derechos reservados. • <a href="privacidad-terminos.html" style="color:#00e676; text-decoration:none;">Términos y Privacidad</a> • <a href="consentimiento.html" style="color:#00e676; text-decoration:none;">Ficha de Consentimiento</a></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/nav.js?v=2"></script>
+    <script src="js/chatbot.js?v=4"></script>
+    <script src="js/auth-modal.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/lightbox.js?v=1"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const container = document.getElementById("dynamic-portfolio-piercing");
+            try {
+                const res = await fetch("/api/portfolio?category=Piercing");
+                const items = await res.json();
+                
+                if (!items || items.length === 0) {
+                    return; // Queda vacío
+                }
+
+                // Evitar duplicar fotos que ya están en la cuadrícula estática de piercings reales
+                const existingImgs = Array.from(document.querySelectorAll("#piercing-real-gallery img, .gallery img"))
+                    .map(img => (img.getAttribute("src") || "").replace(/^\/?images\//, ""));
+                const extraItems = items.filter(item => {
+                    const itemPath = (item.imageUrl || "").replace(/^\/?images\//, "");
+                    return !existingImgs.includes(itemPath);
+                });
+
+                if (extraItems.length === 0) return;
+
+                container.innerHTML = "";
+                extraItems.forEach(item => {
+                    const card = document.createElement("div");
+                    card.className = "item-card";
+                    
+                    const hasImage = item.imageUrl && item.imageUrl.trim() !== "";
+                    const isVideo = hasImage && /\.(mp4|mov|webm|m4v)$/i.test(item.imageUrl);
+                    
+                    let mediaHtml = "";
+                    if (hasImage) {
+                        if (isVideo) {
+                            mediaHtml = `<video src="${item.imageUrl}" controls muted playsinline loop style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0; background:#000;"></video>`;
+                        } else {
+                            mediaHtml = `<img src="${item.imageUrl}" alt="${item.title}" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                            <div class="img-placeholder" style="display:none; aspect-ratio:1/1; height:auto;"><div class="ph-icon">🖼️</div><span>${item.title}</span></div>`;
+                        }
+                    } else {
+                        mediaHtml = `<div class="img-placeholder" style="aspect-ratio:1/1; height:auto;"><div class="ph-icon">🖼️</div><span>${item.title}</span></div>`;
+                    }
+
+                    card.innerHTML = `
+                        ${mediaHtml}
+                        <div class="item-info" style="padding: 1.1rem 1rem; text-align: center;">
+                            <h3 style="margin: 0; font-size: 1.15rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.5px;">${item.title}</h3>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            } catch (err) {
+                container.innerHTML = '<p style="text-align:center; color:red;">Error al cargar el portafolio.</p>';
+            }
+        });
+    </script>
+</body>
+</html>

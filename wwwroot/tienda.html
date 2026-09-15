@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Tienda Online Oficial | Franki Tattoo Ibarra</title>
+    <meta name="description" content="Tienda online de Franki Tattoo Studio en Ibarra: compra joyería de acero quirúrgico hipoalergénico, vapes, pods, esencias y artesanías exclusivas con entrega o retiro en local.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tienda Online Oficial | Franki Tattoo Ibarra">
+    <meta property="og:description" content="Joyería de piercing en acero quirúrgico hipoalergénico, vapes y artesanías exclusivas. Pagos con Banco Pichincha, DeUna y retiro en Ibarra.">
+    <meta property="og:image" content="https://franki-tattoo.onrender.com/images/franki-logo-transparent.png">
+    <meta property="og:url" content="https://franki-tattoo.onrender.com/tienda.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/png" href="images/franki-logo-transparent.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/public.css?v=15">
+    <style>
+        .page-header {
+            margin-top: 100px;
+            text-align: center;
+            padding: 3.5rem 1rem;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), #121212;
+            border-bottom: 1px solid #222;
+        }
+
+            .page-header h1 {
+                color: #00e676;
+                font-size: 3.2rem;
+                text-transform: uppercase;
+            }
+
+        @media (max-width: 768px) {
+            .page-header {
+                margin-top: 70px;
+                padding: 2rem 1rem;
+            }
+
+                .page-header h1 {
+                    font-size: 2.2rem;
+                }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="images/franki-logo-transparent.png" alt="Franki Tattoo" class="logo-img" />
+            <span class="logo-badge">Tattoo</span>
+        </a>
+        
+        <div class="header-actions-mobile">
+            <button id="ft-nav-user-btn-mobile" class="nav-action-btn user-btn" title="Iniciar sesión" aria-label="Mi Cuenta">
+                <span class="ft-user-icon">👤</span>
+            </button>
+            <button id="ft-nav-cart-btn-mobile" class="nav-action-btn cart-btn" aria-label="Carrito" onclick="Cart.openDrawer()">
+                🛒 <span class="ft-cart-badge" style="display:none;">0</span>
+            </button>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="tatuajes.html">Tatuajes</a></li>
+                <li><a href="piercings.html">Piercings</a></li>
+                <li><a href="vapes.html">Smokes / Vapes</a></li>
+                <li><a href="artesanias.html">Artesanías</a></li>
+                <li><a href="tienda.html" style="color:#00e676;">Tienda</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions-desktop">
+            <button id="ft-nav-user-btn" class="nav-action-btn user-btn" title="Iniciar sesión">
+                <span class="ft-user-icon">👤</span>
+                <span class="ft-user-name">Ingresar</span>
+            </button>
+            <button id="ft-nav-cart-btn" class="nav-action-btn cart-btn" title="Ver Carrito" onclick="Cart.openDrawer()">
+                🛒 Carrito <span id="ft-nav-cart-badge" class="ft-cart-badge" style="display:none;">0</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <h1>Tienda Oficial</h1>
+        <p style="color: #ccc; max-width: 650px; margin: 0.5rem auto 0;">
+            Compra online tus Vapes, Joyería de Acero Quirúrgico y Artesanías. Retira en nuestro estudio en Ibarra o solicita envío a domicilio.
+        </p>
+    </div>
+
+    <!-- Filtros de categoría -->
+    <div class="store-filter-bar">
+        <button class="filter-btn active" data-filter="All">Todos los Productos</button>
+        <button class="filter-btn" data-filter="SmokeShop">💨 Smokes & Vapes</button>
+        <button class="filter-btn" data-filter="Piercing">💎 Joyería de Piercings</button>
+        <button class="filter-btn" data-filter="Artesania">🎨 Artesanías</button>
+    </div>
+
+    <section style="padding-top: 1rem;">
+        <h2 class="section-title" style="margin-bottom: 2rem;">Catálogo de Productos</h2>
+        <div class="gallery" id="tienda-products-container"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Franki Tattoo Studio. Todos los derechos reservados. • <a href="privacidad-terminos.html" style="color:#00e676; text-decoration:none;">Términos y Privacidad</a> • <a href="consentimiento.html" style="color:#00e676; text-decoration:none;">Ficha de Consentimiento</a></p>
+    </footer>
+
+    <!-- Barra Flotante de Acción Rápida para Celulares (Mobile Action Dock) -->
+    <nav class="mobile-action-dock" aria-label="Acciones rápidas">
+        <button type="button" class="dock-action-item dock-highlight" onclick="openChatbot()" aria-label="Cotizar o Agendar">
+            <svg class="dock-icon-svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+            <span>Cotizar</span>
+        </button>
+        <button type="button" class="dock-action-item" onclick="Cart.openDrawer()" aria-label="Carrito de compras">
+            <svg class="dock-icon-svg" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+            <span>Carrito</span>
+            <span id="ft-dock-cart-badge" class="dock-cart-badge-count ft-cart-badge" style="display:none;">0</span>
+        </button>
+        <a href="https://www.google.com/maps?cid=12488049835997532476" target="_blank" rel="noopener" class="dock-action-item" aria-label="Ubicación en Google Maps">
+            <svg class="dock-icon-svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span>Ubicación</span>
+        </a>
+    </nav>
+
+    <!-- Scripts -->
+    <script src="js/nav.js?v=2"></script>
+    <script src="js/chatbot.js?v=3"></script>
+    <script src="js/auth-modal.js"></script>
+    <script src="js/cart.js?v=2"></script>
+    <script src="js/store.js?v=2"></script>
+    <script src="js/lightbox.js?v=1"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Leer parámetro url ?cat=SmokeShop / Piercing / Artesania
+            const params = new URLSearchParams(window.location.search);
+            const initialCat = params.get("cat") || "All";
+
+            // Marcar botón activo
+            document.querySelectorAll(".filter-btn").forEach(btn => {
+                btn.classList.toggle("active", btn.dataset.filter === initialCat);
+                btn.addEventListener("click", () => {
+                    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+                    btn.classList.add("active");
+                    Store.renderStore(btn.dataset.filter, "tienda-products-container");
+                });
+            });
+
+            Store.renderStore(initialCat, "tienda-products-container");
+        });
+    </script>
+</body>
+</html>

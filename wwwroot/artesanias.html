@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Artesanías & Colección | Franki Tattoo Ibarra</title>
+    <meta name="description" content="Artesanías exclusivas en Ibarra: lienzos dark art, esculturas en resina, indumentaria y piezas de colección creadas a mano por Franki Tattoo.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Artesanías & Colección | Franki Tattoo Ibarra">
+    <meta property="og:description" content="Lienzos dark art, esculturas en resina y accesorios de autor en Ibarra, Ecuador.">
+    <meta property="og:image" content="https://franki-tattoo.onrender.com/images/franki-logo.jpg">
+    <meta property="og:url" content="https://franki-tattoo.onrender.com/artesanias.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/jpeg" href="images/franki-logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/public.css?v=13">
+    <style>
+        .page-header {
+            margin-top: 100px;
+            text-align: center;
+            padding: 3.5rem 1rem;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), #121212;
+            border-bottom: 1px solid #222;
+        }
+        .page-header h1 {
+            color: #00e676;
+            font-size: 3.5rem;
+            text-transform: uppercase;
+        }
+        @media (max-width: 768px) {
+            .page-header { margin-top: 70px; padding: 2rem 1rem; }
+            .page-header h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="images/franki-logo-transparent.png" alt="Franki Tattoo" class="logo-img" />
+            <span class="logo-badge">Tattoo</span>
+        </a>
+        
+        <div class="header-actions-mobile">
+            <button id="ft-nav-user-btn-mobile" class="nav-action-btn user-btn" title="Iniciar sesión" aria-label="Mi Cuenta">
+                <span class="ft-user-icon">👤</span>
+            </button>
+            <button id="ft-nav-cart-btn-mobile" class="nav-action-btn cart-btn" aria-label="Carrito" onclick="Cart.openDrawer()">
+                🛒 <span class="ft-cart-badge" style="display:none;">0</span>
+            </button>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="tatuajes.html">Tatuajes</a></li>
+                <li><a href="piercings.html">Piercings</a></li>
+                <li><a href="vapes.html">Smokes / Vapes</a></li>
+                <li><a href="artesanias.html" style="color:#00e676;">Artesanías</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions-desktop">
+            <button id="ft-nav-user-btn" class="nav-action-btn user-btn" title="Iniciar sesión">
+                <span class="ft-user-icon">👤</span>
+                <span class="ft-user-name">Ingresar</span>
+            </button>
+            <button id="ft-nav-cart-btn" class="nav-action-btn cart-btn" title="Ver Carrito" onclick="Cart.openDrawer()">
+                🛒 Carrito <span id="ft-nav-cart-badge" class="ft-cart-badge" style="display:none;">0</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <h1>Artesanías & Decoración</h1>
+        <p style="color: #ccc; max-width: 650px; margin: 0.5rem auto 0;">
+            Lienzos dark art, esculturas en resina, indumentaria exclusiva y accesorios hechos a mano por los artistas de Franki Tattoo.
+        </p>
+        <div style="margin-top: 1.5rem;">
+            <a href="tienda.html?cat=Artesania" class="btn-store-cta">
+                🛒 Ir a la Tienda a Comprar Artesanías ➔
+            </a>
+        </div>
+    </div>
+
+    <!-- Obras y Arte de Franki -->
+    <section>
+        <h2 class="section-title">Obras y Diseños por Encargo</h2>
+        <p style="text-align: center; color: #aaa; max-width: 650px; margin: 0 auto 2.5rem; font-size: 1.05rem;">
+            Cada pieza se elabora a mano de forma exclusiva bajo encargo. Cuéntanos tu idea para cotizar el formato, técnica y dimensiones.
+        </p>
+        <div class="gallery">
+            <div class="item-card" style="background: #181818; border: 1px solid #2a2a2a; border-radius: 14px; padding: 2.5rem 1.5rem; text-align: center;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🎨</div>
+                <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem; color: #fff;">Lienzos Dark Art</h3>
+                <p style="color: #aaa; font-size: 0.9rem; margin: 0;">Pintura original en acrílico y técnicas mixtas con estética oscura y alto contraste.</p>
+            </div>
+
+            <div class="item-card" style="background: #181818; border: 1px solid #2a2a2a; border-radius: 14px; padding: 2.5rem 1.5rem; text-align: center;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🪵</div>
+                <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem; color: #fff;">Madera Pirograbada</h3>
+                <p style="color: #aaa; font-size: 0.9rem; margin: 0;">Tablas y paneles grabados a fuego con ilustraciones botánicas y caligrafía.</p>
+            </div>
+
+            <div class="item-card" style="background: #181818; border: 1px solid #2a2a2a; border-radius: 14px; padding: 2.5rem 1.5rem; text-align: center;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🐉</div>
+                <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem; color: #fff;">Ilustración Personalizada</h3>
+                <p style="color: #aaa; font-size: 0.9rem; margin: 0;">Diseños anime, mitología oriental y bocetos originales para enmarcar.</p>
+            </div>
+
+            <div class="item-card" style="background: #181818; border: 1px solid #2a2a2a; border-radius: 14px; padding: 2.5rem 1.5rem; text-align: center;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">👕</div>
+                <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem; color: #fff;">Merch Franki Studio</h3>
+                <p style="color: #aaa; font-size: 0.9rem; margin: 0;">Prendas 100% algodón estampadas con la identidad del estudio.</p>
+            </div>
+        </div>
+
+        <div class="appointment-cta-banner" style="margin-top: 3.5rem;">
+            <div class="cta-content">
+                <h3>¿Te interesa un cuadro o diseño a pedido?</h3>
+                <p>Franki realiza encargos personalizados en lienzo, madera pirograbada y formatos especiales.</p>
+            </div>
+            <a href="https://wa.me/593991548585?text=Hola%20Franki,%20quiero%20consultar%20por%20un%20cuadro%20o%20diseño%20personalizado" target="_blank" rel="noopener" class="btn btn-cta-main">
+                🎨 Cotizar Obra con Franki ➔
+            </a>
+        </div>
+    </section>
+
+    <!-- Galería Dinámica Tienda -->
+    <section style="background-color: #121212; border-top: 1px solid #222;">
+        <h2 class="section-title">Catálogo en Tienda Virtual</h2>
+        <div class="gallery" id="tienda-products-container">
+            <p style="grid-column: 1 / -1; text-align: center; color: #888;">Cargando inventario de artesanías...</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="tienda.html?cat=Artesania" class="btn-store-cta">
+                🛒 Ver Todo en la Tienda Principal ➔
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Franki Tattoo Studio. Todos los derechos reservados. • <a href="privacidad-terminos.html" style="color:#00e676; text-decoration:none;">Términos y Privacidad</a> • <a href="consentimiento.html" style="color:#00e676; text-decoration:none;">Ficha de Consentimiento</a></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/nav.js?v=2"></script>
+    <script src="js/chatbot.js?v=3"></script>
+    <script src="js/auth-modal.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/lightbox.js?v=1"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            Store.renderStore("Artesania", "tienda-products-container");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Franki Tattoo Studio | Tatuajes, Piercings y Smokeshop en Ibarra</title>
+    <meta name="description" content="Estudio profesional de tatuajes y body piercing en Ibarra, Ecuador. Tatuajes de autor, joyería en acero quirúrgico hipoalergénico, vapes y smokeshop. ¡Agenda tu cita o cotiza online!">
+    <meta name="keywords" content="tatuajes ibarra, tattoo ibarra, piercings ibarra, estudio de tatuajes ecuador, acero quirurgico hipoalergenico, smokeshop ibarra, vapes ecuador, franki tattoo">
+    <link rel="canonical" href="https://franki-tattoo.onrender.com/">
+
+    <!-- Performance: Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Open Graph / Redes Sociales & WhatsApp -->
+    <meta property="og:type" content="business.business">
+    <meta property="og:locale" content="es_EC">
+    <meta property="og:site_name" content="Franki Tattoo Studio">
+    <meta property="og:title" content="Franki Tattoo Studio | Tatuajes y Piercings en Ibarra">
+    <meta property="og:description" content="Tatuajes de autor, body piercing aséptico con acero quirúrgico hipoalergénico y smokeshop en el centro histórico de Ibarra. Calificación 4.9⭐ en Google Maps.">
+    <meta property="og:image" content="https://franki-tattoo.onrender.com/images/franki-promo-estudio.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://franki-tattoo.onrender.com">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Franki Tattoo Studio | Ibarra, Ecuador">
+    <meta name="twitter:description" content="Arte en la piel, body piercing aséptico y tienda oficial en Ibarra.">
+    <meta name="twitter:image" content="https://franki-tattoo.onrender.com/images/franki-promo-estudio.jpg">
+
+    <!-- Favicon & Styles -->
+    <link rel="icon" type="image/png" href="images/franki-logo-transparent.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/public.css?v=15">
+
+    <!-- Schema.org / JSON-LD: SEO Local Oficial para Google Search & Google Maps -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["TattooShop", "LocalBusiness"],
+      "@id": "https://franki-tattoo.onrender.com/#localbusiness",
+      "name": "Franki Tattoo Studio",
+      "alternateName": "Franki Tattoo Ibarra",
+      "url": "https://franki-tattoo.onrender.com",
+      "logo": "https://franki-tattoo.onrender.com/images/franki-logo-transparent.png",
+      "image": [
+        "https://franki-tattoo.onrender.com/images/franki-fachada-estudio.jpg",
+        "https://franki-tattoo.onrender.com/images/franki-promo-estudio.jpg",
+        "https://franki-tattoo.onrender.com/images/geishaaa.jpg"
+      ],
+      "description": "Estudio profesional de tatuajes personalizados, perforaciones corporales asépticas con joyería de acero quirúrgico hipoalergénico y tienda de smokeshop en el centro histórico de Ibarra, Ecuador.",
+      "telephone": "+593991548585",
+      "priceRange": "$$",
+      "paymentAccepted": ["Cash", "Bank Transfer", "DeUna"],
+      "currenciesAccepted": "USD",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "José Joaquín Olmedo y Juan Manuel Grijalva 4-68 (Frente a Saitel)",
+        "addressLocality": "Ibarra",
+        "addressRegion": "Imbabura",
+        "postalCode": "100105",
+        "addressCountry": "EC"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 0.3524,
+        "longitude": -78.1226
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "10:00",
+          "closes": "18:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "7",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "sameAs": [
+        "https://www.google.com/maps?cid=12488049835997532476",
+        "https://www.instagram.com/frankioficial",
+        "https://www.tiktok.com/@frankitattoo"
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="images/franki-logo-transparent.png" alt="Franki Tattoo" class="logo-img" />
+            <span class="logo-badge">Tattoo</span>
+        </a>
+        
+        <div class="header-actions-mobile">
+            <button id="ft-nav-user-btn-mobile" class="nav-action-btn user-btn" title="Iniciar sesión" aria-label="Mi Cuenta">
+                <span class="ft-user-icon">👤</span>
+            </button>
+            <button id="ft-nav-cart-btn-mobile" class="nav-action-btn cart-btn" aria-label="Carrito" onclick="Cart.openDrawer()">
+                🛒 <span class="ft-cart-badge" style="display:none;">0</span>
+            </button>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html" style="color:#00e676;">Inicio</a></li>
+                <li><a href="tatuajes.html">Tatuajes</a></li>
+                <li><a href="piercings.html">Piercings</a></li>
+                <li><a href="vapes.html">Smokes / Vapes</a></li>
+                <li><a href="artesanias.html">Artesanías</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="consentimiento.html">Consentimiento</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions-desktop">
+            <button id="ft-nav-user-btn" class="nav-action-btn user-btn" title="Iniciar sesión">
+                <span class="ft-user-icon">👤</span>
+                <span class="ft-user-name">Ingresar</span>
+            </button>
+            <button id="ft-nav-cart-btn" class="nav-action-btn cart-btn" title="Ver Carrito" onclick="Cart.openDrawer()">
+                🛒 Carrito <span id="ft-nav-cart-badge" class="ft-cart-badge" style="display:none;">0</span>
+            </button>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-status-pill">
+            <span class="status-indicator-dot"></span>
+            <span>Estudio en Ibarra • Citas y Consultas Abiertas</span>
+        </div>
+        <h1 class="hero-headline">Arte en la piel <span>& Modificación Corporal</span></h1>
+        <p class="hero-subhead">Tatuajes personalizados de autor, body piercing con acero quirúrgico hipoalergénico y smokeshop en el centro histórico de Ibarra. Atención directa y trabajos garantizados.</p>
+        
+        <div class="hero-actions">
+            <button type="button" class="btn-hero-primary" onclick="openChatbot()">Agendar Cita o Cotizar ➔</button>
+            <a href="https://www.google.com/maps?cid=12488049835997532476" target="_blank" rel="noopener" class="btn-hero-secondary">
+                ⭐ 4.9 en Google Maps (7 reseñas)
+            </a>
+        </div>
+
+        <div class="studio-trust-bar">
+            <div class="trust-stat">
+                <span class="trust-num">+15 Años</span>
+                <span class="trust-lbl">Trayectoria en Ibarra</span>
+            </div>
+            <div class="trust-sep"></div>
+            <div class="trust-stat">
+                <span class="trust-num">100%</span>
+                <span class="trust-lbl">Tintas Americanas</span>
+            </div>
+            <div class="trust-sep"></div>
+            <div class="trust-stat">
+                <span class="trust-num">Grado Médico</span>
+                <span class="trust-lbl">Acero Quirúrgico 316L</span>
+            </div>
+            <div class="trust-sep"></div>
+            <div class="trust-stat">
+                <span class="trust-num">4.9 ★</span>
+                <span class="trust-lbl">Calificación Verificada</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Bento Grid: Espacios y Servicios del Estudio -->
+    <section id="estudio" class="bento-section">
+        <div class="section-header-compact">
+            <span class="section-badge-pill">Servicios & Tienda</span>
+            <h2 class="section-title-clean">El Estudio Franki Tattoo</h2>
+            <p class="section-desc-clean">Atención directa de Franki en nuestro local físico frente a Saitel. Arte corporal seguro y productos seleccionados.</p>
+        </div>
+
+        <div class="bento-grid">
+            <!-- Card 1: Tatuajes de Autor (Card Destacada 7x2) -->
+            <a href="tatuajes.html" class="bento-card bento-card-tattoo">
+                <div class="bento-img-bg" style="background-image: url('images/geishaaa.jpg');"></div>
+                <div class="bento-overlay-gradient"></div>
+                <div class="bento-card-body">
+                    <span class="bento-tag-pill">Especialidad Principal</span>
+                    <h3>Tatuajes de Autor</h3>
+                    <p>Realismo en sombras, anime a color, composiciones botánicas de línea fina y piezas a medida diseñadas exclusivamente para ti con tintas americanas estériles.</p>
+                    <span class="bento-arrow-cta">Explorar Portafolio de Tatuajes ➔</span>
+                </div>
+            </a>
+
+            <!-- Card 2: Body Piercing (5x1) -->
+            <a href="piercings.html" class="bento-card bento-card-piercing">
+                <div class="bento-img-bg" style="background-image: url('images/piercing-industrial-real.jpg');"></div>
+                <div class="bento-overlay-gradient"></div>
+                <div class="bento-card-body">
+                    <span class="bento-tag-pill">Bioseguridad</span>
+                    <h3>Body Piercing</h3>
+                    <p>Perforaciones asépticas con catéter estéril descartable y joyería en acero quirúrgico hipoalergénico sin dolor.</p>
+                    <span class="bento-arrow-cta">Protocolos y Citas ➔</span>
+                </div>
+            </a>
+
+            <!-- Card 3: Smokeshop (5x1) -->
+            <a href="vapes.html" class="bento-card bento-card-smokeshop">
+                <div class="bento-img-bg" style="background-image: url('images/smokeshop-pipas-cristal.jpg');"></div>
+                <div class="bento-overlay-gradient"></div>
+                <div class="bento-card-body">
+                    <span class="bento-tag-pill">Smokeshop & Accesorios</span>
+                    <h3>Smokeshop & Vapes</h3>
+                    <p>Pipas de pyrex, bongs, pods desechables y papelillos de autor con retiro en el local o envíos por Servientrega.</p>
+                    <span class="bento-arrow-cta">Ver Catálogo Smokeshop ➔</span>
+                </div>
+            </a>
+
+            <!-- Card 4: Artesanías & Obras (6x1) -->
+            <a href="artesanias.html" class="bento-card bento-card-art">
+                <div class="bento-img-bg" style="background-image: url('images/Pensador.jpeg');"></div>
+                <div class="bento-overlay-gradient"></div>
+                <div class="bento-card-body">
+                    <span class="bento-tag-pill">Obras Originales</span>
+                    <h3>Lienzos & Pirograbados</h3>
+                    <p>Pinturas originales en acrílico dark art y tablas de madera pirograbadas a fuego personalizadas por Franki bajo encargo.</p>
+                    <span class="bento-arrow-cta">Ver Colección de Arte ➔</span>
+                </div>
+            </a>
+
+            <!-- Card 5: Tienda Online Oficial (6x1) -->
+            <a href="tienda.html" class="bento-card bento-card-store">
+                <div class="bento-img-bg" style="background-image: url('images/franki-promo-estudio.jpg');"></div>
+                <div class="bento-overlay-gradient"></div>
+                <div class="bento-card-body">
+                    <span class="bento-tag-pill">Compra en Línea</span>
+                    <h3>Tienda Online Oficial</h3>
+                    <p>Adquiere joyería de acero quirúrgico hipoalergénico, accesorios y cuidados post-tatuaje con pago seguro por DeUna, Banco Pichincha o entrega local.</p>
+                    <span class="bento-arrow-cta">Entrar a la Tienda ➔</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Sección Trabajos Reales con Filtros Interactivos -->
+    <section id="galeria" style="background-color: #0d0d0d;">
+        <div class="section-header-compact">
+            <span class="section-badge-pill">Portafolio</span>
+            <h2 class="section-title-clean">Trabajos Reales en Piel</h2>
+            <p class="section-desc-clean">Fotografías reales tomadas en el estudio. Sin retoques artificiales ni fotos de catálogo.</p>
+        </div>
+
+        <div class="portfolio-filter-bar">
+            <button type="button" class="filter-chip active" data-filter="all">Todos los Trabajos</button>
+            <button type="button" class="filter-chip" data-filter="tatuaje">Tatuajes</button>
+            <button type="button" class="filter-chip" data-filter="piercing">Piercings</button>
+            <button type="button" class="filter-chip" data-filter="arte">Lienzos & Arte</button>
+        </div>
+
+        <div class="gallery" id="featured-gallery-grid">
+            <!-- Tatuajes Reales de Franki -->
+            <a href="tatuajes.html" class="gallery-item" data-category="tatuaje">
+                <img src="images/geishaaa.jpg" alt="Tatuaje Geisha Oriental a Color - Franki Tattoo" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Oriental & Color • Geisha</h3>
+                </div>
+            </a>
+            <a href="tatuajes.html" class="gallery-item" data-category="tatuaje">
+                <img src="images/espartano.jpg" alt="Tatuaje Guerrero Espartano Realismo y Sombras - Franki Tattoo" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Realismo & Sombras • Espartano</h3>
+                </div>
+            </a>
+            <a href="tatuajes.html" class="gallery-item" data-category="tatuaje">
+                <img src="images/floresrojas.jpg" alt="Tatuaje Flores Rojas a Color - Franki Tattoo" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Color & Detalle • Flores Rojas</h3>
+                </div>
+            </a>
+            <a href="tatuajes.html" class="gallery-item" data-category="tatuaje">
+                <img src="images/gatito.jpg" alt="Tatuaje Gatito Retrato Línea Fina - Franki Tattoo" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Fineline & Retrato • Gatito</h3>
+                </div>
+            </a>
+            <a href="tatuajes.html" class="gallery-item" data-category="tatuaje">
+                <img src="images/arbolvida.jpg" alt="Tatuaje Árbol de la Vida y Geometría - Franki Tattoo" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Símbolo & Blackwork • Árbol de la Vida</h3>
+                </div>
+            </a>
+            <a href="tatuajes.html" class="gallery-item" data-category="tatuaje">
+                <img src="images/frase-2.jpg" alt="Tatuaje Lettering y Caligrafía - Franki Tattoo" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Lettering & Frases • Caligrafía</h3>
+                </div>
+            </a>
+
+            <!-- Piercings -->
+            <a href="piercings.html" class="gallery-item" data-category="piercing">
+                <img src="images/piercing-industrial-real.jpg" alt="Piercing Industrial y Oreja en Acero Quirúrgico" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Industrial & Cartílago</h3>
+                </div>
+            </a>
+            <a href="piercings.html" class="gallery-item" data-category="piercing">
+                <img src="images/piercing-ombligo-real.jpg" alt="Piercing de Ombligo en Acero Quirúrgico Franki Tattoo" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Piercing de Ombligo</h3>
+                </div>
+            </a>
+            <a href="piercings.html" class="gallery-item" data-category="piercing">
+                <img src="images/piercing-nostril-real.jpg" alt="Piercing Nostril y Septum Franki Tattoo" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Nostril & Septum</h3>
+                </div>
+            </a>
+
+            <!-- Obras / Arte -->
+            <a href="artesanias.html" class="gallery-item" data-category="arte">
+                <img src="images/Pensador.jpeg" alt="Lienzo El Pensador Pintura Franki" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Lienzo Original • El Pensador</h3>
+                </div>
+            </a>
+            <a href="artesanias.html" class="gallery-item" data-category="arte">
+                <img src="images/DR PLAGA.jpeg" alt="Lienzo Dr Plaga Dark Art Franki" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Dark Art • Dr. Plaga</h3>
+                </div>
+            </a>
+            <a href="artesanias.html" class="gallery-item" data-category="arte">
+                <img src="images/Anatomia cosmica.jpeg" alt="Lienzo Anatomía Cósmica Franki" loading="lazy" />
+                <div class="gallery-overlay">
+                    <h3>Técnica Mixta • Anatomía</h3>
+                </div>
+            </a>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="tatuajes.html" class="btn">Ver Catálogo Completo de Tatuajes ➔</a>
+            <a href="tienda.html" class="btn" style="background: transparent; border: 1px solid #444; color: #fff;">Ir a la Tienda 🛒</a>
+        </div>
+    </section>
+
+    <!-- Sección Testimonios y Reseñas REALES de Google -->
+    <section class="testimonials-section">
+        <h2 class="section-title">Reseñas Reales en Google Maps</h2>
+        
+        <div class="google-reviews-badge">
+            <div class="google-badge-brand">
+                <svg width="26" height="26" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                    <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                </svg>
+                <span class="google-badge-score">4.9</span>
+            </div>
+            <div class="google-badge-stars">★★★★★</div>
+            <span style="color:#aaa; font-size: 0.95rem; font-weight:600;">(7 opiniones en Google)</span>
+            <a href="https://www.google.com/maps?cid=12488049835997532476" target="_blank" rel="noopener" class="google-badge-cta">
+                Ver Ficha Oficial en Google ➔
+            </a>
+        </div>
+
+        <!-- Tags destacados de Google -->
+        <div style="display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-bottom: 2.2rem;">
+            <span style="background:#1e1e1e; border:1px solid #333; color:#00e676; padding:4px 12px; border-radius:14px; font-size:0.85rem; font-weight:600;">✨ Higiene y Limpieza</span>
+            <span style="background:#1e1e1e; border:1px solid #333; color:#00e676; padding:4px 12px; border-radius:14px; font-size:0.85rem; font-weight:600;">🎨 Calidad de Tatuajes</span>
+            <span style="background:#1e1e1e; border:1px solid #333; color:#00e676; padding:4px 12px; border-radius:14px; font-size:0.85rem; font-weight:600;">⚡ Buena Vibra & Trato</span>
+        </div>
+
+        <div class="testimonials-grid">
+            <!-- Review 1: Luis Yépez con fotos -->
+            <div class="testimonial-card">
+                <div class="testimonial-card-header">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <span class="google-review-source">
+                        <svg width="14" height="14" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg> Google
+                    </span>
+                </div>
+                <div class="testimonial-quote">
+                    "Excelente trabajo Franki realiza todo con trato personalizado muy amable. Ambiente amigable y súper higiénico y limpio todo."
+                </div>
+                <div style="display:flex; gap:6px; margin: 12px 0;">
+                    <img src="images/tattoo-spiderman-real.jpg" alt="Tattoo Spiderman" style="width:52px; height:52px; object-fit:cover; border-radius:6px; border:1px solid #333;" />
+                    <img src="images/tattoo-dr-plaga-hd.jpg" alt="Tattoo Dr Plaga" style="width:52px; height:52px; object-fit:cover; border-radius:6px; border:1px solid #333;" />
+                    <img src="images/tattoo-geometria-esqueleto-hd.jpg" alt="Tattoo Geometría" style="width:52px; height:52px; object-fit:cover; border-radius:6px; border:1px solid #333;" />
+                </div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar" style="background:#7b1fa2;">L</div>
+                    <div class="author-meta">
+                        <h4>luis yepez <span class="verified-tag">✔ 3 fotos</span></h4>
+                        <span>Google Maps • Hace un año</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2: Alberto Torres -->
+            <div class="testimonial-card">
+                <div class="testimonial-card-header">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <span class="google-review-source">
+                        <svg width="14" height="14" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg> Google
+                    </span>
+                </div>
+                <div class="testimonial-quote">
+                    "Excelente lugar sus trabajos son precisos y de la mejor calidad"
+                </div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar" style="background:#e65100;">A</div>
+                    <div class="author-meta">
+                        <h4>alberto torres <span class="verified-tag">✔ Local Guide</span></h4>
+                        <span>22 opiniones • Google Maps</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 3: Cristian Andrés Pozo -->
+            <div class="testimonial-card">
+                <div class="testimonial-card-header">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <span class="google-review-source">
+                        <svg width="14" height="14" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg> Google
+                    </span>
+                </div>
+                <div class="testimonial-quote">
+                    "Exelente artista y lo mejor de todo la Higiene."
+                </div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar" style="background:#1565c0;">C</div>
+                    <div class="author-meta">
+                        <h4>Cristian Andrés Pozo <span class="verified-tag">✔ Local Guide</span></h4>
+                        <span>76 opiniones • 134 fotos</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 4: Gabriela Terán -->
+            <div class="testimonial-card">
+                <div class="testimonial-card-header">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <span class="google-review-source">
+                        <svg width="14" height="14" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg> Google
+                    </span>
+                </div>
+                <div class="testimonial-quote">
+                    "Lo mejor de lo mejor en tatoo e higiene"
+                </div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar" style="background:#ad1457;">G</div>
+                    <div class="author-meta">
+                        <h4>Gabriela Terán <span class="verified-tag">✔ Verificada</span></h4>
+                        <span>6 opiniones • Google Maps</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 5: Gehitza Carrero -->
+            <div class="testimonial-card">
+                <div class="testimonial-card-header">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <span class="google-review-source">
+                        <svg width="14" height="14" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg> Google
+                    </span>
+                </div>
+                <div class="testimonial-quote">
+                    "Buenos tatuajes, buena vibra"
+                </div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar" style="background:#2e7d32;">G</div>
+                    <div class="author-meta">
+                        <h4>Gehitza Carrero <span class="verified-tag">✔ Local Guide</span></h4>
+                        <span>100 opiniones • 381 fotos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+            <a href="https://www.google.com/maps?cid=12488049835997532476" target="_blank" rel="noopener" style="color: #00e676; text-decoration: none; font-size: 0.95rem; font-weight:600;">
+                ⭐ ¿Te tatuaste o perforaste con Franki? Déjanos tu opinión en Google Maps ➔
+            </a>
+        </div>
+    </section>
+
+    <!-- Sección Contacto y Ubicación (Sin duplicados y con redes unificadas) -->
+    <section id="contacto" class="contact-section-modern">
+        <div class="contact-card-glass">
+            <div class="contact-info-col">
+                <span class="section-badge-pill">Ubicación & Atención</span>
+                <h2 class="contact-heading">Franki Tattoo Studio</h2>
+                <p class="contact-lead">Atención directa por Franki en un ambiente profesional, privado y aséptico en el centro de Ibarra. Agenda tu cita o visítanos.</p>
+
+                <div class="contact-details-list">
+                    <div class="contact-detail-row">
+                        <div class="detail-icon-circle">📍</div>
+                        <div>
+                            <strong>Dirección del Estudio:</strong>
+                            <p>José Joaquín Olmedo y Juan Manuel Grijalva 4-68 (Frente a Saitel), Centro histórico de Ibarra, Ecuador</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail-row">
+                        <div class="detail-icon-circle">🕒</div>
+                        <div>
+                            <strong>Horario de Atención:</strong>
+                            <p>Lunes a Sábado: 10:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail-row">
+                        <div class="detail-icon-circle">💬</div>
+                        <div>
+                            <strong>WhatsApp Directo:</strong>
+                            <p>+593 99 154 8585 (Atención y Cotizaciones)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Barra Única de Redes y Ubicación (Limpia y sin duplicados) -->
+                <div class="contact-social-bar">
+                    <a href="https://www.google.com/maps?cid=12488049835997532476" target="_blank" rel="noopener" class="social-chip chip-maps">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <span>Google Maps</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@frankitattoo" target="_blank" rel="noopener" class="social-chip chip-tiktok">
+                        <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.49 6.27 6.27 0 0 0 1.87-4.49V8.41a8.31 8.31 0 0 0 4.9 1.6V6.69z"/></svg>
+                        <span>TikTok @frankitattoo</span>
+                    </a>
+                    <a href="https://www.instagram.com/frankioficial" target="_blank" rel="noopener" class="social-chip chip-instagram">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-map-col">
+                <div class="studio-facade-card">
+                    <img src="images/franki-fachada-estudio.jpg" alt="Fachada Franki Tattoo Studio en Ibarra" loading="lazy" />
+                    <div class="facade-badge-overlay">
+                        <span class="facade-status">📍 Local Físico Oficial</span>
+                        <p>Olmedo 4-68 y Grijalva (Frente a Saitel) • Centro Histórico de Ibarra</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Franki Tattoo Studio. Todos los derechos reservados. • <a href="privacidad-terminos.html" style="color:#00e676; text-decoration:none;">Términos y Privacidad</a> • <a href="consentimiento.html" style="color:#00e676; text-decoration:none;">Ficha de Consentimiento</a></p>
+    </footer>
+
+    <!-- Barra Flotante de Acción Rápida para Celulares (Mobile Action Dock) -->
+    <nav class="mobile-action-dock" aria-label="Acciones rápidas">
+        <button type="button" class="dock-action-item dock-highlight" onclick="openChatbot()" aria-label="Cotizar o Agendar">
+            <svg class="dock-icon-svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+            <span>Cotizar</span>
+        </button>
+        <button type="button" class="dock-action-item" onclick="Cart.openDrawer()" aria-label="Carrito de compras">
+            <svg class="dock-icon-svg" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+            <span>Carrito</span>
+            <span id="ft-dock-cart-badge" class="dock-cart-badge-count ft-cart-badge" style="display:none;">0</span>
+        </button>
+        <a href="https://www.google.com/maps?cid=12488049835997532476" target="_blank" rel="noopener" class="dock-action-item" aria-label="Ubicación en Google Maps">
+            <svg class="dock-icon-svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span>Ubicación</span>
+        </a>
+    </nav>
+
+    <!-- Scripts -->
+    <script src="js/nav.js?v=2"></script>
+    <script src="js/chatbot.js?v=4"></script>
+    <script src="js/auth-modal.js"></script>
+    <script src="js/cart.js?v=2"></script>
+    <script src="js/lightbox.js?v=1"></script>
+
+    <!-- Script de Filtro Interactivo de Portafolio y Sincronización del Dock Móvil -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Filtros de Portafolio
+            const chips = document.querySelectorAll('.filter-chip');
+            const items = document.querySelectorAll('#featured-gallery-grid .gallery-item');
+            chips.forEach(chip => {
+                chip.addEventListener('click', () => {
+                    chips.forEach(c => c.classList.remove('active'));
+                    chip.classList.add('active');
+                    const category = chip.getAttribute('data-filter');
+                    items.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Sincronizar badge de carrito en el dock inferior de móviles
+            const syncBadges = () => {
+                const headerBadge = document.getElementById('ft-nav-cart-badge') || document.querySelector('.header-actions-mobile .ft-cart-badge');
+                const dockBadge = document.getElementById('ft-dock-cart-badge');
+                if (headerBadge && dockBadge) {
+                    const count = headerBadge.textContent.trim();
+                    dockBadge.textContent = count;
+                    dockBadge.style.display = (count && count !== '0' && headerBadge.style.display !== 'none') ? 'inline-flex' : 'none';
+                }
+            };
+            setInterval(syncBadges, 600);
+        });
+    </script>
+</body>
+</html>
+

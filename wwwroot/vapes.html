@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Smokes & Vapes Store | Franki Tattoo Ibarra</title>
+    <meta name="description" content="Tienda de vapes en Ibarra: desechables de alta duración, pods recargables, esencias importadas y accesorios smokeshop. Compras online y retiro en tienda.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Smokes & Vapes Store | Franki Tattoo Ibarra">
+    <meta property="og:description" content="Pods recargables, desechables 10k+ puffs y sales importadas en Ibarra.">
+    <meta property="og:image" content="https://franki-tattoo.onrender.com/images/franki-logo.jpg">
+    <meta property="og:url" content="https://franki-tattoo.onrender.com/vapes.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/jpeg" href="images/franki-logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/public.css?v=13">
+    <style>
+        .page-header {
+            margin-top: 100px;
+            text-align: center;
+            padding: 3.5rem 1rem;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), #121212;
+            border-bottom: 1px solid #222;
+        }
+
+            .page-header h1 {
+                color: #00e676;
+                font-size: 3.5rem;
+                text-transform: uppercase;
+            }
+
+        @media (max-width: 768px) {
+            .page-header {
+                margin-top: 70px;
+                padding: 2rem 1rem;
+            }
+
+                .page-header h1 {
+                    font-size: 2.2rem;
+                }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="images/franki-logo-transparent.png" alt="Franki Tattoo" class="logo-img" />
+            <span class="logo-badge">Tattoo</span>
+        </a>
+        
+        <div class="header-actions-mobile">
+            <button id="ft-nav-user-btn-mobile" class="nav-action-btn user-btn" title="Iniciar sesión" aria-label="Mi Cuenta">
+                <span class="ft-user-icon">👤</span>
+            </button>
+            <button id="ft-nav-cart-btn-mobile" class="nav-action-btn cart-btn" aria-label="Carrito" onclick="Cart.openDrawer()">
+                🛒 <span class="ft-cart-badge" style="display:none;">0</span>
+            </button>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="tatuajes.html">Tatuajes</a></li>
+                <li><a href="piercings.html">Piercings</a></li>
+                <li><a href="vapes.html" style="color:#00e676;">Smokes / Vapes</a></li>
+                <li><a href="artesanias.html">Artesanías</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions-desktop">
+            <button id="ft-nav-user-btn" class="nav-action-btn user-btn" title="Iniciar sesión">
+                <span class="ft-user-icon">👤</span>
+                <span class="ft-user-name">Ingresar</span>
+            </button>
+            <button id="ft-nav-cart-btn" class="nav-action-btn cart-btn" title="Ver Carrito" onclick="Cart.openDrawer()">
+                🛒 Carrito <span id="ft-nav-cart-badge" class="ft-cart-badge" style="display:none;">0</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div style="display:inline-block; background:rgba(0, 230, 118, 0.12); border:1px solid rgba(0, 230, 118, 0.35); padding:4px 14px; border-radius:16px; font-size:0.82rem; color:#00e676; font-weight:700; margin-bottom:0.8rem;">
+            💨 Smokeshop Oficial & Vaporizadores • Franki Tattoo
+        </div>
+        <h1>Smokeshop & Vapes Store</h1>
+        <p style="color: #ccc; max-width: 650px; margin: 0.5rem auto 0;">
+            Pipas de cristal Pyrex, bongs, blunts, papelillos de sabores, pods recargables y sales importadas en Ibarra.
+        </p>
+        <div style="margin-top: 1.5rem; display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+            <a href="tienda.html?cat=SmokeShop" class="btn-store-cta">
+                🛒 Ir a la Tienda a Comprar Vapes ➔
+            </a>
+            <a href="https://wa.me/593991548585?text=Hola%20Franki,%20quiero%20consultar%20disponibilidad%20de%20vapes%20y%20smokeshop" target="_blank" rel="noopener" class="btn" style="background:#25D366; color:#000; font-weight:700;">
+                💬 Consultar Stock por WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Catálogo de Accesorios Smokeshop y Vapes Reales -->
+    <section>
+        <h2 class="section-title">Artículos de Smokeshop y Vaporizadores</h2>
+        <div class="gallery">
+            <div class="item-card">
+                <img src="images/smokeshop-pipas-cristal.jpg" alt="Pipas de Cristal Artesanales Pyrex" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center;">
+                    <h3 style="margin-bottom:0.4rem; font-size:1.15rem;">Pipas de Cristal Pyrex</h3>
+                    <p style="color:#aaa; font-size:0.88rem; margin:0;">Vidrio soplado grueso resistente al calor, diseños en espiral y colores psicodélicos.</p>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <img src="images/smokeshop-blunts-papelillos.jpg" alt="Blunts y Papelillos de Sabores" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center;">
+                    <h3 style="margin-bottom:0.4rem; font-size:1.15rem;">Blunts & Papelillos</h3>
+                    <p style="color:#aaa; font-size:0.88rem; margin:0;">Wraps saborizados importados, papelillos orgánicos de combustión lenta y filtros.</p>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiDciX31PVScN-QeskGLZXm6WnjiYXIr1Z0SCu3yWfAQdAGzX5UKfVW7RH&s=10" alt="Pods Recargables Vaporesso" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center;">
+                    <h3 style="margin-bottom:0.4rem; font-size:1.15rem;">Pods Recargables</h3>
+                    <p style="color:#aaa; font-size:0.88rem; margin:0;">Sistemas abiertos de cartucho recargable, batería de larga duración y flujo de aire regulable.</p>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrhcsDKaywJYaMCfjZsO-nQu2aRDxQOVfjc-9KAyq3_l_S-1Rm3DyHwUYk&s=10" alt="Vapes Desechables 10k Puffs" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center;">
+                    <h3 style="margin-bottom:0.4rem; font-size:1.15rem;">Desechables 10k+ Puffs</h3>
+                    <p style="color:#aaa; font-size:0.88rem; margin:0;">Variedad de sabores frutales y mentolados intensos con indicador de líquido y batería.</p>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <img src="https://www.tigovape.cl/wp-content/uploads/2025/08/Just-juice-Nic-Salt-Banner-e1754429124315.webp" alt="Líquidos y Sales de Nicotina" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center;">
+                    <h3 style="margin-bottom:0.4rem; font-size:1.15rem;">Sales & Líquidos Premium</h3>
+                    <p style="color:#aaa; font-size:0.88rem; margin:0;">E-liquids originales en graduaciones de 20mg, 35mg y 50mg con sellos de garantía.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="appointment-cta-banner" style="margin-top: 3.5rem;">
+            <div class="cta-content">
+                <h3>¿Buscas un sabor o modelo en específico?</h3>
+                <p>Retira directamente en el local o pide envío rápido dentro de Ibarra. Atención de lunes a sábado.</p>
+            </div>
+            <a href="https://wa.me/593991548585?text=Hola%20Franki,%20quiero%20comprar%20un%20vape%20o%20accesorio%20smokeshop" target="_blank" rel="noopener" class="btn btn-cta-main">
+                📲 Escribir a Franki por WhatsApp ➔
+            </a>
+        </div>
+    </section>
+
+    <!-- Inventario dinámico de tienda -->
+    <section style="background-color: #121212; border-top: 1px solid #222;">
+        <h2 class="section-title">Productos en Tienda Virtual</h2>
+        <div class="gallery" id="tienda-products-container">
+            <p style="grid-column: 1 / -1; text-align: center; color: #888;">Cargando inventario de la tienda...</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="tienda.html?cat=SmokeShop" class="btn-store-cta">
+                🛒 Ver Todo en la Tienda Principal ➔
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Franki Tattoo Studio. Todos los derechos reservados. • <a href="privacidad-terminos.html" style="color:#00e676; text-decoration:none;">Términos y Privacidad</a> • <a href="consentimiento.html" style="color:#00e676; text-decoration:none;">Ficha de Consentimiento</a></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/nav.js?v=2"></script>
+    <script src="js/chatbot.js?v=3"></script>
+    <script src="js/auth-modal.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/lightbox.js?v=1"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            Store.renderStore("SmokeShop", "tienda-products-container");
+        });
+    </script>
+</body>
+</html>

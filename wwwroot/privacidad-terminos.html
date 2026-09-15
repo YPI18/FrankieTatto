@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos, Privacidad y Cookies | Franki Tattoo Studio</title>
+    <meta name="description" content="Términos de servicio, política de privacidad y protección de datos personales de Franki Tattoo Studio en Ibarra, Ecuador.">
+    <link rel="icon" type="image/jpeg" href="images/franki-logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/public.css?v=13">
+    <style>
+        .legal-page {
+            max-width: 900px;
+            margin: 40px auto 60px;
+            padding: 0 20px;
+        }
+        .legal-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .legal-header h1 {
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+        .legal-header p {
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+        .legal-badge {
+            display: inline-block;
+            background: rgba(0, 230, 118, 0.15);
+            color: #00e676;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            border: 1px solid rgba(0, 230, 118, 0.3);
+        }
+        .legal-card {
+            background: #14171c;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .legal-card h2 {
+            color: #00e676;
+            font-size: 1.4rem;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .legal-card h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin: 20px 0 10px;
+        }
+        .legal-card p, .legal-card li {
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .legal-card ul {
+            padding-left: 20px;
+            margin: 12px 0;
+        }
+        .legal-card li {
+            margin-bottom: 8px;
+        }
+        .alert-box {
+            background: rgba(255, 171, 0, 0.1);
+            border-left: 4px solid #ffab00;
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            color: #ffca28;
+            font-size: 0.92rem;
+        }
+        .back-nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #00e676;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 25px;
+            transition: transform 0.2s;
+        }
+        .back-nav-btn:hover {
+            transform: translateX(-4px);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="images/franki-logo-transparent.png" alt="Franki Tattoo" class="logo-img" />
+            <span class="logo-badge">Tattoo</span>
+        </a>
+        
+        <div class="header-actions-mobile">
+            <button id="ft-nav-cart-btn-mobile" class="nav-action-btn cart-btn" aria-label="Carrito" onclick="Cart.openDrawer()">
+                🛒 <span class="ft-cart-badge" style="display:none;">0</span>
+            </button>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="tatuajes.html">Tatuajes</a></li>
+                <li><a href="piercings.html">Piercings</a></li>
+                <li><a href="vapes.html">Smokes / Vapes</a></li>
+                <li><a href="artesanias.html">Artesanías</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="consentimiento.html">Consentimiento</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions-desktop">
+            <button id="ft-nav-cart-btn" class="nav-action-btn cart-btn" title="Ver Carrito" onclick="Cart.openDrawer()">
+                🛒 Carrito <span id="ft-nav-cart-badge" class="ft-cart-badge" style="display:none;">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="legal-page">
+        <a href="index.html" class="back-nav-btn">← Volver al inicio</a>
+
+        <div class="legal-header">
+            <span class="legal-badge">Marco Legal y de Confidencialidad</span>
+            <h1>Términos de Servicio y Política de Privacidad</h1>
+            <p>Última actualización: Septiembre 2026 • Franki Tattoo Studio (Ibarra, Ecuador)</p>
+        </div>
+
+        <!-- 1. TÉRMINOS Y CONDICIONES -->
+        <section class="legal-card" id="terminos">
+            <h2>📜 1. Términos y Condiciones del Servicio</h2>
+            <p>Bienvenido a <strong>Franki Tattoo Studio</strong>. Al utilizar nuestro sitio web, agendar citas o adquirir productos en nuestra tienda, aceptas los siguientes términos de servicio:</p>
+
+            <h3>1.1. Política de Mayoría de Edad (+18)</h3>
+            <ul>
+                <li><strong>Tatuajes y Perforaciones:</strong> Los servicios están estrictamente reservados para mayores de 18 años con documento de identidad original (Cédula o Pasaporte).</li>
+                <li><strong>Menores de edad (16 a 17 años):</strong> Podrán realizarse tatuajes o perforaciones únicamente acompañados de su padre, madre o tutor legal con presentación física de ambas cédulas y firma presencial del consentimiento legal.</li>
+                <li><strong>Vapes y Accesorios para fumar:</strong> La venta de vaporizadores y líquidos está terminantemente prohibida a menores de edad bajo cualquier circunstancia.</li>
+            </ul>
+
+            <div class="alert-box">
+                ⚠️ Nos reservamos el derecho de solicitar identificación física antes de iniciar cualquier procedimiento corporal o entrega de productos regulados.
+            </div>
+
+            <h3>1.2. Agendamiento de Citas y Anticipos</h3>
+            <ul>
+                <li>Las reservas de citas a través del sitio web o WhatsApp pueden requerir un depósito de anticipo para separar la fecha y garantizar el tiempo del artista.</li>
+                <li><strong>Reprogramaciones:</strong> Puedes reprogramar tu cita sin penalización avisando con un mínimo de <strong>24 horas de antelación</strong>.</li>
+                <li><strong>Cancelaciones de última hora o inasistencia:</strong> El anticipo no es reembolsable si el cliente no asiste o cancela con menos de 24 horas, debido a los insumos esterilizados y el tiempo reservado en cabina.</li>
+            </ul>
+
+            <h3>1.3. Bioseguridad y Salud</h3>
+            <ul>
+                <li>Franki Tattoo cumple con estrictos protocolos de asepsia, agujas y material punzocortante 100% estéril, descartable de un solo uso y tintas homologadas.</li>
+                <li>No se realizarán procedimientos a personas bajo la influencia de alcohol o sustancias estupefacientes, ni sobre piel que presente lesiones, quemaduras solares o infecciones activas.</li>
+            </ul>
+        </section>
+
+        <!-- 2. POLÍTICA DE PRIVACIDAD -->
+        <section class="legal-card" id="privacidad">
+            <h2>🔒 2. Política de Privacidad y Protección de Datos</h2>
+            <p>Tu privacidad y la seguridad de tu información personal son una prioridad absoluta para Franki Tattoo Studio. Cumplimos con los principios de la Ley Orgánica de Protección de Datos Personales de Ecuador.</p>
+
+            <h3>2.1. Datos que recopilamos</h3>
+            <ul>
+                <li><strong>Datos de contacto:</strong> Nombre completo, número de WhatsApp/teléfono y correo electrónico al agendar citas o realizar compras en la tienda.</li>
+                <li><strong>Ficha de consentimiento:</strong> Declaración de salud (alergias, cicatrización, medicación) y firma digital necesaria para resguardar la seguridad del procedimiento médico-estético.</li>
+                <li><strong>Comprobantes de pago:</strong> Capturas de transferencia que adjuntas voluntariamente para validar compras.</li>
+            </ul>
+
+            <h3>2.2. Uso exclusivo de la información</h3>
+            <p>Tus datos son utilizados <strong>únicamente</strong> para:</p>
+            <ul>
+                <li>Confirmar y coordinar tu cita o entrega de productos.</li>
+                <li>Verificar antecedentes de salud para garantizar que el procedimiento sea seguro para ti.</li>
+                <li>Cumplir con los registros sanitarios y consentimientos informados exigidos por las autoridades de salud.</li>
+            </ul>
+
+            <div class="alert-box" style="border-left-color: #00e676; background: rgba(0, 230, 118, 0.08); color: #00e676;">
+                🛡️ <strong>Garantía de Confidencialidad:</strong> Franki Tattoo NUNCA vende, alquila ni comparte tus datos personales o números telefónicos con empresas de publicidad de terceros.
+            </div>
+
+            <h3>2.3. Derechos del titular de datos</h3>
+            <p>Tienes derecho en todo momento a consultar, actualizar o solicitar la eliminación de tus datos de contacto de nuestro sistema administrativo comunicándote directamente a nuestro WhatsApp oficial <strong>+593 99 154 8585</strong>.</p>
+        </section>
+
+        <!-- 3. COOKIES Y ALMACENAMIENTO LOCAL -->
+        <section class="legal-card" id="cookies">
+            <h2>🍪 3. Política de Cookies y Almacenamiento Local</h2>
+            <p>Nuestra página web está diseñada bajo un principio de mínima recolección de datos y máxima privacidad:</p>
+            <ul>
+                <li><strong>Carrito de Compras (LocalStorage):</strong> Empleamos el almacenamiento local de tu propio navegador para que los productos que agregues al carrito no se borren si recargas la página. No contiene información sensible ni rastrea tus visitas en otras páginas.</li>
+                <li><strong>Sesión de Administración (Cookies Técnicas):</strong> Únicamente el personal del estudio utiliza cookies técnicas cifradas para el ingreso seguro al panel de control interno.</li>
+                <li><strong>Cero Rastreo Invasivo:</strong> No vendemos datos de navegación a redes publicitarias externas.</li>
+            </ul>
+        </section>
+
+        <!-- 4. RESPONSABILIDAD Y CUIDADOS -->
+        <section class="legal-card" id="cuidados">
+            <h2>🩺 4. Deslinde de Responsabilidad y Cuidados Posteriores</h2>
+            <p>El resultado final y la preservación estética de un tatuaje o perforación dependen en un 50% de la técnica del artista y en un <strong>50% del cuidado responsable que el cliente le otorgue durante la cicatrización</strong>.</p>
+            <ul>
+                <li>El cliente se compromete a seguir al pie de la letra las instrucciones de lavado, hidratación y protección solar indicadas en nuestra guía de cuidados y en la <a href="consentimiento.html" style="color:#00e676; text-decoration:underline;">Ficha de Consentimiento Digital</a>.</li>
+                <li>El estudio no se hace responsable por infecciones o decoloraciones derivadas de rascarse, sumergirse en piscinas/mar, exponerse al sol o desatender las normas básicas de higiene durante el período de curación.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Franki Tattoo Studio. Todos los derechos reservados. • <a href="privacidad-terminos.html" style="color:#00e676; text-decoration:none;">Términos y Privacidad</a> • <a href="consentimiento.html" style="color:#00e676; text-decoration:none;">Ficha de Consentimiento</a></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/nav.js?v=2"></script>
+    <script src="js/cart.js?v=2"></script>
+</body>
+</html>
