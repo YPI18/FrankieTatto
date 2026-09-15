@@ -48,8 +48,7 @@
 
     <header>
         <a href="index.html" class="logo">
-            <img src="images/franki-logo-transparent.png" alt="Franki Tattoo" class="logo-img" />
-            <span class="logo-badge">Tattoo</span>
+            <img src="images/franki-logo-transparent.png" alt="Franki" class="logo-img" />
         </a>
         
         <div class="header-actions-mobile">
@@ -176,6 +175,23 @@
     <footer>
         <p>&copy; 2026 Franki Tattoo Studio. Todos los derechos reservados. • <a href="privacidad-terminos.html" style="color:#00e676; text-decoration:none;">Términos y Privacidad</a> • <a href="consentimiento.html" style="color:#00e676; text-decoration:none;">Ficha de Consentimiento</a></p>
     </footer>
+
+    <!-- Barra Flotante de Acción Rápida para Celulares (Mobile Action Dock) -->
+    <nav class="mobile-action-dock" aria-label="Acciones rápidas">
+        <button type="button" class="dock-action-item dock-highlight" onclick="openChatbot('Vapes')" aria-label="Cotizar o Agendar">
+            <svg class="dock-icon-svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+            <span>Cotizar</span>
+        </button>
+        <button type="button" class="dock-action-item" onclick="Cart.openDrawer()" aria-label="Carrito de compras">
+            <svg class="dock-icon-svg" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+            <span>Carrito</span>
+            <span id="ft-dock-cart-badge" class="dock-cart-badge-count ft-cart-badge" style="display:none;">0</span>
+        </button>
+        <a href="https://www.google.com/maps?cid=12488049835997532476" target="_blank" rel="noopener" class="dock-action-item" aria-label="Ubicación en Google Maps">
+            <svg class="dock-icon-svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span>Ubicación</span>
+        </a>
+    </nav>
 
     <!-- Scripts -->
     <script src="js/nav.js?v=2"></script>
