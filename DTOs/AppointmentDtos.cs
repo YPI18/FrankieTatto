@@ -32,6 +32,12 @@ public class AppointmentDto
 
     [JsonPropertyName("nombreEmpleado")]
     public string? EmployeeName { get; set; }
+
+    [JsonPropertyName("consentFormId")]
+    public int? ConsentFormId { get; set; }
+
+    [JsonPropertyName("hasConsent")]
+    public bool HasConsent => ConsentFormId.HasValue;
 }
 
 public class AppointmentCreateDto

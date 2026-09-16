@@ -42,7 +42,8 @@ public class AppointmentsController : ControllerBase
                 CustomerId = a.CustomerId,
                 CustomerName = a.Customer != null ? a.Customer.FullName : null,
                 EmployeeId = a.EmployeeId,
-                EmployeeName = a.Employee != null ? a.Employee.FullName : null
+                EmployeeName = a.Employee != null ? a.Employee.FullName : null,
+                ConsentFormId = a.ConsentFormId
             })
             .ToListAsync();
 
@@ -72,7 +73,8 @@ public class AppointmentsController : ControllerBase
             CustomerId = a.CustomerId,
             CustomerName = a.Customer != null ? a.Customer.FullName : null,
             EmployeeId = a.EmployeeId,
-            EmployeeName = a.Employee != null ? a.Employee.FullName : null
+            EmployeeName = a.Employee != null ? a.Employee.FullName : null,
+            ConsentFormId = a.ConsentFormId
         });
     }
 

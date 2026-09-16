@@ -43,8 +43,7 @@
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="images/franki-logo-transparent.png" alt="Franki Tattoo Logo" class="logo-img" />
-                <span>FRANKI TATTOO</span>
+                <img src="images/franki-logo-transparent.png" alt="Franki" class="logo-img" />
             </a>
             <div class="menu-toggle" id="mobile-menu-btn">
                 <span></span><span></span><span></span>
@@ -143,10 +142,13 @@
                     </div>
                 </div>
 
+                <!-- Estado y Notificaciones -->
+                <div id="consent-status-banner" style="display:none; margin-top:1.5rem; padding:1.1rem; border-radius:10px; font-weight:600; font-size:0.95rem; text-align:center;"></div>
+
                 <!-- Botones de Acción -->
-                <div style="margin-top: 2.2rem; display: flex; flex-direction: column; gap: 0.9rem;">
+                <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.9rem;">
                     <button type="submit" id="btn-send-whatsapp" class="btn btn-cta-main" style="width: 100%; font-size: 1.05rem; padding: 1rem;">
-                        📲 Confirmar y Enviar Ficha a Franki por WhatsApp ➔
+                        📲 Confirmar, Guardar Ficha y Enviar a WhatsApp ➔
                     </button>
                     <button type="button" onclick="window.print()" class="btn btn-print-doc" style="background:#222; color:#ccc; width: 100%; border: 1px solid #444;">
                         🖨️ Imprimir / Guardar en PDF
@@ -228,8 +230,12 @@
                 hasSigned = false;
             });
 
-            // Form Submit y Envío a WhatsApp
-            document.getElementById("consent-form").addEventListener("submit", (e) => {
+            // Form Submit, Guardado en Base de Datos y Envío a WhatsApp
+            const consentForm = document.getElementById("consent-form");
+            const submitBtn = document.getElementById("btn-send-whatsapp");
+            const statusBanner = document.getElementById("consent-status-banner");
+
+            consentForm.addEventListener("submit", async (e) => {
                 e.preventDefault();
 
                 if (!hasSigned) {
@@ -240,12 +246,74 @@
                 const nombre = document.getElementById("c-nombre").value.trim();
                 const cedula = document.getElementById("c-cedula").value.trim();
                 const telefono = document.getElementById("c-telefono").value.trim();
-                const edad = document.getElementById("c-edad").value.trim();
+                const edad = parseInt(document.getElementById("c-edad").value.trim(), 10);
                 const proc = document.getElementById("c-procedimiento").value;
                 const zona = document.getElementById("c-zona").value.trim();
                 const fecha = new Date().toLocaleDateString("es-EC", { dateStyle: "medium" });
 
-                const msg = `📋 *CONSENTIMIENTO INFORMADO DIGITAL — FRANKI TATTOO*\n\n` +
+                // Obtener firma digital en Base64 PNG
+                const signatureData = canvas.toDataURL("image/png");
+
+                // Verificar si vino con parámetro de cita en la URL (?cita=X o ?appointmentId=X)
+                const urlParams = new URLSearchParams(window.location.search);
+                const apptId = urlParams.get("cita") || urlParams.get("appointmentId");
+
+                const payload = {
+                    clientName: nombre,
+                    identificationNumber: cedula,
+                    phone: telefono,
+                    age: edad,
+                    procedureType: proc,
+                    bodyArea: zona,
+                    isAdultConfirmed: true,
+                    noAlcoholOrDrugs: true,
+                    noSevereConditions: true,
+                    notPregnantOrNursing: true,
+                    acceptsCareProtocol: true,
+                    signatureData: signatureData,
+                    appointmentId: apptId ? parseInt(apptId, 10) : null
+                };
+
+                submitBtn.disabled = true;
+                const originalBtnText = submitBtn.innerHTML;
+                submitBtn.innerHTML = `⏳ Guardando y archivando firma...`;
+
+                let recordId = null;
+
+                try {
+                    const response = await fetch("/api/consents", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (response.ok) {
+                        const resData = await response.json();
+                        recordId = resData.id;
+                        statusBanner.style.display = "block";
+                        statusBanner.style.background = "rgba(0, 230, 118, 0.12)";
+                        statusBanner.style.border = "1px solid #00e676";
+                        statusBanner.style.color = "#00e676";
+                        statusBanner.innerHTML = `✅ <strong>Ficha de Consentimiento registrada y archivada exitosamente.</strong><br><span style="color:#ccc; font-size:0.85rem;">Registro oficial del estudio: <strong>#F-${resData.id}</strong> • Vinculado a tu expediente en Franki Tattoo.</span>`;
+                    } else {
+                        const err = await response.text();
+                        console.warn("Fallo al guardar consentimiento en API:", err);
+                        statusBanner.style.display = "block";
+                        statusBanner.style.background = "rgba(255, 152, 0, 0.12)";
+                        statusBanner.style.border = "1px solid #ff9800";
+                        statusBanner.style.color = "#ff9800";
+                        statusBanner.innerHTML = `⚠️ Ficha lista para enviar a WhatsApp. (Aviso: no se pudo sincronizar temporalmente con la nube).`;
+                    }
+                } catch (err) {
+                    console.warn("Error de red al guardar consentimiento:", err);
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = `✅ Ficha Lista y Enviada a WhatsApp`;
+                }
+
+                // Generar mensaje estructurado para WhatsApp
+                const numRef = recordId ? ` (Registro #${recordId})` : "";
+                const msg = `📋 *CONSENTIMIENTO INFORMADO DIGITAL — FRANKI TATTOO*${numRef}\n\n` +
                     `📅 *Fecha:* ${fecha}\n` +
                     `👤 *Cliente:* ${nombre}\n` +
                     `🆔 *Cédula/Pasaporte:* ${cedula}\n` +
@@ -255,9 +323,9 @@
                     `📍 *Zona del Cuerpo:* ${zona}\n\n` +
                     `✅ *Declaración de Salud:* Aprobada y aceptada.\n` +
                     `✅ *Mayoría de edad:* Verificada.\n` +
-                    `✅ *Protocolo de cuidados:* Aceptado.\n` +
-                    `✍️ *Firma Digital:* Registrada en pantalla en Franki Tattoo Studio.\n\n` +
-                    `_Ficha archivada para control sanitario y respaldo del cliente._`;
+                    `✅ *Protocolo de bioseguridad:* Aceptado.\n` +
+                    `✍️ *Firma Digital:* Registrada y archivada en sistema de Franki Tattoo Studio.\n\n` +
+                    `_Documento legal archivado para control sanitario y respaldo del cliente._`;
 
                 const url = `https://wa.me/593991548585?text=${encodeURIComponent(msg)}`;
                 window.open(url, "_blank");

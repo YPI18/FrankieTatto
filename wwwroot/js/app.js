@@ -16,6 +16,7 @@ const crudClients = {
   appointments: makeCrud("/api/appointments"),
   orders: makeCrud("/api/orders"),
   portfolio: makeCrud("/api/portfolio"),
+  consents: makeCrud("/api/consents"),
 };
 
 const entities = {
@@ -79,6 +80,7 @@ const entities = {
       { key: "tipoServicio", label: "Tipo" },
       { key: "estado", label: "Estado" },
       { key: "nombreCliente", label: "Cliente" },
+      { key: "consentStatus", label: "Ficha Médica" },
       { key: "notas", label: "Notas / Teléfono" },
       { key: "nombreEmpleado", label: "Empleado" },
     ],
@@ -104,6 +106,22 @@ const entities = {
       { name: "category", label: "Categoría", type: "select", options: ["Tattoo", "Piercing", "SmokeShop", "Artesania"], required: true },
       { name: "imageUrl", label: "Imagen", type: "image-upload", required: true },
     ],
+  },
+  consents: {
+    label: "Fichas de Consentimiento",
+    requiredRolesToWrite: ["Admin", "Employee"],
+    noCreate: true,
+    columns: [
+      { key: "id", label: "N°" },
+      { key: "signedAtFormatted", label: "Fecha y Hora" },
+      { key: "clientName", label: "Cliente" },
+      { key: "identificationNumber", label: "Cédula / Pasaporte" },
+      { key: "phone", label: "Teléfono" },
+      { key: "procedureType", label: "Procedimiento" },
+      { key: "bodyArea", label: "Zona" },
+      { key: "signatureData", label: "Firma" },
+    ],
+    fields: [],
   }
 };
 
@@ -312,11 +330,26 @@ async function renderTab() {
   leftControls.style.gap = "0.75rem";
 
   if (canWrite) {
-    const newBtn = document.createElement("button");
-    newBtn.type = "button";
-    newBtn.textContent = "+ Nuevo";
-    newBtn.onclick = () => renderForm(content, currentTab, config, client, null);
-    leftControls.appendChild(newBtn);
+    if (config.noCreate) {
+      const openFormBtn = document.createElement("button");
+      openFormBtn.type = "button";
+      openFormBtn.textContent = "📋 Abrir Ficha Pública ➔";
+      openFormBtn.style.background = "#00e676";
+      openFormBtn.style.color = "#000";
+      openFormBtn.style.fontWeight = "bold";
+      openFormBtn.style.borderRadius = "6px";
+      openFormBtn.style.border = "none";
+      openFormBtn.style.padding = "0.6rem 1.1rem";
+      openFormBtn.style.cursor = "pointer";
+      openFormBtn.onclick = () => window.open("consentimiento.html", "_blank");
+      leftControls.appendChild(openFormBtn);
+    } else {
+      const newBtn = document.createElement("button");
+      newBtn.type = "button";
+      newBtn.textContent = "+ Nuevo";
+      newBtn.onclick = () => renderForm(content, currentTab, config, client, null);
+      leftControls.appendChild(newBtn);
+    }
   }
 
   const searchInput = document.createElement("input");
@@ -402,6 +435,65 @@ function renderTable(table, config, client, items, canWrite) {
         td.appendChild(textSpan);
       } else if (col.key === "id") {
         td.textContent = index + 1;
+      } else if (col.key === "signatureData") {
+        if (item.signatureData) {
+          const img = document.createElement("img");
+          img.src = item.signatureData;
+          img.alt = "Firma";
+          img.style.maxHeight = "36px";
+          img.style.maxWidth = "88px";
+          img.style.background = "#fff";
+          img.style.padding = "2px 4px";
+          img.style.borderRadius = "4px";
+          img.style.cursor = "pointer";
+          img.title = "Clic para ver la ficha completa";
+          img.onclick = () => window.viewConsentModal(item.id);
+          td.appendChild(img);
+        } else {
+          td.textContent = "Sin firma";
+        }
+      } else if (col.key === "consentStatus") {
+        if (item.consentFormId || item.hasConsent) {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.textContent = "✍️ Ver Ficha";
+          btn.style.background = "#00e676";
+          btn.style.color = "#000";
+          btn.style.fontWeight = "bold";
+          btn.style.fontSize = "0.78rem";
+          btn.style.padding = "5px 9px";
+          btn.style.border = "none";
+          btn.style.borderRadius = "6px";
+          btn.style.cursor = "pointer";
+          btn.title = "Ficha firmada por el cliente";
+          btn.onclick = () => window.viewConsentModal(item.consentFormId);
+          td.appendChild(btn);
+        } else {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.textContent = "⏳ Pendiente 📋";
+          btn.title = "Clic para copiar enlace de consentimiento para el cliente";
+          btn.style.background = "#222";
+          btn.style.color = "#bbb";
+          btn.style.fontSize = "0.75rem";
+          btn.style.padding = "4px 8px";
+          btn.style.border = "1px solid #444";
+          btn.style.borderRadius = "6px";
+          btn.style.cursor = "pointer";
+          btn.onclick = () => {
+            const consentLink = `${window.location.origin}/consentimiento.html?cita=${item.id}`;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(consentLink).then(() => {
+                alert(`¡Enlace copiado al portapapeles!\n\nEnvíaselo a ${item.nombreCliente || "tu cliente"} por WhatsApp:\n${consentLink}`);
+              }).catch(() => {
+                prompt("Copia este enlace para el cliente:", consentLink);
+              });
+            } else {
+              prompt("Copia este enlace para el cliente:", consentLink);
+            }
+          };
+          td.appendChild(btn);
+        }
       } else {
         td.textContent = item[col.key] ?? "";
       }
@@ -431,26 +523,56 @@ function renderTable(table, config, client, items, canWrite) {
         td.appendChild(select);
       }
 
-      const editBtn = document.createElement("button");
-      editBtn.type = "button";
-      editBtn.textContent = "Editar";
-      editBtn.onclick = () => renderForm(document.getElementById("content"), currentTab, config, client, item);
-      td.appendChild(editBtn);
+      if (currentTab === "consents") {
+        const viewBtn = document.createElement("button");
+        viewBtn.type = "button";
+        viewBtn.textContent = "📄 Ver Ficha";
+        viewBtn.style.background = "#00e676";
+        viewBtn.style.color = "#000";
+        viewBtn.style.fontWeight = "bold";
+        viewBtn.style.padding = "5px 10px";
+        viewBtn.style.borderRadius = "6px";
+        viewBtn.style.border = "none";
+        viewBtn.style.cursor = "pointer";
+        viewBtn.onclick = () => window.viewConsentModal(item.id);
+        td.appendChild(viewBtn);
 
-      const delBtn = document.createElement("button");
-      delBtn.type = "button";
-      delBtn.textContent = "Borrar";
-      delBtn.className = "danger";
-      delBtn.onclick = async () => {
-        if (!confirm("¿Seguro que querés borrar este registro?")) return;
-        try {
-          await client.remove(item.id);
-          renderTab();
-        } catch (err) {
-          showError(err.message);
-        }
-      };
-      td.appendChild(delBtn);
+        const delBtn = document.createElement("button");
+        delBtn.type = "button";
+        delBtn.textContent = "Borrar";
+        delBtn.className = "danger";
+        delBtn.onclick = async () => {
+          if (!confirm("¿Seguro que deseas eliminar esta ficha de consentimiento?")) return;
+          try {
+            await client.remove(item.id);
+            renderTab();
+          } catch (err) {
+            showError(err.message);
+          }
+        };
+        td.appendChild(delBtn);
+      } else {
+        const editBtn = document.createElement("button");
+        editBtn.type = "button";
+        editBtn.textContent = "Editar";
+        editBtn.onclick = () => renderForm(document.getElementById("content"), currentTab, config, client, item);
+        td.appendChild(editBtn);
+
+        const delBtn = document.createElement("button");
+        delBtn.type = "button";
+        delBtn.textContent = "Borrar";
+        delBtn.className = "danger";
+        delBtn.onclick = async () => {
+          if (!confirm("¿Seguro que querés borrar este registro?")) return;
+          try {
+            await client.remove(item.id);
+            renderTab();
+          } catch (err) {
+            showError(err.message);
+          }
+        };
+        td.appendChild(delBtn);
+      }
 
       tr.appendChild(td);
     }
@@ -1083,6 +1205,94 @@ async function renderSecurity(content) {
     document.getElementById("2fa-loading").textContent = "❌ Error: " + err.message;
   }
 }
+
+// ---------------- Visor de Ficha de Consentimiento ----------------
+
+window.viewConsentModal = async function (id) {
+  if (!id) return;
+  try {
+    const res = await fetch(`/api/consents/${id}`, {
+      headers: buildHeaders(false),
+      credentials: "include"
+    });
+    if (!res.ok) throw new Error("No se pudo cargar la ficha de consentimiento.");
+    const c = await res.json();
+
+    let modal = document.getElementById("consent-viewer-modal");
+    if (!modal) {
+      modal = document.createElement("div");
+      modal.id = "consent-viewer-modal";
+      modal.style.position = "fixed";
+      modal.style.inset = "0";
+      modal.style.background = "rgba(0,0,0,0.85)";
+      modal.style.zIndex = "10000";
+      modal.style.display = "flex";
+      modal.style.alignItems = "center";
+      modal.style.justifyContent = "center";
+      modal.style.padding = "15px";
+      modal.style.overflowY = "auto";
+      document.body.appendChild(modal);
+    }
+
+    modal.innerHTML = `
+      <div id="printable-consent-area" style="background:#141414; border:1px solid #333; border-radius:14px; max-width:680px; width:100%; max-height:92vh; overflow-y:auto; padding:2.2rem; position:relative; box-shadow:0 12px 45px rgba(0,0,0,0.85); color:#e0e0e0; font-family:'Montserrat', sans-serif;">
+        <button id="close-modal-x" type="button" style="position:absolute; top:16px; right:20px; background:none; border:none; color:#888; font-size:1.5rem; cursor:pointer;" title="Cerrar">✕</button>
+        
+        <div style="text-align:center; border-bottom:2px solid #00e676; padding-bottom:1.1rem; margin-bottom:1.3rem;">
+          <img src="images/franki-logo-transparent.png" alt="Franki" style="height:46px; margin-bottom:0.4rem;" />
+          <h2 style="color:#ffffff; margin:0; font-size:1.35rem; text-transform:uppercase; letter-spacing:0.5px;">Ficha Oficial de Consentimiento Informado</h2>
+          <p style="color:#00e676; font-size:0.82rem; margin:6px 0 0 0; font-weight:600;">Franki Tattoo Studio • Ibarra, Ecuador • Registro Oficial #F-${c.id}</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.9rem; font-size:0.88rem; background:#1b1b1b; padding:1.2rem; border-radius:10px; margin-bottom:1.2rem; border:1px solid #282828;">
+          <div><strong style="color:#888;">Cliente:</strong> <br><span style="color:#fff; font-weight:700; font-size:0.95rem;">${c.clientName}</span></div>
+          <div><strong style="color:#888;">Cédula / Pasaporte:</strong> <br><span style="color:#fff; font-weight:600;">${c.identificationNumber}</span></div>
+          <div><strong style="color:#888;">Teléfono / WhatsApp:</strong> <br><span style="color:#fff;">${c.phone}</span></div>
+          <div><strong style="color:#888;">Edad:</strong> <br><span style="color:#fff;">${c.age} años (Mayor de edad)</span></div>
+          <div><strong style="color:#888;">Procedimiento:</strong> <br><span style="color:#00e676; font-weight:700;">${c.procedureType}</span></div>
+          <div><strong style="color:#888;">Zona anatómica:</strong> <br><span style="color:#fff;">${c.bodyArea}</span></div>
+          <div style="grid-column:1 / -1; border-top:1px solid #282828; padding-top:0.6rem;">
+            <strong style="color:#888;">Fecha y Hora de Firma Digital:</strong> <span style="color:#fff; font-weight:600;">${c.signedAtFormatted}</span>
+            ${c.appointmentId ? `<span style="margin-left:12px; background:rgba(0,230,118,0.15); color:#00e676; padding:2px 8px; border-radius:4px; font-size:0.8rem;">Cita Vinculada #${c.appointmentId}</span>` : ''}
+          </div>
+        </div>
+
+        <div style="font-size:0.8rem; color:#ccc; line-height:1.55; background:#181818; padding:1.1rem; border-radius:8px; margin-bottom:1.3rem; border-left:4px solid #00e676;">
+          <h4 style="color:#00e676; margin:0 0 0.5rem 0; font-size:0.88rem;">Declaración Sanitaria y Consentimiento Legal:</h4>
+          <p style="margin:0 0 5px 0;">✅ <strong>Mayoría de edad:</strong> Declara tener 18 años o más y acudir por voluntad propia.</p>
+          <p style="margin:0 0 5px 0;">✅ <strong>Sustancias:</strong> Declara no estar bajo influencia de alcohol, drogas ni anticoagulantes.</p>
+          <p style="margin:0 0 5px 0;">✅ <strong>Condición Médica:</strong> Declara no padecer hemofilia, cicatrización con queloides severos ni cardiopatías graves.</p>
+          <p style="margin:0 0 5px 0;">✅ <strong>Embarazo / Lactancia:</strong> Declara no encontrarse en estado de gestación ni en lactancia.</p>
+          <p style="margin:0;">✅ <strong>Bioseguridad:</strong> Certifica que comprobó el uso de material 100% estéril y descartable, comprometiéndose a cumplir el protocolo de cuidados posteriores.</p>
+        </div>
+
+        <div style="text-align:center; background:#0d0d0d; border:2px dashed #333; border-radius:10px; padding:1.2rem; margin-bottom:1.5rem;">
+          <div style="color:#888; font-size:0.75rem; margin-bottom:0.6rem; text-transform:uppercase; letter-spacing:0.8px; font-weight:600;">Firma Digital Estampada por el Cliente en Pantalla:</div>
+          <img src="${c.signatureData}" alt="Firma Digital" style="max-height:115px; max-width:100%; background:#ffffff; padding:8px; border-radius:8px; box-shadow:0 4px 14px rgba(0,0,0,0.5);" />
+        </div>
+
+        <div id="modal-action-buttons" style="display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; border-top:1px solid #282828; padding-top:1.1rem;">
+          <button type="button" id="btn-print-consent" style="background:#222; color:#fff; border:1px solid #444; padding:0.65rem 1.3rem; border-radius:8px; cursor:pointer; font-weight:600; display:flex; align-items:center; gap:6px;">
+            🖨️ Imprimir / Guardar en PDF
+          </button>
+          <button type="button" id="btn-close-consent" style="background:#00e676; color:#000; border:none; padding:0.65rem 1.5rem; border-radius:8px; cursor:pointer; font-weight:700;">
+            Cerrar Visor
+          </button>
+        </div>
+      </div>
+    `;
+
+    document.getElementById("close-modal-x").onclick = () => modal.style.display = "none";
+    document.getElementById("btn-close-consent").onclick = () => modal.style.display = "none";
+    document.getElementById("btn-print-consent").onclick = () => {
+      window.print();
+    };
+
+    modal.style.display = "flex";
+  } catch (err) {
+    alert(err.message || "Error al abrir la ficha de consentimiento.");
+  }
+};
 
 // ---------------- Init ----------------
 

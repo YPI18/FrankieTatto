@@ -17,6 +17,7 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
     public DbSet<Order> Orders => Set<Order>();
     public DbSet<OrderItem> OrderItems => Set<OrderItem>();
     public DbSet<PortfolioItem> PortfolioItems => Set<PortfolioItem>();
+    public DbSet<ConsentForm> ConsentForms => Set<ConsentForm>();
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -79,5 +80,17 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
             .WithMany(p => p.OrderItems)
             .HasForeignKey(oi => oi.ProductId)
             .OnDelete(DeleteBehavior.Restrict);
+
+        builder.Entity<ConsentForm>()
+            .HasOne(c => c.Customer)
+            .WithMany(cust => cust.ConsentForms)
+            .HasForeignKey(c => c.CustomerId)
+            .OnDelete(DeleteBehavior.SetNull);
+
+        builder.Entity<ConsentForm>()
+            .HasOne(c => c.Appointment)
+            .WithOne(a => a.ConsentForm)
+            .HasForeignKey<ConsentForm>(c => c.AppointmentId)
+            .OnDelete(DeleteBehavior.SetNull);
     }
 }

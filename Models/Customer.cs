@@ -13,4 +13,5 @@ public class Customer
 
     public ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
     public ICollection<Order> Orders { get; set; } = new List<Order>();
+    public ICollection<ConsentForm> ConsentForms { get; set; } = new List<ConsentForm>();
 }

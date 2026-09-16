@@ -15,4 +15,7 @@ public class Appointment
 
     public int? EmployeeId { get; set; }
     public Employee? Employee { get; set; }
+
+    public int? ConsentFormId { get; set; }
+    public ConsentForm? ConsentForm { get; set; }
 }
