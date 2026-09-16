@@ -109,8 +109,17 @@ public static class DataSeeder
                 new PortfolioItem { Title = "Piercing Tragus & Hélix", ImageUrl = "images/piercing-tragus-real.jpg", Category = ServiceType.Piercing },
                 new PortfolioItem { Title = "Piercing Labret Labio", ImageUrl = "images/piercing-labret-real.jpg", Category = ServiceType.Piercing },
 
-                // Smokeshop Real (24 y 25)
+                // Smokeshop Real
                 new PortfolioItem { Title = "Pipas de Cristal Pyrex Artesanales", ImageUrl = "images/smokeshop-pipas-cristal.jpg", Category = ServiceType.SmokeShop },
+                new PortfolioItem { Title = "Blunts Double Platinum Sabores", ImageUrl = "images/blunt-wrap-platinum-sabores.jpg", Category = ServiceType.SmokeShop },
+                new PortfolioItem { Title = "Papelillos Moon Saborizados", ImageUrl = "images/papelillos-moon-saborizados.png", Category = ServiceType.SmokeShop },
+                new PortfolioItem { Title = "Papel Celulosa Hornet Transparente", ImageUrl = "images/papel-celulosa-hornet.jpg", Category = ServiceType.SmokeShop },
+                new PortfolioItem { Title = "Pipas Artesanales de Tagua a Color", ImageUrl = "images/pipas-artesanales-tagua-color.jpg", Category = ServiceType.SmokeShop },
+                new PortfolioItem { Title = "Pipas de Tagua Natural Marfil Vegetal", ImageUrl = "images/pipas-tagua-marfil-vegetal.jpg", Category = ServiceType.SmokeShop },
+                new PortfolioItem { Title = "Pipas Artesanales Cerámica y Bambú", ImageUrl = "images/pipas-ceramica-bambu-color.jpg", Category = ServiceType.SmokeShop },
+                new PortfolioItem { Title = "Papelillos GIZEH Pure Extra Fine", ImageUrl = "images/papelillos-gizeh-pure.webp", Category = ServiceType.SmokeShop },
+                new PortfolioItem { Title = "Papeles RAW, OCB & Juicy Jay's", ImageUrl = "images/papeles-raw-juicy-bambu.jpg", Category = ServiceType.SmokeShop },
+                new PortfolioItem { Title = "Smoking Slim & Colección $100", ImageUrl = "images/papelillos-smoking-billete-coleccion.jpg", Category = ServiceType.SmokeShop },
                 new PortfolioItem { Title = "Blunts y Papelillos de Sabores", ImageUrl = "images/smokeshop-blunts-papelillos.jpg", Category = ServiceType.SmokeShop }
             };
 

@@ -104,45 +104,276 @@
 
     <!-- Catálogo de Accesorios Smokeshop y Vapes Reales -->
     <section>
+        <div class="pricing-notice-banner" style="max-width: 900px; margin: 0 auto 2.5rem auto; background: rgba(0, 230, 118, 0.08); border: 1px solid rgba(0, 230, 118, 0.3); border-radius: 12px; padding: 1rem 1.5rem; display: flex; align-items: center; gap: 14px;">
+            <span style="font-size: 1.8rem;">🌿</span>
+            <div style="color: #ddd; font-size: 0.95rem; line-height: 1.5;">
+                <strong style="color: #00e676;">Stock en Local y Envíos:</strong> Todos nuestros artículos de liar, pipas artesanales de tagua y papelillos están disponibles para retiro directo en el estudio en Ibarra o envíos seguros a nivel nacional.
+            </div>
+        </div>
+
         <h2 class="section-title">Artículos de Smokeshop y Vaporizadores</h2>
-        <div class="gallery">
-            <div class="item-card">
-                <img src="images/smokeshop-pipas-cristal.jpg" alt="Pipas de Cristal Artesanales Pyrex" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
-                <div class="item-info" style="padding: 1.25rem; text-align: center;">
-                    <h3 style="margin-bottom:0.4rem; font-size:1.15rem;">Pipas de Cristal Pyrex</h3>
-                    <p style="color:#aaa; font-size:0.88rem; margin:0;">Vidrio soplado grueso resistente al calor, diseños en espiral y colores psicodélicos.</p>
+
+        <!-- Barra de Filtros por Categoría -->
+        <div class="filter-bar" id="smokes-filter-bar">
+            <button type="button" class="filter-chip is-active" data-filter="all">✨ Todos los Artículos</button>
+            <button type="button" class="filter-chip" data-filter="papeleria">🚬 Papelería & Blunts</button>
+            <button type="button" class="filter-chip" data-filter="pipas">🏺 Pipas Artesanales & Cristal</button>
+            <button type="button" class="filter-chip" data-filter="vapes">💨 Vaporizadores & Sales</button>
+        </div>
+
+        <div class="gallery" id="smokes-gallery">
+            <!-- 1. Blunts Double Platinum Sabores x2 -->
+            <div class="item-card smokes-card" data-category="papeleria">
+                <div style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.8); backdrop-filter:blur(6px); border:1px solid rgba(0,230,118,0.5); border-radius:20px; padding:4px 10px; font-size:0.75rem; font-weight:700; color:#00e676; z-index:2;">
+                    🔥 Sabores Variados
+                </div>
+                <img src="images/smokes/blunt-wrap-platinum-sabores.jpg" alt="Blunts Double Platinum Sabores - Franki Tattoo" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="margin-bottom:0.4rem; font-size:1.15rem; color:#fff;">Blunts Double Platinum x2</h3>
+                        <p style="color:#aaa; font-size:0.88rem; margin:0; line-height:1.4;">Wraps aromáticos importados con empaque hermético sellado (uva, mango, vainilla, berries) de combustión lenta y pareja.</p>
+                    </div>
+                    <a href="https://wa.me/593991548585?text=Hola%20Franki,%20me%20interesa%20comprar:%20Blunts%20Double%20Platinum%20x2" target="_blank" rel="noopener" class="btn" style="background:#25D366; color:#000; font-weight:700; font-size:0.85rem; padding:0.6rem 1rem; border-radius:8px; margin-top:1rem; text-decoration:none; display:inline-block;">
+                        💬 Consultar por WhatsApp
+                    </a>
                 </div>
             </div>
 
-            <div class="item-card">
-                <img src="images/smokeshop-blunts-papelillos.jpg" alt="Blunts y Papelillos de Sabores" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
-                <div class="item-info" style="padding: 1.25rem; text-align: center;">
-                    <h3 style="margin-bottom:0.4rem; font-size:1.15rem;">Blunts & Papelillos</h3>
-                    <p style="color:#aaa; font-size:0.88rem; margin:0;">Wraps saborizados importados, papelillos orgánicos de combustión lenta y filtros.</p>
+            <!-- 2. Blunt Wrap Double Platinum Original -->
+            <div class="item-card smokes-card" data-category="papeleria">
+                <div style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.8); backdrop-filter:blur(6px); border:1px solid rgba(0,230,118,0.5); border-radius:20px; padding:4px 10px; font-size:0.75rem; font-weight:700; color:#00e676; z-index:2;">
+                    🍂 Hoja Prensada
+                </div>
+                <img src="images/smokes/blunt-wrap-double-platinum.webp" alt="Blunt Wrap Double Platinum Original - Franki Tattoo" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="margin-bottom:0.4rem; font-size:1.15rem; color:#fff;">Blunt Wrap Platinum Original</h3>
+                        <p style="color:#aaa; font-size:0.88rem; margin:0; line-height:1.4;">Envoltura clásica de hoja de tabaco seleccionada. Aroma profundo, fácil enrolado y quemado uniforme.</p>
+                    </div>
+                    <a href="https://wa.me/593991548585?text=Hola%20Franki,%20me%20interesa%20comprar:%20Blunt%20Wrap%20Platinum%20Original" target="_blank" rel="noopener" class="btn" style="background:#25D366; color:#000; font-weight:700; font-size:0.85rem; padding:0.6rem 1rem; border-radius:8px; margin-top:1rem; text-decoration:none; display:inline-block;">
+                        💬 Consultar por WhatsApp
+                    </a>
                 </div>
             </div>
 
-            <div class="item-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiDciX31PVScN-QeskGLZXm6WnjiYXIr1Z0SCu3yWfAQdAGzX5UKfVW7RH&s=10" alt="Pods Recargables Vaporesso" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
-                <div class="item-info" style="padding: 1.25rem; text-align: center;">
-                    <h3 style="margin-bottom:0.4rem; font-size:1.15rem;">Pods Recargables</h3>
-                    <p style="color:#aaa; font-size:0.88rem; margin:0;">Sistemas abiertos de cartucho recargable, batería de larga duración y flujo de aire regulable.</p>
+            <!-- 3. Papelillos Moon Saborizados -->
+            <div class="item-card smokes-card" data-category="papeleria">
+                <div style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.8); backdrop-filter:blur(6px); border:1px solid rgba(0,230,118,0.5); border-radius:20px; padding:4px 10px; font-size:0.75rem; font-weight:700; color:#00e676; z-index:2;">
+                    🍓 Esencias Frutales
+                </div>
+                <img src="images/smokes/papelillos-moon-saborizados.png" alt="Papelillos Moon Saborizados - Franki Tattoo" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="margin-bottom:0.4rem; font-size:1.15rem; color:#fff;">Papelillos Moon Sabores</h3>
+                        <p style="color:#aaa; font-size:0.88rem; margin:0; line-height:1.4;">Sedas ultrafinas aromatizadas con esencias de frutos tropicales, maracuyá, fresa y arándano. Pega con goma 100% natural.</p>
+                    </div>
+                    <a href="https://wa.me/593991548585?text=Hola%20Franki,%20me%20interesa%20comprar:%20Papelillos%20Moon%20Saborizados" target="_blank" rel="noopener" class="btn" style="background:#25D366; color:#000; font-weight:700; font-size:0.85rem; padding:0.6rem 1rem; border-radius:8px; margin-top:1rem; text-decoration:none; display:inline-block;">
+                        💬 Consultar por WhatsApp
+                    </a>
                 </div>
             </div>
 
-            <div class="item-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrhcsDKaywJYaMCfjZsO-nQu2aRDxQOVfjc-9KAyq3_l_S-1Rm3DyHwUYk&s=10" alt="Vapes Desechables 10k Puffs" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
-                <div class="item-info" style="padding: 1.25rem; text-align: center;">
-                    <h3 style="margin-bottom:0.4rem; font-size:1.15rem;">Desechables 10k+ Puffs</h3>
-                    <p style="color:#aaa; font-size:0.88rem; margin:0;">Variedad de sabores frutales y mentolados intensos con indicador de líquido y batería.</p>
+            <!-- 4. Papel Celulosa Transparente Hornet -->
+            <div class="item-card smokes-card" data-category="papeleria">
+                <div style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.8); backdrop-filter:blur(6px); border:1px solid rgba(0,230,118,0.5); border-radius:20px; padding:4px 10px; font-size:0.75rem; font-weight:700; color:#00e676; z-index:2;">
+                    🌱 100% Celulosa Vegetal
+                </div>
+                <img src="images/smokes/papel-celulosa-hornet.jpg" alt="Papel Celulosa Transparente Hornet - Franki Tattoo" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="margin-bottom:0.4rem; font-size:1.15rem; color:#fff;">Celulosa Hornet Transparente</h3>
+                        <p style="color:#aaa; font-size:0.88rem; margin:0; line-height:1.4;">Papel transparente 100% vegetal biodegradable. No altera el sabor de tus flores, sin químicos y con combustión extra lenta.</p>
+                    </div>
+                    <a href="https://wa.me/593991548585?text=Hola%20Franki,%20me%20interesa%20comprar:%20Papel%20Celulosa%20Hornet" target="_blank" rel="noopener" class="btn" style="background:#25D366; color:#000; font-weight:700; font-size:0.85rem; padding:0.6rem 1rem; border-radius:8px; margin-top:1rem; text-decoration:none; display:inline-block;">
+                        💬 Consultar por WhatsApp
+                    </a>
                 </div>
             </div>
 
-            <div class="item-card">
-                <img src="https://www.tigovape.cl/wp-content/uploads/2025/08/Just-juice-Nic-Salt-Banner-e1754429124315.webp" alt="Líquidos y Sales de Nicotina" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
-                <div class="item-info" style="padding: 1.25rem; text-align: center;">
-                    <h3 style="margin-bottom:0.4rem; font-size:1.15rem;">Sales & Líquidos Premium</h3>
-                    <p style="color:#aaa; font-size:0.88rem; margin:0;">E-liquids originales en graduaciones de 20mg, 35mg y 50mg con sellos de garantía.</p>
+            <!-- 5. Pipas de Cristal Pyrex Artesanales -->
+            <div class="item-card smokes-card" data-category="pipas">
+                <div style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.8); backdrop-filter:blur(6px); border:1px solid rgba(0,230,118,0.5); border-radius:20px; padding:4px 10px; font-size:0.75rem; font-weight:700; color:#00e676; z-index:2;">
+                    💎 Vidrio Pyrex Soplado
+                </div>
+                <img src="images/smokeshop-pipas-cristal.jpg" alt="Pipas de Cristal Artesanales Pyrex - Franki Tattoo" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="margin-bottom:0.4rem; font-size:1.15rem; color:#fff;">Pipas de Cristal Pyrex</h3>
+                        <p style="color:#aaa; font-size:0.88rem; margin:0; line-height:1.4;">Vidrio soplado grueso resistente a choques térmicos, acabados artesanales en espiral con colores psicodélicos.</p>
+                    </div>
+                    <a href="https://wa.me/593991548585?text=Hola%20Franki,%20me%20interesa%20comprar:%20Pipas%20de%20Cristal%20Pyrex" target="_blank" rel="noopener" class="btn" style="background:#25D366; color:#000; font-weight:700; font-size:0.85rem; padding:0.6rem 1rem; border-radius:8px; margin-top:1rem; text-decoration:none; display:inline-block;">
+                        💬 Consultar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- 6. Pipas Artesanales de Tagua a Color -->
+            <div class="item-card smokes-card" data-category="pipas">
+                <div style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.8); backdrop-filter:blur(6px); border:1px solid rgba(0,230,118,0.5); border-radius:20px; padding:4px 10px; font-size:0.75rem; font-weight:700; color:#00e676; z-index:2;">
+                    ✨ Tagua & Madera
+                </div>
+                <img src="images/smokes/pipas-artesanales-tagua-color.jpg" alt="Pipas Artesanales de Tagua a Color - Franki Tattoo" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="margin-bottom:0.4rem; font-size:1.15rem; color:#fff;">Pipas de Tagua Multicolor</h3>
+                        <p style="color:#aaa; font-size:0.88rem; margin:0; line-height:1.4;">Piezas únicas talladas a mano en semilla de tagua con aplicaciones en madera noble y acabados en colores vivos.</p>
+                    </div>
+                    <a href="https://wa.me/593991548585?text=Hola%20Franki,%20me%20interesa%20comprar:%20Pipas%20de%20Tagua%20Multicolor" target="_blank" rel="noopener" class="btn" style="background:#25D366; color:#000; font-weight:700; font-size:0.85rem; padding:0.6rem 1rem; border-radius:8px; margin-top:1rem; text-decoration:none; display:inline-block;">
+                        💬 Consultar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- 7. Pipas de Tagua Natural (Marfil Vegetal) -->
+            <div class="item-card smokes-card" data-category="pipas">
+                <div style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.8); backdrop-filter:blur(6px); border:1px solid rgba(0,230,118,0.5); border-radius:20px; padding:4px 10px; font-size:0.75rem; font-weight:700; color:#00e676; z-index:2;">
+                    🌿 Marfil Vegetal
+                </div>
+                <img src="images/smokes/pipas-tagua-marfil-vegetal.jpg" alt="Pipas de Tagua Natural Marfil Vegetal - Franki Tattoo" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="margin-bottom:0.4rem; font-size:1.15rem; color:#fff;">Pipas Tagua Marfil Vegetal</h3>
+                        <p style="color:#aaa; font-size:0.88rem; margin:0; line-height:1.4;">Semilla de tagua natural ecuatoriana pulida a mano. Material 100% ecológico, duradero y de calada suave y fresca.</p>
+                    </div>
+                    <a href="https://wa.me/593991548585?text=Hola%20Franki,%20me%20interesa%20comprar:%20Pipas%20Tagua%20Marfil%20Vegetal" target="_blank" rel="noopener" class="btn" style="background:#25D366; color:#000; font-weight:700; font-size:0.85rem; padding:0.6rem 1rem; border-radius:8px; margin-top:1rem; text-decoration:none; display:inline-block;">
+                        💬 Consultar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- 8. Pipas Artesanales Cerámica y Bambú -->
+            <div class="item-card smokes-card" data-category="pipas">
+                <div style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.8); backdrop-filter:blur(6px); border:1px solid rgba(0,230,118,0.5); border-radius:20px; padding:4px 10px; font-size:0.75rem; font-weight:700; color:#00e676; z-index:2;">
+                    🎨 Cerámica & Bambú
+                </div>
+                <img src="images/smokes/pipas-ceramica-bambu-color.jpg" alt="Pipas Artesanales Cerámica y Bambú - Franki Tattoo" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="margin-bottom:0.4rem; font-size:1.15rem; color:#fff;">Pipas Cerámica & Bambú Splash</h3>
+                        <p style="color:#aaa; font-size:0.88rem; margin:0; line-height:1.4;">Cazoletas de cerámica esmaltadas con diseño salpicado artesanal en vivos colores y boquilla de bambú natural ligero.</p>
+                    </div>
+                    <a href="https://wa.me/593991548585?text=Hola%20Franki,%20me%20interesa%20comprar:%20Pipas%20Ceramica%20y%20Bambu" target="_blank" rel="noopener" class="btn" style="background:#25D366; color:#000; font-weight:700; font-size:0.85rem; padding:0.6rem 1rem; border-radius:8px; margin-top:1rem; text-decoration:none; display:inline-block;">
+                        💬 Consultar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- 9. Papelillos GIZEH Pure Extra Fine -->
+            <div class="item-card smokes-card" data-category="papeleria">
+                <div style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.8); backdrop-filter:blur(6px); border:1px solid rgba(0,230,118,0.5); border-radius:20px; padding:4px 10px; font-size:0.75rem; font-weight:700; color:#00e676; z-index:2;">
+                    🌾 Cáñamo Orgánico
+                </div>
+                <img src="images/smokes/papelillos-gizeh-pure.webp" alt="Papelillos GIZEH Pure Extra Fine - Franki Tattoo" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="margin-bottom:0.4rem; font-size:1.15rem; color:#fff;">GIZEH Pure Extra Fine</h3>
+                        <p style="color:#aaa; font-size:0.88rem; margin:0; line-height:1.4;">Papel de cáñamo natural sin blanquear (unbleached) con certificación eco-friendly, ultra delgado y cierre magnético.</p>
+                    </div>
+                    <a href="https://wa.me/593991548585?text=Hola%20Franki,%20me%20interesa%20comprar:%20Papelillos%20GIZEH%20Pure" target="_blank" rel="noopener" class="btn" style="background:#25D366; color:#000; font-weight:700; font-size:0.85rem; padding:0.6rem 1rem; border-radius:8px; margin-top:1rem; text-decoration:none; display:inline-block;">
+                        💬 Consultar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- 10. Colección RAW, OCB & Juicy Jay's -->
+            <div class="item-card smokes-card" data-category="papeleria">
+                <div style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.8); backdrop-filter:blur(6px); border:1px solid rgba(0,230,118,0.5); border-radius:20px; padding:4px 10px; font-size:0.75rem; font-weight:700; color:#00e676; z-index:2;">
+                    ⭐ Marcas Legendarias
+                </div>
+                <img src="images/smokes/papeles-raw-juicy-bambu.jpg" alt="Colección RAW OCB y Juicy Jays - Franki Tattoo" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="margin-bottom:0.4rem; font-size:1.15rem; color:#fff;">Sedas RAW, OCB & Juicy Jay's</h3>
+                        <p style="color:#aaa; font-size:0.88rem; margin:0; line-height:1.4;">Las marcas más buscadas: RAW Classic & Organic Hemp, OCB sin blanquear, Juicy Jay's de sabores y sedas Bambú clásicas.</p>
+                    </div>
+                    <a href="https://wa.me/593991548585?text=Hola%20Franki,%20me%20interesa%20comprar:%20Papeles%20RAW%20y%20OCB" target="_blank" rel="noopener" class="btn" style="background:#25D366; color:#000; font-weight:700; font-size:0.85rem; padding:0.6rem 1rem; border-radius:8px; margin-top:1rem; text-decoration:none; display:inline-block;">
+                        💬 Consultar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- 11. Smoking Slim & Colección $100 Super Size -->
+            <div class="item-card smokes-card" data-category="papeleria">
+                <div style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.8); backdrop-filter:blur(6px); border:1px solid rgba(0,230,118,0.5); border-radius:20px; padding:4px 10px; font-size:0.75rem; font-weight:700; color:#00e676; z-index:2;">
+                    💵 King Size & Diseños
+                </div>
+                <img src="images/smokes/papelillos-smoking-billete-coleccion.jpg" alt="Papelillos Smoking Slim y Billete 100 - Franki Tattoo" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="margin-bottom:0.4rem; font-size:1.15rem; color:#fff;">Smoking Slim & Billete $100</h3>
+                        <p style="color:#aaa; font-size:0.88rem; margin:0; line-height:1.4;">Papel de fumar extra largo King Size Slim Smoking y papeles coleccionables de $100 con tintas vegetales comestibles.</p>
+                    </div>
+                    <a href="https://wa.me/593991548585?text=Hola%20Franki,%20me%20interesa%20comprar:%20Smoking%20Slim%20y%20Billete%20100" target="_blank" rel="noopener" class="btn" style="background:#25D366; color:#000; font-weight:700; font-size:0.85rem; padding:0.6rem 1rem; border-radius:8px; margin-top:1rem; text-decoration:none; display:inline-block;">
+                        💬 Consultar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- 12. Blunts y Papelillos de Sabores -->
+            <div class="item-card smokes-card" data-category="papeleria">
+                <div style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.8); backdrop-filter:blur(6px); border:1px solid rgba(0,230,118,0.5); border-radius:20px; padding:4px 10px; font-size:0.75rem; font-weight:700; color:#00e676; z-index:2;">
+                    📦 Combos Surtidos
+                </div>
+                <img src="images/smokeshop-blunts-papelillos.jpg" alt="Blunts y Papelillos de Sabores Surtidos - Franki Tattoo" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="margin-bottom:0.4rem; font-size:1.15rem; color:#fff;">Blunts & Papelillos Surtidos</h3>
+                        <p style="color:#aaa; font-size:0.88rem; margin:0; line-height:1.4;">Wraps saborizados importados, papelillos orgánicos de combustión lenta, boquillas y filtros de cartón.</p>
+                    </div>
+                    <a href="https://wa.me/593991548585?text=Hola%20Franki,%20me%20interesa%20comprar:%20Blunts%20y%20Papelillos%20Surtidos" target="_blank" rel="noopener" class="btn" style="background:#25D366; color:#000; font-weight:700; font-size:0.85rem; padding:0.6rem 1rem; border-radius:8px; margin-top:1rem; text-decoration:none; display:inline-block;">
+                        💬 Consultar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- 13. Pods Recargables -->
+            <div class="item-card smokes-card" data-category="vapes">
+                <div style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.8); backdrop-filter:blur(6px); border:1px solid rgba(0,230,118,0.5); border-radius:20px; padding:4px 10px; font-size:0.75rem; font-weight:700; color:#00e676; z-index:2;">
+                    ⚡ Sistema Recargable
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiDciX31PVScN-QeskGLZXm6WnjiYXIr1Z0SCu3yWfAQdAGzX5UKfVW7RH&s=10" alt="Pods Recargables Vaporesso - Franki Tattoo" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="margin-bottom:0.4rem; font-size:1.15rem; color:#fff;">Pods Recargables</h3>
+                        <p style="color:#aaa; font-size:0.88rem; margin:0; line-height:1.4;">Sistemas abiertos de cartucho recargable, batería de larga duración Type-C y flujo de aire regulable.</p>
+                    </div>
+                    <a href="https://wa.me/593991548585?text=Hola%20Franki,%20me%20interesa%20comprar:%20Pods%20Recargables" target="_blank" rel="noopener" class="btn" style="background:#25D366; color:#000; font-weight:700; font-size:0.85rem; padding:0.6rem 1rem; border-radius:8px; margin-top:1rem; text-decoration:none; display:inline-block;">
+                        💬 Consultar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- 14. Vapes Desechables 10k Puffs -->
+            <div class="item-card smokes-card" data-category="vapes">
+                <div style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.8); backdrop-filter:blur(6px); border:1px solid rgba(0,230,118,0.5); border-radius:20px; padding:4px 10px; font-size:0.75rem; font-weight:700; color:#00e676; z-index:2;">
+                    💨 10.000+ Puffs
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrhcsDKaywJYaMCfjZsO-nQu2aRDxQOVfjc-9KAyq3_l_S-1Rm3DyHwUYk&s=10" alt="Vapes Desechables 10k Puffs - Franki Tattoo" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="margin-bottom:0.4rem; font-size:1.15rem; color:#fff;">Desechables 10k+ Puffs</h3>
+                        <p style="color:#aaa; font-size:0.88rem; margin:0; line-height:1.4;">Variedad de sabores frutales y mentolados intensos con indicador digital de líquido y batería.</p>
+                    </div>
+                    <a href="https://wa.me/593991548585?text=Hola%20Franki,%20me%20interesa%20comprar:%20Desechables%2010k%20Puffs" target="_blank" rel="noopener" class="btn" style="background:#25D366; color:#000; font-weight:700; font-size:0.85rem; padding:0.6rem 1rem; border-radius:8px; margin-top:1rem; text-decoration:none; display:inline-block;">
+                        💬 Consultar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- 15. Sales & Líquidos Premium -->
+            <div class="item-card smokes-card" data-category="vapes">
+                <div style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.8); backdrop-filter:blur(6px); border:1px solid rgba(0,230,118,0.5); border-radius:20px; padding:4px 10px; font-size:0.75rem; font-weight:700; color:#00e676; z-index:2;">
+                    🧪 Nic Salts & E-Liquids
+                </div>
+                <img src="https://www.tigovape.cl/wp-content/uploads/2025/08/Just-juice-Nic-Salt-Banner-e1754429124315.webp" alt="Líquidos y Sales de Nicotina - Franki Tattoo" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px 14px 0 0;" loading="lazy" />
+                <div class="item-info" style="padding: 1.25rem; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="margin-bottom:0.4rem; font-size:1.15rem; color:#fff;">Sales & Líquidos Premium</h3>
+                        <p style="color:#aaa; font-size:0.88rem; margin:0; line-height:1.4;">E-liquids originales en graduaciones de 20mg, 35mg y 50mg con sellos de garantía antifalsificación.</p>
+                    </div>
+                    <a href="https://wa.me/593991548585?text=Hola%20Franki,%20me%20interesa%20comprar:%20Sales%20de%20Nicotina" target="_blank" rel="noopener" class="btn" style="background:#25D366; color:#000; font-weight:700; font-size:0.85rem; padding:0.6rem 1rem; border-radius:8px; margin-top:1rem; text-decoration:none; display:inline-block;">
+                        💬 Consultar por WhatsApp
+                    </a>
                 </div>
             </div>
         </div>
@@ -203,6 +434,32 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             Store.renderStore("SmokeShop", "tienda-products-container");
+
+            // Filtro interactivo de Smokeshop
+            const filterChips = document.querySelectorAll("#smokes-filter-bar .filter-chip");
+            const cards = document.querySelectorAll("#smokes-gallery .smokes-card");
+
+            filterChips.forEach(chip => {
+                chip.addEventListener("click", () => {
+                    filterChips.forEach(c => c.classList.remove("is-active"));
+                    chip.classList.add("is-active");
+
+                    const filter = chip.getAttribute("data-filter");
+                    cards.forEach(card => {
+                        const cat = card.getAttribute("data-category");
+                        if (filter === "all" || cat === filter) {
+                            card.style.display = "flex";
+                            card.style.opacity = "0";
+                            setTimeout(() => {
+                                card.style.transition = "opacity 0.3s ease";
+                                card.style.opacity = "1";
+                            }, 20);
+                        } else {
+                            card.style.display = "none";
+                        }
+                    });
+                });
+            });
         });
     </script>
 </body>
