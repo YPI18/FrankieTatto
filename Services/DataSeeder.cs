@@ -58,12 +58,55 @@ public static class DataSeeder
 
         await context.SaveChangesAsync();
 
-        // 2. Sembrar y Sincronizar Portafolio Real con IDs limpios y ordenados (1 al 25)
+        // 2. Sembrar y Sincronizar Portafolio Real con IDs limpios y ordenados
+        var initialPortfolio = new List<PortfolioItem>
+        {
+            // Tatuajes Reales de Franki Tattoo (1 al 17)
+            new PortfolioItem { Title = "Dragon Ball • Shenlong", ImageUrl = "images/tattoo-shenlong-dragonball.jpg", Category = ServiceType.Tattoo },
+            new PortfolioItem { Title = "Manga León & Reloj", ImageUrl = "images/tattoo-manga-leon-reloj.jpg", Category = ServiceType.Tattoo },
+            new PortfolioItem { Title = "Rosas & Mariposa Espalda", ImageUrl = "images/tattoo-espalda-rosas-mariposa.jpg", Category = ServiceType.Tattoo },
+            new PortfolioItem { Title = "Flores Línea Fina & Botánico", ImageUrl = "images/tattoo-flores-antebrazo-fineline.jpg", Category = ServiceType.Tattoo },
+            new PortfolioItem { Title = "Spider-Man a Color", ImageUrl = "images/tattoo-spiderman-real.jpg", Category = ServiceType.Tattoo },
+            new PortfolioItem { Title = "Brazalete Medusa", ImageUrl = "images/tattoo-medusa-brazalete.jpg", Category = ServiceType.Tattoo },
+            new PortfolioItem { Title = "Dr. Plaga Sombras", ImageUrl = "images/tattoo-dr-plaga-hd.jpg", Category = ServiceType.Tattoo },
+            new PortfolioItem { Title = "Geometría Sagrada Esqueleto", ImageUrl = "images/tattoo-geometria-esqueleto-hd.jpg", Category = ServiceType.Tattoo },
+            new PortfolioItem { Title = "Lobo y Luna en Bosque", ImageUrl = "images/tattoo-lobo-luna-bosque.jpg", Category = ServiceType.Tattoo },
+            new PortfolioItem { Title = "One Piece • Nico Robin", ImageUrl = "images/tattoo-robin-onepiece.jpg", Category = ServiceType.Tattoo },
+            new PortfolioItem { Title = "Lettering Un Día a la Vez", ImageUrl = "images/tattoo-lettering-undia.jpg", Category = ServiceType.Tattoo },
+            new PortfolioItem { Title = "Serpientes Blackwork", ImageUrl = "images/tattoo-serpientes-antebrazo.jpg", Category = ServiceType.Tattoo },
+            new PortfolioItem { Title = "Ovni & Alien Espacio", ImageUrl = "images/tattoo-ovni-alien-tierra.jpg", Category = ServiceType.Tattoo },
+            new PortfolioItem { Title = "Calaveras en Corazón", ImageUrl = "images/tattoo-calaveras-corazon.jpg", Category = ServiceType.Tattoo },
+            new PortfolioItem { Title = "Sol & Luna en Pareja", ImageUrl = "images/tattoo-sol-luna-pareja.jpg", Category = ServiceType.Tattoo },
+            new PortfolioItem { Title = "Girasol en Hombro", ImageUrl = "images/tattoo-girasol-espalda.jpg", Category = ServiceType.Tattoo },
+            new PortfolioItem { Title = "Pocoyó Full Color", ImageUrl = "images/tattoo-pocoyo-color.jpg", Category = ServiceType.Tattoo },
+
+            // Perforaciones Reales de Estudio (18 al 23)
+            new PortfolioItem { Title = "Piercing de Ombligo Acero Quirúrgico", ImageUrl = "images/piercing-ombligo-real.jpg", Category = ServiceType.Piercing },
+            new PortfolioItem { Title = "Piercing Industrial Oreja", ImageUrl = "images/piercing-industrial-real.jpg", Category = ServiceType.Piercing },
+            new PortfolioItem { Title = "Piercing Nostril & Septum Nariz", ImageUrl = "images/piercing-nostril-real.jpg", Category = ServiceType.Piercing },
+            new PortfolioItem { Title = "Piercing de Ceja", ImageUrl = "images/piercing-ceja-real.jpg", Category = ServiceType.Piercing },
+            new PortfolioItem { Title = "Piercing Tragus & Hélix", ImageUrl = "images/piercing-tragus-real.jpg", Category = ServiceType.Piercing },
+            new PortfolioItem { Title = "Piercing Labret Labio", ImageUrl = "images/piercing-labret-real.jpg", Category = ServiceType.Piercing },
+
+            // Smokeshop Real (24 al 34)
+            new PortfolioItem { Title = "Pipas de Cristal Pyrex Artesanales", ImageUrl = "images/smokeshop-pipas-cristal.jpg", Category = ServiceType.SmokeShop },
+            new PortfolioItem { Title = "Blunts Double Platinum Sabores", ImageUrl = "images/blunt-wrap-platinum-sabores.jpg", Category = ServiceType.SmokeShop },
+            new PortfolioItem { Title = "Papelillos Moon Saborizados", ImageUrl = "images/papelillos-moon-saborizados.png", Category = ServiceType.SmokeShop },
+            new PortfolioItem { Title = "Papel Celulosa Hornet Transparente", ImageUrl = "images/papel-celulosa-hornet.jpg", Category = ServiceType.SmokeShop },
+            new PortfolioItem { Title = "Pipas Artesanales de Tagua a Color", ImageUrl = "images/pipas-artesanales-tagua-color.jpg", Category = ServiceType.SmokeShop },
+            new PortfolioItem { Title = "Pipas de Tagua Natural Marfil Vegetal", ImageUrl = "images/pipas-tagua-marfil-vegetal.jpg", Category = ServiceType.SmokeShop },
+            new PortfolioItem { Title = "Pipas Artesanales Cerámica y Bambú", ImageUrl = "images/pipas-ceramica-bambu-color.jpg", Category = ServiceType.SmokeShop },
+            new PortfolioItem { Title = "Papelillos GIZEH Pure Extra Fine", ImageUrl = "images/papelillos-gizeh-pure.webp", Category = ServiceType.SmokeShop },
+            new PortfolioItem { Title = "Papeles RAW, OCB & Juicy Jay's", ImageUrl = "images/papeles-raw-juicy-bambu.jpg", Category = ServiceType.SmokeShop },
+            new PortfolioItem { Title = "Smoking Slim & Colección $100", ImageUrl = "images/papelillos-smoking-billete-coleccion.jpg", Category = ServiceType.SmokeShop },
+            new PortfolioItem { Title = "Blunts y Papelillos de Sabores", ImageUrl = "images/smokeshop-blunts-papelillos.jpg", Category = ServiceType.SmokeShop }
+        };
+
         var countPortfolio = await context.PortfolioItems.CountAsync();
         var maxPortfolioId = await context.PortfolioItems.MaxAsync(p => (int?)p.Id) ?? 0;
 
-        // Si los IDs tienen saltos o no están ordenados del 1 al 25 correlativos:
-        if (countPortfolio != 25 || maxPortfolioId != 25)
+        // Si la cantidad de items no coincide con la lista esperada:
+        if (countPortfolio != initialPortfolio.Count || maxPortfolioId != initialPortfolio.Count)
         {
             try
             {
@@ -79,49 +122,6 @@ public static class DataSeeder
                 }
                 catch { }
             }
-
-            var initialPortfolio = new List<PortfolioItem>
-            {
-                // Tatuajes Reales de Franki Tattoo (1 al 17)
-                new PortfolioItem { Title = "Dragon Ball • Shenlong", ImageUrl = "images/tattoo-shenlong-dragonball.jpg", Category = ServiceType.Tattoo },
-                new PortfolioItem { Title = "Manga León & Reloj", ImageUrl = "images/tattoo-manga-leon-reloj.jpg", Category = ServiceType.Tattoo },
-                new PortfolioItem { Title = "Rosas & Mariposa Espalda", ImageUrl = "images/tattoo-espalda-rosas-mariposa.jpg", Category = ServiceType.Tattoo },
-                new PortfolioItem { Title = "Flores Línea Fina & Botánico", ImageUrl = "images/tattoo-flores-antebrazo-fineline.jpg", Category = ServiceType.Tattoo },
-                new PortfolioItem { Title = "Spider-Man a Color", ImageUrl = "images/tattoo-spiderman-real.jpg", Category = ServiceType.Tattoo },
-                new PortfolioItem { Title = "Brazalete Medusa", ImageUrl = "images/tattoo-medusa-brazalete.jpg", Category = ServiceType.Tattoo },
-                new PortfolioItem { Title = "Dr. Plaga Sombras", ImageUrl = "images/tattoo-dr-plaga-hd.jpg", Category = ServiceType.Tattoo },
-                new PortfolioItem { Title = "Geometría Sagrada Esqueleto", ImageUrl = "images/tattoo-geometria-esqueleto-hd.jpg", Category = ServiceType.Tattoo },
-                new PortfolioItem { Title = "Lobo y Luna en Bosque", ImageUrl = "images/tattoo-lobo-luna-bosque.jpg", Category = ServiceType.Tattoo },
-                new PortfolioItem { Title = "One Piece • Nico Robin", ImageUrl = "images/tattoo-robin-onepiece.jpg", Category = ServiceType.Tattoo },
-                new PortfolioItem { Title = "Lettering Un Día a la Vez", ImageUrl = "images/tattoo-lettering-undia.jpg", Category = ServiceType.Tattoo },
-                new PortfolioItem { Title = "Serpientes Blackwork", ImageUrl = "images/tattoo-serpientes-antebrazo.jpg", Category = ServiceType.Tattoo },
-                new PortfolioItem { Title = "Ovni & Alien Espacio", ImageUrl = "images/tattoo-ovni-alien-tierra.jpg", Category = ServiceType.Tattoo },
-                new PortfolioItem { Title = "Calaveras en Corazón", ImageUrl = "images/tattoo-calaveras-corazon.jpg", Category = ServiceType.Tattoo },
-                new PortfolioItem { Title = "Sol & Luna en Pareja", ImageUrl = "images/tattoo-sol-luna-pareja.jpg", Category = ServiceType.Tattoo },
-                new PortfolioItem { Title = "Girasol en Hombro", ImageUrl = "images/tattoo-girasol-espalda.jpg", Category = ServiceType.Tattoo },
-                new PortfolioItem { Title = "Pocoyó Full Color", ImageUrl = "images/tattoo-pocoyo-color.jpg", Category = ServiceType.Tattoo },
-
-                // Perforaciones Reales de Estudio (18 al 23)
-                new PortfolioItem { Title = "Piercing de Ombligo Acero Quirúrgico", ImageUrl = "images/piercing-ombligo-real.jpg", Category = ServiceType.Piercing },
-                new PortfolioItem { Title = "Piercing Industrial Oreja", ImageUrl = "images/piercing-industrial-real.jpg", Category = ServiceType.Piercing },
-                new PortfolioItem { Title = "Piercing Nostril & Septum Nariz", ImageUrl = "images/piercing-nostril-real.jpg", Category = ServiceType.Piercing },
-                new PortfolioItem { Title = "Piercing de Ceja", ImageUrl = "images/piercing-ceja-real.jpg", Category = ServiceType.Piercing },
-                new PortfolioItem { Title = "Piercing Tragus & Hélix", ImageUrl = "images/piercing-tragus-real.jpg", Category = ServiceType.Piercing },
-                new PortfolioItem { Title = "Piercing Labret Labio", ImageUrl = "images/piercing-labret-real.jpg", Category = ServiceType.Piercing },
-
-                // Smokeshop Real
-                new PortfolioItem { Title = "Pipas de Cristal Pyrex Artesanales", ImageUrl = "images/smokeshop-pipas-cristal.jpg", Category = ServiceType.SmokeShop },
-                new PortfolioItem { Title = "Blunts Double Platinum Sabores", ImageUrl = "images/blunt-wrap-platinum-sabores.jpg", Category = ServiceType.SmokeShop },
-                new PortfolioItem { Title = "Papelillos Moon Saborizados", ImageUrl = "images/papelillos-moon-saborizados.png", Category = ServiceType.SmokeShop },
-                new PortfolioItem { Title = "Papel Celulosa Hornet Transparente", ImageUrl = "images/papel-celulosa-hornet.jpg", Category = ServiceType.SmokeShop },
-                new PortfolioItem { Title = "Pipas Artesanales de Tagua a Color", ImageUrl = "images/pipas-artesanales-tagua-color.jpg", Category = ServiceType.SmokeShop },
-                new PortfolioItem { Title = "Pipas de Tagua Natural Marfil Vegetal", ImageUrl = "images/pipas-tagua-marfil-vegetal.jpg", Category = ServiceType.SmokeShop },
-                new PortfolioItem { Title = "Pipas Artesanales Cerámica y Bambú", ImageUrl = "images/pipas-ceramica-bambu-color.jpg", Category = ServiceType.SmokeShop },
-                new PortfolioItem { Title = "Papelillos GIZEH Pure Extra Fine", ImageUrl = "images/papelillos-gizeh-pure.webp", Category = ServiceType.SmokeShop },
-                new PortfolioItem { Title = "Papeles RAW, OCB & Juicy Jay's", ImageUrl = "images/papeles-raw-juicy-bambu.jpg", Category = ServiceType.SmokeShop },
-                new PortfolioItem { Title = "Smoking Slim & Colección $100", ImageUrl = "images/papelillos-smoking-billete-coleccion.jpg", Category = ServiceType.SmokeShop },
-                new PortfolioItem { Title = "Blunts y Papelillos de Sabores", ImageUrl = "images/smokeshop-blunts-papelillos.jpg", Category = ServiceType.SmokeShop }
-            };
 
             context.PortfolioItems.AddRange(initialPortfolio);
             await context.SaveChangesAsync();

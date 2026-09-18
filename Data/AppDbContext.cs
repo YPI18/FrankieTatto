@@ -92,5 +92,22 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
             .WithOne(a => a.ConsentForm)
             .HasForeignKey<ConsentForm>(c => c.AppointmentId)
             .OnDelete(DeleteBehavior.SetNull);
+
+        // Guardar Enums como texto legible en Supabase / PostgreSQL ("Tattoo", "Piercing", etc.)
+        builder.Entity<PortfolioItem>()
+            .Property(p => p.Category)
+            .HasConversion<string>();
+
+        builder.Entity<Product>()
+            .Property(p => p.Type)
+            .HasConversion<string>();
+
+        builder.Entity<Appointment>()
+            .Property(a => a.Type)
+            .HasConversion<string>();
+
+        builder.Entity<Appointment>()
+            .Property(a => a.Status)
+            .HasConversion<string>();
     }
 }
